@@ -5,6 +5,8 @@ version = "0.1.0"
 edition = "2021"
 authors = ["Jonathan Solskov Jensen <josj@solskov-jensen.dk"]
 repository = "https://github.com/Zirv-io/Zirv-ui"
+license = "MIT/Apache-2.0"
+readme = "README.md"
 
 [dependencies]
 time = { version = "0.3.34", features = ["local-offset", "wasm-bindgen"] }
