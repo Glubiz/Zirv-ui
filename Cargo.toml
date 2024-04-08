@@ -1,0 +1,19 @@
+[package]
+name = "zirv-ui"
+description = "Component library for Yew"
+version = "0.1.0"
+edition = "2021"
+authors = ["Jonathan Solskov Jensen <josj@solskov-jensen.dk"]
+repository = "https://github.com/Zirv-io/Zirv-ui"
+
+[dependencies]
+time = { version = "0.3.34", features = ["local-offset", "wasm-bindgen"] }
+uuid = { version = "1.8.0", features = ["v4", "js"] }
+yew = { version = "0.21", default-features = false }
+gloo = "0.11"
+log = "0.4.21"
+
+[features]
+full = ["toast", "flex"]
+toast = []
+flex = []
