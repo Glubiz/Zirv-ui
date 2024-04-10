@@ -10,13 +10,22 @@ pub use flex::{
     FlexProps
 };
 
-#[cfg(image)]
+#[cfg(feature = "image")]
 mod image;
 
-#[cfg(image)]
+#[cfg(feature = "image")]
 pub use image::{
     Image,
     ImageProps
+};
+
+#[cfg(feature = "theme-toggle")]
+mod theme_toggle;
+
+#[cfg(feature = "theme-toggle")]
+pub use theme_toggle::{
+    ThemeToggle,
+    ThemeToggleProps
 };
 
 #[cfg(feature = "toast")]

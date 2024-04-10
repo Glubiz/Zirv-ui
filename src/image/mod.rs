@@ -10,6 +10,10 @@ pub struct ImageProps {
 #[function_component(Image)]
 pub fn image(props: &ImageProps) -> Html {
     html! {
-        <img src={&props.image} alt={Some(props.alt.clone())} class={classes!("image", Some(props.classes.clone()))} />
+        <img 
+            src={&props.image} 
+            alt={Some(props.alt.clone())} 
+            class={classes!("image", Some(props.classes.clone()))} 
+        />
     }
 }

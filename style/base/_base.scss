@@ -15,7 +15,7 @@
 
 html {
     font-size: 62.5%;
-    background-color: $color-base;
+    background-color: var(--background-color);
 }
 
 body {
@@ -26,9 +26,9 @@ body {
     width: 100%;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: $default-font-size;
     line-height: 1.7;
-    color: $color-text;
+    color: var(--text-color-primary);
 }
 
 main{

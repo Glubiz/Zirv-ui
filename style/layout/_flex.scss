@@ -2,7 +2,7 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: 1rem;
+    gap: $flex-gap;
 
     &-direction {
         &-horizontal {

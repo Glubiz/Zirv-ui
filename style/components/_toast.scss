@@ -1,12 +1,12 @@
 .toast {
     cursor: pointer;
     padding: 0.6em;
-    border-radius: $border-radius-inner;
+    border-radius: $border-radius-outer;
     display: flex;
     flex-direction: column;
     gap: $flex-gap;
     border: 2px solid transparent;
-    background-color: #27292b;
+    background-color: var(--module-color);
 
     &-loading {
         animation: slide-in;
