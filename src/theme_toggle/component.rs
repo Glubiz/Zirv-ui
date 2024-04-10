@@ -1,3 +1,7 @@
+use yew::{classes, function_component, html, Callback, Html, use_context};
+
+use super::provider::ThemeContext;
+
 #[function_component(ThemeToggle)]
 pub fn theme_toggle() -> Html {
     let theme_context = use_context::<ThemeContext>().expect("no ctx found");
