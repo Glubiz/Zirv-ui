@@ -10,7 +10,8 @@ use yew::{function_component, html, use_state, ContextProvider, Html};
 use yew_nested_router::prelude::{Switch as RouterSwitch, *};
 
 use crate::router::{AppRoute, switch_app_route};
-use zirv_ui::{ToastProvider, ToastFactory, Toast};
+use zirv_ui::{ToastProvider, ToastFactory, Toast, ThemeProvider};
+
 #[cfg(debug_assertions)]
 const LOG_LEVEL: log::Level = log::Level::Trace;
 
@@ -25,10 +26,12 @@ pub fn app() -> Html {
     let component_creator = ToastFactory;
 
     html! {
-        <ToastProvider<Toast, ToastFactory> {component_creator}>
-            <Router<AppRoute> default={AppRoute::Index}>
-                <RouterSwitch<AppRoute> render={switch_app_route} />
-            </Router<AppRoute>>
-        </ToastProvider<Toast, ToastFactory>>
+        <ThemeProvider>
+            <ToastProvider<Toast, ToastFactory> {component_creator}>
+                <Router<AppRoute> default={AppRoute::Index}>
+                    <RouterSwitch<AppRoute> render={switch_app_route} />
+                </Router<AppRoute>>
+            </ToastProvider<Toast, ToastFactory>>
+        </ThemeProvider>
     }
 }

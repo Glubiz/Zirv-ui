@@ -1,19 +1,18 @@
-use wasm_bindgen::JsCast;
-use web_sys::{window, HtmlElement};
+#[function_component(ThemeToggle)]
+pub fn theme_toggle() -> Html {
+    let theme_context = use_context::<ThemeContext>().expect("no ctx found");
 
-pub fn toggle_theme(theme: Theme) {
-    if let Some(window) = window() {
-        let document = window.document().unwrap();
-        let body = document.body().unwrap();
-        let body: HtmlElement = body.dyn_into::<HtmlElement>().unwrap();
-        
-        match theme {
-            Theme::Dark => {
-                body.set_class_name("dark-theme");
-            },
-            Theme::Light => {
-                body.set_class_name("light-theme");
-            },
-        }
+    let onclick = {
+        let theme_context = theme_context.clone();
+        Callback::from(move |_| {
+            theme_context.toggle_theme.emit(());
+        })
+    };
+
+    html! {
+        <div>
+            <button {onclick}>{ "Toggle Theme" }</button>
+            <p>{ format!("Current theme: {:?}", theme_context.theme) }</p>
+        </div>
     }
 }

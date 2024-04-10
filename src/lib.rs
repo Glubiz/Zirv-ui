@@ -25,6 +25,7 @@ mod theme_toggle;
 #[cfg(feature = "theme-toggle")]
 pub use theme_toggle::{
     ThemeToggle,
+    ThemeProvider,
     ThemeToggleProps
 };
 

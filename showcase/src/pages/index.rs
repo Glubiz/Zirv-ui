@@ -2,7 +2,7 @@ use crate::components::{
     hero::hero::Hero,
 };
 
-use zirv_ui::{use_toast, Toast, ToastType};
+use zirv_ui::{use_toast, Toast, ToastType, ThemeToggle};
 use yew::prelude::*;
 
 #[function_component(Index)]
