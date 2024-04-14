@@ -16,7 +16,7 @@ yew = { version = "0.21", features = ["csr"] }
 yew-hooks = "0.3"
 yew-more-hooks = { version = "0.3.0", features = ["yew-hooks"] }
 yew-nested-router = "0.6.3"
-zirv-ui = { version = "0.2.0", features = ["flex", "toast", "theme-toggle"]}
+zirv-ui = { path = "../", features = ["full"]}
 
 # release profile settings to reduce the final binary size
 [profile.release]

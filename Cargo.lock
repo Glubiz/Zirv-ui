@@ -1279,5 +1279,6 @@ dependencies = [
  "log",
  "time",
  "uuid",
+ "web-sys",
  "yew",
 ]

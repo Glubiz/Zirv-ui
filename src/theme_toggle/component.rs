@@ -1,4 +1,4 @@
-use yew::{classes, function_component, html, Callback, Html, use_context};
+use yew::{function_component, html, Callback, Html, use_context};
 
 use super::provider::ThemeContext;
 
@@ -16,7 +16,7 @@ pub fn theme_toggle() -> Html {
     html! {
         <div>
             <button {onclick}>{ "Toggle Theme" }</button>
-            <p>{ format!("Current theme: {:?}", theme_context.theme) }</p>
+            <p>{ format!("Current theme: {:?}", &theme_context.theme) }</p>
         </div>
     }
 }

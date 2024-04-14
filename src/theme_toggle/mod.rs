@@ -1,2 +1,4 @@
 pub mod component;
-pub use provider;
+pub mod manager;
+pub mod provider;
+pub mod use_theme;

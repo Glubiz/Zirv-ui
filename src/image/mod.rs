@@ -1,9 +1,9 @@
-use yew::{classes, function_component, html, Children, Classes, Html, Properties};
+use yew::{classes, function_component, html, Classes, Html, Properties};
 
 #[derive(Properties, Clone, PartialEq)]
 pub struct ImageProps {
-    pub src: Into<String>,
-    pub alt: Option<String>,
+    pub src: String,
+    pub alt: String,
     pub classes: Option<Classes>,
 }
 
@@ -11,8 +11,8 @@ pub struct ImageProps {
 pub fn image(props: &ImageProps) -> Html {
     html! {
         <img 
-            src={&props.image} 
-            alt={Some(props.alt.clone())} 
+            src={props.src} 
+            alt={props.alt} 
             class={classes!("image", Some(props.classes.clone()))} 
         />
     }
