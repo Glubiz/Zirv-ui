@@ -4,7 +4,7 @@ description = "Component library for Yew"
 version = "0.2.1"
 edition = "2021"
 authors = ["Jonathan Solskov Jensen <josj@solskov-jensen.dk"]
-repository = "https://github.com/Zirv-io/Zirv-ui"
+repository = "https://github.com/Glubiz/Zirv-ui"
 license = "MIT/Apache-2.0"
 readme = "README.md"
 
