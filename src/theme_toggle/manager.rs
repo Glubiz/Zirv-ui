@@ -16,3 +16,22 @@ impl Default for ThemeManager {
     }
 }
 
+#[derive(Debug)]
+pub enum Action {
+    Toggle,
+}
+
+impl Reducible for ThemeManager {
+    type Action = Action;
+
+    fn reduce(&mut self, action: Self::Action) {
+        match action {
+            Action::Toggle => {
+                *self = match self {
+                    Theme::Light => Theme::Dark,
+                    Theme::Dark => Theme::Light,
+                }
+            }
+        }
+    }
+}
