@@ -17,8 +17,6 @@ log = "0.4.21"
 web-sys = "0.3.69"
 
 [features]
-full = ["toast", "flex", "image", "theme-toggle"]
+full = ["toast", "flex"]
 toast = []
 flex = []
-image = []
-theme-toggle = []
