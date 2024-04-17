@@ -19,15 +19,6 @@ pub use image::{
     ImageProps
 };
 
-#[cfg(feature = "theme-toggle")]
-mod theme_toggle;
-
-#[cfg(feature = "theme-toggle")]
-pub use theme_toggle::{
-    component::ThemeToggle,
-    provider::ThemeProvider
-};
-
 #[cfg(feature = "toast")]
 mod toast;
 
