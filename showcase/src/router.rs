@@ -1,8 +1,7 @@
-use crate::pages::{about::About, index::Index};
+use crate::pages::index::Index;
 
 use yew::{
-    function_component, html, html_nested, use_callback, use_effect_with, use_state_eq, Children,
-    Html, Properties,
+    html, Html,
 };
 use yew_nested_router::Target;
 

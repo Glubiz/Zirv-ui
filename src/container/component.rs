@@ -1,17 +1,15 @@
-use yew::{classes, function_component, html, Classes, Html, Properties};
-use yew::Children;
+use yew::{classes, function_component, html, Children, Classes, Html, Properties};
 
-#[derive(Properties, Clone, PartialEq)]
+#[derive(Properties, Clone, PartialEq, Default)]
 pub struct ContainerProps {
-    pub classes: Option<Classes>,
     pub children: Children,
+    pub classes: Option<Classes>,
 }
 
 #[function_component(Container)]
 pub fn container(props: &ContainerProps) -> Html {
-    let classes = classes!("style", Some(props.classes.clone()));
     html! {
-        <div class={classes}>
+        <div class={classes!("container", Some(props.classes.clone()))}>
             { props.children.clone() }
         </div>
     }

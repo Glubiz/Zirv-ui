@@ -1,6 +1,6 @@
-# Zirv-UI for Yew
+# Zirv-UI for yew
 
-Welcome to `zirv-ui`, a comprehensive component library designed specifically for the [Yew framework](https://yew.rs/). Our mission is to streamline your web development process by providing a wide range of reusable, customizable components tailored for Yew applications. Whether you're building simple or complex web applications, `zirv-ui` aims to provide the tools you need to create efficient, beautiful, and responsive designs. 
+Welcome to `zirv-ui`, a comprehensive component library designed specifically for the [Yew framework](https://yew.rs/). Our mission is to streamline your web development process by providing a wide range of reusable, customizable components tailored for Yew applications. Whether you're building simple or complex web applications, `zirv-ui` aims to provide the tools you need to create efficient, beautiful, and responsive designs.
 
 ## Key Features
 
@@ -33,7 +33,7 @@ zirv-ui = { version = "0.1.0", branch = "master" }
 ## HTML Setup
 Furthermore add the following to the <head> tag within your index.html file:
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zirv-io/Zirv-ui@main/style/dist/main.css"> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zirv-io/Zirv-ui@main/style/dist/main.css">
 ```
 
 ## How to Contribute

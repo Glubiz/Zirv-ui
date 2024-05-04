@@ -1,16 +1,14 @@
-mod pages;
 mod components;
+mod pages;
 mod router;
-mod services;
-mod layouts;
-mod hooks;
 
 use wasm_bindgen::prelude::*;
-use yew::{function_component, html, use_state, ContextProvider, Html};
+use yew::{function_component, html, Html};
 use yew_nested_router::prelude::{Switch as RouterSwitch, *};
 
+use components::header::Header;
 use crate::router::{AppRoute, switch_app_route};
-use zirv_ui::{ToastProvider, ToastFactory, Toast, ThemeProvider};
+use zirv_ui::{ToastProvider, ToastFactory, Toast};
 
 #[cfg(debug_assertions)]
 const LOG_LEVEL: log::Level = log::Level::Trace;
@@ -26,12 +24,11 @@ pub fn app() -> Html {
     let component_creator = ToastFactory;
 
     html! {
-        <ThemeProvider>
-            <ToastProvider<Toast, ToastFactory> {component_creator}>
-                <Router<AppRoute> default={AppRoute::Index}>
-                    <RouterSwitch<AppRoute> render={switch_app_route} />
-                </Router<AppRoute>>
-            </ToastProvider<Toast, ToastFactory>>
-        </ThemeProvider>
+        <ToastProvider<Toast, ToastFactory> {component_creator}>
+            <Header/>
+            <Router<AppRoute> default={AppRoute::Index}>
+                <RouterSwitch<AppRoute> render={switch_app_route} />
+            </Router<AppRoute>>
+        </ToastProvider<Toast, ToastFactory>>
     }
 }

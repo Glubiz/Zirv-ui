@@ -1,7 +1,7 @@
 [package]
 name = "zirv-ui"
 description = "Component library for Yew"
-version = "0.2.1"
+version = "0.2.2"
 edition = "2021"
 authors = ["Jonathan Solskov Jensen <josj@solskov-jensen.dk"]
 repository = "https://github.com/Glubiz/Zirv-ui"
@@ -17,6 +17,7 @@ log = "0.4.21"
 web-sys = "0.3.69"
 
 [features]
-full = ["toast", "flex"]
+full = ["toast", "flex", "container"]
 toast = []
 flex = []
+container = []

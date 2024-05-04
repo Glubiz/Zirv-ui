@@ -1,5 +1,9 @@
+mod options;
+
+#[cfg(feature = "container")]
 mod container;
 
+#[cfg(feature = "container")]
 pub use container::component::{Container, ContainerProps};
 
 #[cfg(feature = "flex")]
