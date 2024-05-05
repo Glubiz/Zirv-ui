@@ -1,7 +1,8 @@
 use yew::{classes, Classes};
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Default)]
 pub enum FlexDirection {
+    #[default]
     Row,
     RowReverse,
     Column,

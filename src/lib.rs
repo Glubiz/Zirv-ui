@@ -10,7 +10,7 @@ pub use container::component::{Container, ContainerProps};
 mod flex;
 
 #[cfg(feature = "flex")]
-pub use flex::{Flex, FlexAlign, FlexDirection, FlexJustify, FlexProps};
+pub use flex::{Flex, FlexProps};
 
 #[cfg(feature = "toast")]
 mod toast;
