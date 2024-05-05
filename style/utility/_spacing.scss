@@ -1,0 +1,29 @@
+.padding {
+    &-none {
+        padding: 0;
+    }
+    &-small {
+        padding: $spacing-small;
+    }
+    &-medium {
+        padding: $spacing-medium;
+    }
+    &-large {
+        padding: $spacing-large;
+    }
+}
+
+.margin {
+    &-none {
+        margin: 0;
+    }
+    &-small {
+        margin: $spacing-small;
+    }
+    &-medium {
+        margin: $spacing-medium;
+    }
+    &-large {
+        margin: $spacing-large;
+    }
+}

@@ -20,8 +20,9 @@ impl From<&FlexDirection> for Classes {
     }
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Default)]
 pub enum FlexWrap {
+    #[default]
     NoWrap,
     Wrap,
     WrapReverse,
@@ -30,7 +31,7 @@ pub enum FlexWrap {
 impl From<&FlexWrap> for Classes {
     fn from(flex_wrap: &FlexWrap) -> Self {
         match flex_wrap {
-            FlexWrap::NoWrap => classes!("flex-wrap-no-wrap"),
+            FlexWrap::NoWrap => classes!("flex-wrap-nowrap"),
             FlexWrap::Wrap => classes!("flex-wrap-wrap"),
             FlexWrap::WrapReverse => classes!("flex-wrap-wrap-reverse"),
         }
@@ -83,61 +84,34 @@ impl From<&FlexJustify> for Classes {
     }
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Default)]
 pub enum FlexGrow {
+    #[default]
     None,
-    Small,
-    Medium,
-    Large,
+    Grow,
 }
 
 impl From<&FlexGrow> for Classes {
     fn from(flex_grow: &FlexGrow) -> Self {
         match flex_grow {
-            FlexGrow::None => classes!("flex-grow-none"),
-            FlexGrow::Small => classes!("flex-grow-small"),
-            FlexGrow::Medium => classes!("flex-grow-medium"),
-            FlexGrow::Large => classes!("flex-grow-large"),
+            FlexGrow::None => classes!("flex-grow-0"),
+            FlexGrow::Grow => classes!("flex-grow-1"),
         }
     }
 }
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Default)]
 pub enum FlexShrink {
+    #[default]
     None,
-    Small,
-    Medium,
-    Large,
+    Shrink,
 }
 
 impl From<&FlexShrink> for Classes {
     fn from(flex_shrink: &FlexShrink) -> Self {
         match flex_shrink {
-            FlexShrink::None => classes!("flex-shrink-none"),
-            FlexShrink::Small => classes!("flex-shrink-small"),
-            FlexShrink::Medium => classes!("flex-shrink-medium"),
-            FlexShrink::Large => classes!("flex-shrink-large"),
-        }
-    }
-}
-
-#[derive(Debug, Clone, PartialEq)]
-pub enum FlexBasis {
-    Auto,
-    Content,
-    Fill,
-    MaxContent,
-    MinContent,
-}
-
-impl From<&FlexBasis> for Classes {
-    fn from(flex_basis: &FlexBasis) -> Self {
-        match flex_basis {
-            FlexBasis::Auto => classes!("flex-basis-auto"),
-            FlexBasis::Content => classes!("flex-basis-content"),
-            FlexBasis::Fill => classes!("flex-basis-fill"),
-            FlexBasis::MaxContent => classes!("flex-basis-max-content"),
-            FlexBasis::MinContent => classes!("flex-basis-min-content"),
+            FlexShrink::None => classes!("flex-shrink-0"),
+            FlexShrink::Shrink => classes!("flex-shrink-1"),
         }
     }
 }

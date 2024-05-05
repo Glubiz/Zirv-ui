@@ -7,7 +7,7 @@ pub enum BorderRaduis {
     #[default]
     Medium,
     Large,
-    Full,
+    Rounded,
 }
 
 impl From<&BorderRaduis> for Classes {
@@ -17,7 +17,7 @@ impl From<&BorderRaduis> for Classes {
             BorderRaduis::Small => classes!("border-radius-small"),
             BorderRaduis::Medium => classes!("border-radius-medium"),
             BorderRaduis::Large => classes!("border-radius-large"),
-            BorderRaduis::Full => classes!("border-radius-full"),
+            BorderRaduis::Rounded => classes!("border-radius-rounded"),
         }
     }
 }

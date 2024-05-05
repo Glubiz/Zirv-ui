@@ -16,10 +16,15 @@
 @import "layout/footer";
 @import "layout/header";
 
+@import "utility/background";
 @import "utility/border";
-@import "utility/height";
-@import "utility/margin";
-@import "utility/padding";
-@import "utility/width";
+@import "utility/color";
+@import "utility/display";
+@import "utility/flex";
+@import "utility/overflow";
+@import "utility/shadow";
+@import "utility/size";
+@import "utility/spacing";
+@import "utility/zindex";
 
 @import "variables/theme";

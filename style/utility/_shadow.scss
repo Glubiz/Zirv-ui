@@ -1,0 +1,14 @@
+.box-shadow {
+    &-none {
+        box-shadow: none;
+    }
+    &-small {
+        box-shadow: $box-shadow-small;
+    }
+    &-medium {
+        box-shadow: $box-shadow-medium;
+    }
+    &-large {
+        box-shadow: $box-shadow-large;
+    }
+}

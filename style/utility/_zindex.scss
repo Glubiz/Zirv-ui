@@ -1,0 +1,14 @@
+.z-index {
+    &-none {
+        z-index: 0;
+    }
+    &-front {
+        z-index: 999;
+    }
+    &-middle {
+        z-index: 100;
+    }
+    &-back {
+        z-index: -999;
+    }
+}

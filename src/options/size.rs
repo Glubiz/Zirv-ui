@@ -8,6 +8,12 @@ pub enum Height {
     Medium,
     Large,
     Full,
+    Screen,
+    Auto,
+    Min,
+    Max,
+    Fit,
+    Inherit,
 }
 
 impl From<&Height> for Classes {
@@ -18,6 +24,12 @@ impl From<&Height> for Classes {
             Height::Medium => classes!("height-medium"),
             Height::Large => classes!("height-large"),
             Height::Full => classes!("height-full"),
+            Height::Screen => classes!("height-screen"),
+            Height::Auto => classes!("height-auto"),
+            Height::Min => classes!("height-min"),
+            Height::Max => classes!("height-max"),
+            Height::Fit => classes!("height-fit"),
+            Height::Inherit => classes!("height-inherit"),
         }
     }
 }
@@ -30,6 +42,12 @@ pub enum Width {
     Medium,
     Large,
     Full,
+    Screen,
+    Auto,
+    Min,
+    Max,
+    Fit,
+    Inherit,
 }
 
 impl From<&Width> for Classes {
@@ -40,6 +58,12 @@ impl From<&Width> for Classes {
             Width::Medium => classes!("width-medium"),
             Width::Large => classes!("width-large"),
             Width::Full => classes!("width-full"),
+            Width::Screen => classes!("width-screen"),
+            Width::Auto => classes!("width-auto"),
+            Width::Min => classes!("width-min"),
+            Width::Max => classes!("width-max"),
+            Width::Fit => classes!("width-fit"),
+            Width::Inherit => classes!("width-inherit"),
         }
     }
 }
