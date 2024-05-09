@@ -1,6 +1,7 @@
 use yew::{classes, function_component, html, Children, Classes, Html, Properties};
 
 use crate::options::{
+    display::Display,
     flex::{
         FlexAlign,
         FlexDirection,
@@ -45,7 +46,7 @@ pub struct FlexProps {
 #[function_component(Flex)]
 pub fn flex(props: &FlexProps) -> Html {
     html! {
-        <div class={classes!("flex", &props.options.direction, &props.options.align, &props.options.justify, Some(props.options.classes.clone()))}>
+        <div class={classes!(&Display::Flex, &props.options.direction, &props.options.align, &props.options.justify, Some(props.options.classes.clone()))}>
             {props.children.clone()}
         </div>
     }

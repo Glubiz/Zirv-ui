@@ -4,7 +4,7 @@ mod options;
 mod container;
 
 #[cfg(feature = "container")]
-pub use container::component::{Container, ContainerProps};
+pub use container::{Container, ContainerProps};
 
 #[cfg(feature = "flex")]
 mod flex;
