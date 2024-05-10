@@ -3,6 +3,7 @@ pub mod border;
 pub mod color;
 pub mod display;
 pub mod flex;
+pub mod font;
 pub mod overflow;
 pub mod shadow;
 pub mod size;
