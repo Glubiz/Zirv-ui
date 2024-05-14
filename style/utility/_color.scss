@@ -1,32 +1,35 @@
 :root {
-    $background-color: #252e42;
-    $module-color: #35415a;
-    $text-color-primary: #fff;
-    $text-color-secondary: #ccc;
-    $accent-color-primary: #2c698d;
-    $accent-color-secondary: #bae8e8;
-    $accent-color-secondary: #e3f6f5;
-    $color-success: #2ecc71;
-    $color-warning: #f39c12;
-    $color-error: #e74c3c;
+    --background-color: #252e42;
+    --module-color: #35415a;
+    --text-color-primary: #fff;
+    --text-color-secondary: #ccc;
+    --color-primary: #2c698d;
+    --color-secondary: #bae8e8;
+    --color-secondary: #e3f6f5;
+    --color-success: #2ecc71;
+    --color-warning: #f39c12;
+    --color-error: #e74c3c;
+    --color-disabled: #7f8c8d;
+
 }
 
 .light-theme{
-    $background-color: #fff;
-    $module-color: #bbbbbb;
-    $text-color-primary: #000;
-    $text-color-secondary: #333;
-    $accent-color-primary: #2c698d;
-    $accent-color-secondary: #bae8e8;
-    $accent-color-secondary: #e3f6f5;
+
+    --background-color: #fff;
+    --module-color: #bbbbbb;
+    --text-color-primary: #000;
+    --text-color-secondary: #333;
+    --color-primary: #2c698d;
+    --color-secondary: #bae8e8;
+    --color-tertiery: #e3f6f5;
 }
 
 .dark-theme{
-    $background-color: #252e42;
-    $module-color: #35415a;
-    $text-color-primary: #fff;
-    $text-color-secondary: #cccccc;
-    $accent-color-primary: #2c698d;
-    $accent-color-secondary: #bae8e8;
-    $accent-color-secondary: #e3f6f5;
+    --background-color: #252e42;
+    --module-color: #35415a;
+    --text-color-primary: #fff;
+    --text-color-secondary: #cccccc;
+    --color-primary: #2c698d;
+    --color-secondary: #bae8e8;
+    --color-secondary: #e3f6f5;
 }

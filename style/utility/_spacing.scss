@@ -3,13 +3,13 @@
         padding: 0;
     }
     &-small {
-        padding: $spacing-small;
+        padding: .5rem;
     }
     &-medium {
-        padding: $spacing-medium;
+        padding: 1rem;
     }
     &-large {
-        padding: $spacing-large;
+        padding: 1.5rem;
     }
 }
 
@@ -18,12 +18,12 @@
         margin: 0;
     }
     &-small {
-        margin: $spacing-small;
+        margin: .5rem;
     }
     &-medium {
-        margin: $spacing-medium;
+        margin: 1rem;
     }
     &-large {
-        margin: $spacing-large;
+        margin: 1.5rem;
     }
 }

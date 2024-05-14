@@ -7,9 +7,11 @@
 @import "base/typography";
 @import "base/utilities";
 
+@import "components/button";
 @import "components/container";
 @import "components/hero";
 @import "components/loader";
+@import "components/table";
 @import "components/toast";
 
 @import "layout/flex";
@@ -26,5 +28,3 @@
 @import "utility/size";
 @import "utility/spacing";
 @import "utility/zindex";
-
-@import "variables/theme";

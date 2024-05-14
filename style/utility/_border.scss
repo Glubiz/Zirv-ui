@@ -4,16 +4,19 @@
       border-radius: 0;
     }
     &-small {
-      border-radius: $border-radius-small;
+      border-radius: 8px;
     }
     &-medium {
-      border-radius: $border-radius-medium;
+      border-radius: 16px;
     }
     &-large {
-      border-radius: $border-radius-large;
+      border-radius: 32px;
     }
     &-rounded {
-      border-radius: $border-radius-rounded;
+      border-radius: 25%;
+    }
+    &-circle {
+      border-radius: 50%;
     }
   }
 
@@ -22,13 +25,13 @@
       border-width: 0;
     }
     &-small {
-      border-width: $border-width-small;
+      border-width: 1px;
     }
     &-medium {
-      border-width: $border-width-medium;
+      border-width: 4px;
     }
     &-large {
-      border-width: $border-width-large;
+      border-width: 8px;
     }
   }
 
@@ -55,22 +58,22 @@
       border-color: transparent;
     }
     &-primary {
-      border-color: $color-primary;
+      border-color: --color-primary;
     }
     &-secondary {
-      border-color: $color-secondary;
+      border-color: --color-secondary;
     }
     &-tertiary {
-      border-color: $color-tertiary;
+      border-color: --color-tertiary;
     }
     &-success {
-      border-color: $color-success;
+      border-color: --color-success;
     }
     &-warning {
-      border-color: $color-warning;
+      border-color: --color-warning;
     }
     &-error {
-      border-color: $color-error;
+      border-color: --color-error;
     }
   }
 

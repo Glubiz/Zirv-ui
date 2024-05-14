@@ -28,7 +28,7 @@ pub fn app() -> Html {
             <Header/>
             <Router<AppRoute> default={AppRoute::Index}>
                 <RouterSwitch<AppRoute> render={switch_app_route} />
-            </Router<AppRoute>>
-        </ToastProvider<Toast, ToastFactory>>
+            </Router>
+        </ToastProvider>
     }
 }

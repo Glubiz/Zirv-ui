@@ -1,0 +1,20 @@
+button {
+    background-color: var(--color-primary);
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+        background-color: var(--color-primary);
+    }
+    
+    &:active {
+        background-color: var(--color-primary);
+    }
+    
+    &:disabled {
+        background-color: var(--color-disabled);
+        cursor: not-allowed;
+    }
+}
