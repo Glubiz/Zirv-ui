@@ -1,19 +1,30 @@
 mod options;
-
-#[cfg(feature = "container")]
 mod container;
+mod flex;
+mod text;
+mod toast;
 
 #[cfg(feature = "container")]
 pub use container::{Container, ContainerProps};
 
 #[cfg(feature = "flex")]
-mod flex;
-
-#[cfg(feature = "flex")]
 pub use flex::{Flex, FlexProps};
 
-#[cfg(feature = "toast")]
-mod toast;
+#[cfg(feature = "text")]
+pub use text::{
+    headline::{
+        Headline, 
+        HeadlineProps,
+    },
+    paragraph::{
+        Paragraph, 
+        ParagraphProps,
+    },
+    subheadline::{
+        Subheadline,
+        SubheadlineProps,
+    },
+};
 
 #[cfg(feature = "toast")]
 pub use toast::{

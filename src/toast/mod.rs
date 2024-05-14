@@ -11,7 +11,6 @@ pub mod provider;
 pub mod use_toast;
 pub mod utils;
 
-
 #[derive(Debug, Clone, PartialEq)]
 pub struct Toast {
     pub(crate) id: Uuid,

@@ -29,7 +29,7 @@ pub struct HeadlineProps {
 #[function_component(Headline)]
 pub fn headline(props: &HeadlineProps) -> Html {
     html! {
-        <h1 class={classes!(todo!())}>
+        <h1 class={classes!(&props.options.size, &props.options.weight, &props.options.style, &props.options.family, &props.options.classes)}>
             {props.children.clone()}
         </h1>
     }
