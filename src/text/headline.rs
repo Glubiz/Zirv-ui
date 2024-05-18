@@ -8,7 +8,8 @@ use crate::options::font::{
 };
 
 #[derive(Properties, Clone, PartialEq)]
-pub struct Options {
+pub struct HeadlineProps {
+    pub children: Children,
     #[prop_or_default]
     pub size: FontSize,
     #[prop_or_default]
@@ -20,16 +21,12 @@ pub struct Options {
     pub classes: Option<Classes>
 }
 
-#[derive(Properties, Clone, PartialEq)]
-pub struct HeadlineProps {
-    pub children: Children,
-    pub options: Options
-}
-
 #[function_component(Headline)]
 pub fn headline(props: &HeadlineProps) -> Html {
+    let classes = classes!(&props.size, &props.weight, &props.style, &props.family, &props.classes);
+
     html! {
-        <h1 class={classes!(&props.options.size, &props.options.weight, &props.options.style, &props.options.family, &props.options.classes)}>
+        <h1 class={classes!(classes)}>
             {props.children.clone()}
         </h1>
     }

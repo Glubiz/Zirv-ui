@@ -3,6 +3,7 @@ use yew::{classes, Classes};
 #[derive(Debug, Clone, PartialEq, Default)]
 pub enum FontSize {
     #[default]
+    None,
     Small,
     Medium,
     Large,
@@ -12,6 +13,7 @@ pub enum FontSize {
 impl From<&FontSize> for Classes {
     fn from(font_size: &FontSize) -> Self {
         match font_size {
+            FontSize::None => classes!("font-size-default"),
             FontSize::Small => classes!("font-size-small"),
             FontSize::Medium => classes!("font-size-medium"),
             FontSize::Large => classes!("font-size-large"),
@@ -22,20 +24,20 @@ impl From<&FontSize> for Classes {
 
 #[derive(Debug, Clone, PartialEq, Default)]
 pub enum FontWeight {
+    Lighter,
     #[default]
     Normal,
     Bold,
     Bolder,
-    Lighter,
 }
 
 impl From<&FontWeight> for Classes {
     fn from(font_weight: &FontWeight) -> Self {
         match font_weight {
+            FontWeight::Lighter => classes!("font-weight-lighter"),
             FontWeight::Normal => classes!("font-weight-normal"),
             FontWeight::Bold => classes!("font-weight-bold"),
             FontWeight::Bolder => classes!("font-weight-bolder"),
-            FontWeight::Lighter => classes!("font-weight-lighter"),
         }
     }
 }
@@ -45,7 +47,6 @@ pub enum FontStyle {
     #[default]
     Normal,
     Italic,
-    Oblique,
 }
 
 impl From<&FontStyle> for Classes {
@@ -53,7 +54,6 @@ impl From<&FontStyle> for Classes {
         match font_style {
             FontStyle::Normal => classes!("font-style-normal"),
             FontStyle::Italic => classes!("font-style-italic"),
-            FontStyle::Oblique => classes!("font-style-oblique"),
         }
     }
 }
@@ -141,14 +141,16 @@ impl From<&TextDecoration> for Classes {
 #[derive(Debug, Clone, PartialEq, Default)]
 pub enum TextOverflow {
     #[default]
-    Clip,
+    None,
+    Wrap,
     Ellipsis,
 }
 
 impl From<&TextOverflow> for Classes {
     fn from(text_overflow: &TextOverflow) -> Self {
         match text_overflow {
-            TextOverflow::Clip => classes!("text-overflow-clip"),
+            TextOverflow::None => classes!("text-overflow-nowrap"),
+            TextOverflow::Wrap => classes!("text-overflow-wrap"),
             TextOverflow::Ellipsis => classes!("text-overflow-ellipsis"),
         }
     }

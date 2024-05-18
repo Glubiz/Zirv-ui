@@ -1,8 +1,10 @@
-mod options;
-mod container;
-mod flex;
-mod text;
-mod toast;
+pub mod options;
+pub mod container;
+pub mod flex;
+pub mod text;
+pub mod toast;
+
+pub use options::*;
 
 #[cfg(feature = "container")]
 pub use container::{Container, ContainerProps};

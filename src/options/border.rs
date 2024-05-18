@@ -1,7 +1,7 @@
 use yew::{classes, Classes};
 
 #[derive(Debug, Clone, PartialEq, Default)]
-pub enum BorderRaduis {
+pub enum BorderRadius {
     None,
     Small,
     #[default]
@@ -10,14 +10,14 @@ pub enum BorderRaduis {
     Rounded,
 }
 
-impl From<&BorderRaduis> for Classes {
-    fn from(border_radius: &BorderRaduis) -> Self {
+impl From<&BorderRadius> for Classes {
+    fn from(border_radius: &BorderRadius) -> Self {
         match border_radius {
-            BorderRaduis::None => classes!("border-radius-none"),
-            BorderRaduis::Small => classes!("border-radius-small"),
-            BorderRaduis::Medium => classes!("border-radius-medium"),
-            BorderRaduis::Large => classes!("border-radius-large"),
-            BorderRaduis::Rounded => classes!("border-radius-rounded"),
+            BorderRadius::None => classes!("border-radius-none"),
+            BorderRadius::Small => classes!("border-radius-small"),
+            BorderRadius::Medium => classes!("border-radius-medium"),
+            BorderRadius::Large => classes!("border-radius-large"),
+            BorderRadius::Rounded => classes!("border-radius-rounded"),
         }
     }
 }
@@ -127,7 +127,7 @@ impl From<&Border> for Classes {
                 classes
             }
             Border::Bottom(width, style, color) => {
-                let mut classes =classes!("border-bottom");
+                let mut classes = classes!("border-bottom");
                 classes.push(width);
                 classes.push(style);
                 classes.push(color);

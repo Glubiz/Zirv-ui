@@ -1,5 +1,6 @@
 use zirv_ui::{use_toast, Toast, ToastType, Container};
 use yew::prelude::*;
+use zirv_ui::options::color::BackgroundColor;
 
 #[function_component(Header)]
 pub fn header() -> Html {
@@ -15,7 +16,7 @@ pub fn header() -> Html {
 
     html! {
         <>
-            <Container classes={Some(classes!("flex", "justify-center", "align-center"))}>
+            <Container background_color={BackgroundColor::Container}>
                 <img src="../images/logo.png" alt="Logo" class="h-12 w-12" />
                 <button {onclick}>{"Show Toast"}</button>
             </Container>

@@ -17,7 +17,7 @@ use crate::options::{
 };
 
 #[derive(Properties, Clone, PartialEq)]
-pub struct FlexProps {
+pub struct LoaderProps {
     pub children: Children,
     #[prop_or_default]
     pub wrap: FlexWrap,
@@ -38,10 +38,10 @@ pub struct FlexProps {
     pub classes: Option<Classes>
 }
 
-#[function_component(Flex)]
-pub fn flex(props: &FlexProps) -> Html {
+#[function_component(Loader)]
+pub fn loader(props: &LoaderProps) -> Html {
     html! {
-        <div class={classes!(&Display::Flex, &props.direction, &props.align, &props.justify, Some(props.classes.clone()))}>
+        <div class={classes!(&Display::Loader, &props.direction, &props.align, &props.justify, Some(props.classes.clone()))}>
             {props.children.clone()}
         </div>
     }

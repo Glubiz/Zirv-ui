@@ -1,0 +1,181 @@
+.text {
+    &-weight {
+        &-lighter {
+            font-weight: lighter;
+        }
+        &-normal {
+            font-weight: normal;
+        }
+        &-bold {
+            font-weight: bold;
+        }
+        &-bolder {
+            font-weight: bolder;
+        }
+    }
+
+    &-style {
+        &-italic {
+            font-style: italic;
+        }
+        &-normal {
+            font-style: normal;
+        }
+    }
+
+    &-family {
+        &-arial {
+            font-family: Arial, sans-serif;
+        }
+        &-helvetica {
+            font-family: Helvetica, sans-serif;
+        }
+        &-times-new-roman {
+            font-family: 'Times New Roman', serif;
+        }
+        &-courier-new {
+            font-family: 'Courier New', monospace;
+        }
+    }
+
+    &-align {
+        &-left {
+            text-align: left;
+        }
+        &-center {
+            text-align: center;
+        }
+        &-right {
+            text-align: right;
+        }
+        &-justify {
+            text-align: justify;
+        }
+    }
+
+    &-transform {
+        &-uppercase {
+            text-transform: uppercase;
+        }
+        &-lowercase {
+            text-transform: lowercase;
+        }
+        &-capitalize {
+            text-transform: capitalize;
+        }
+        &-none {
+            text-transform: none;
+        }
+    }
+
+    &-decoration {
+        &-underline {
+            text-decoration: underline;
+        }
+        &-overline {
+            text-decoration: overline;
+        }
+        &-line-through {
+            text-decoration: line-through;
+        }
+        &-none {
+            text-decoration: none;
+        }
+    }
+
+    &-overflow {
+        &-ellipsis {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        &-wrap {
+            white-space: wrap;
+        }
+        &-nowrap {
+            white-space: nowrap;
+        }
+    }
+
+    &-shadow {
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+
+        &-none {
+            text-shadow: none;
+        }
+    }
+
+    &-stroke {
+        -webkit-text-stroke: 1px inherit;
+
+        &-none {
+            -webkit-text-stroke: none;
+        }
+    }
+}
+
+h1 {
+    .text {
+        &-size {
+            &-default {
+                font-size: 3rem;
+            }
+            &-small {
+                font-size: 1.5rem;
+            }
+            &-medium {
+                font-size: 2rem;
+            }
+            &-large {
+                font-size: 3rem;
+            }
+            &-extra-large {
+                font-size: 4rem;
+            }
+        }
+    }
+}
+
+h3 {
+    .text {
+        &-size {
+            &-default {
+                font-size: 1.5rem;
+            }
+            &-small {
+                font-size: 1rem;
+            }
+            &-medium {
+                font-size: 1.25rem;
+            }
+            &-large {
+                font-size: 1.5rem;
+            }
+            &-extra-large {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+p, a, li, span{
+    .text {
+        &-size {
+            &-default {
+                font-size: 1rem;
+            }
+            &-small {
+                font-size: .75rem;
+            }
+            &-medium {
+                font-size: 1rem;
+            }
+            &-large {
+                font-size: 1.25rem;
+            }
+            &-extra-large {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
