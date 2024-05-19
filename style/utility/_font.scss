@@ -112,6 +112,42 @@
             -webkit-text-stroke: none;
         }
     }
+
+    &-color {
+        &-none {
+            color: transparent;
+        }
+        &-primary {
+            color: var(--color-primary);
+        }
+        &-secondary {
+            color: var(--color-secondary);
+        }
+        &-teritiary {
+            color: var(--color-tertiery);
+        }
+        &-container {
+            color: var(--module-color);
+        }
+        &-background {
+            color: var(--background-color);
+        }
+        &-text-primary {
+            color: var(--text-color-primary);
+        }
+        &-text-secondary {
+            color: var(--text-color-secondary);
+        }
+        &-success {
+            color: var(--color-success);
+        }
+        &-warning {
+            color: var(--color-warning);
+        }
+        &-error {
+            color: var(--color-error);
+        }
+    }
 }
 
 h1 {

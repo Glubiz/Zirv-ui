@@ -18,6 +18,7 @@ pub struct HeadlineProps {
     pub style: FontStyle,
     #[prop_or_default]
     pub family: FontFamily,
+    #[prop_or(None)]
     pub classes: Option<Classes>
 }
 

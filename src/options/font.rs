@@ -187,3 +187,37 @@ impl From<&TextStroke> for Classes {
         }
     }
 }
+
+#[derive(Debug, Clone, PartialEq, Default)]
+pub enum TextColor {
+    None,
+    Primary,
+    Secondary,
+    Tertiary,
+    Container,
+    Background,
+    #[default]
+    TextPrimary,
+    TextSecondary,
+    Success,
+    Warning,
+    Error,
+}
+
+impl From<&TextColor> for Classes {
+    fn from(text_color: &TextColor) -> Self {
+        match text_color {
+            TextColor::None => classes!("text-color-none"),
+            TextColor::Primary => classes!("text-color-primary"),
+            TextColor::Secondary => classes!("text-color-secondary"),
+            TextColor::Tertiary => classes!("text-color-tertiary"),
+            TextColor::Container => classes!("text-color-container"),
+            TextColor::Background => classes!("text-color-background"),
+            TextColor::TextPrimary => classes!("text-color-text-primary"),
+            TextColor::TextSecondary => classes!("text-color-text-secondary"),
+            TextColor::Success => classes!("text-color-success"),
+            TextColor::Warning => classes!("text-color-warning"),
+            TextColor::Error => classes!("text-color-error"),
+        }
+    }
+}

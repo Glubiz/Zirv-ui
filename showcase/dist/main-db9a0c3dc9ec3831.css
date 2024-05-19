@@ -261,13 +261,13 @@ button:disabled {
   border-radius: 0;
 }
 .border-radius-small {
-  border-radius: 8px;
+  border-radius: 4px;
 }
 .border-radius-medium {
-  border-radius: 16px;
+  border-radius: 8px;
 }
 .border-radius-large {
-  border-radius: 32px;
+  border-radius: 16px;
 }
 .border-radius-rounded {
   border-radius: 25%;
@@ -566,6 +566,39 @@ button:disabled {
 }
 .text-stroke-none {
   -webkit-text-stroke: none;
+}
+.text-color-none {
+  color: transparent;
+}
+.text-color-primary {
+  color: var(--color-primary);
+}
+.text-color-secondary {
+  color: var(--color-secondary);
+}
+.text-color-teritiary {
+  color: var(--color-tertiery);
+}
+.text-color-container {
+  color: var(--module-color);
+}
+.text-color-background {
+  color: var(--background-color);
+}
+.text-color-text-primary {
+  color: var(--text-color-primary);
+}
+.text-color-text-secondary {
+  color: var(--text-color-secondary);
+}
+.text-color-success {
+  color: var(--color-success);
+}
+.text-color-warning {
+  color: var(--color-warning);
+}
+.text-color-error {
+  color: var(--color-error);
 }
 
 h1 .text-size-default {

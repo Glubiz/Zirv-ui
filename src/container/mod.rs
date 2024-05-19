@@ -39,9 +39,9 @@ pub struct ContainerProps {
     pub padding: Padding,
     #[prop_or_default]
     pub margin: Margin,
-    #[prop_or_default]
+    #[prop_or(BackgroundColor::Container)]
     pub background_color: BackgroundColor,
-    #[prop_or_default]
+    #[prop_or(None)]
     pub classes: Option<Classes>
 }
 

@@ -1,3 +1,4 @@
+pub mod button;
 pub mod options;
 pub mod container;
 pub mod flex;
@@ -5,6 +6,9 @@ pub mod text;
 pub mod toast;
 
 pub use options::*;
+
+#[cfg(feature = "button")]
+pub use button::{Button, ButtonProps};
 
 #[cfg(feature = "container")]
 pub use container::{Container, ContainerProps};
