@@ -5,13 +5,13 @@ use crate::{border::{Border, BorderColor, BorderRadius, BorderStyle, BorderWidth
 #[derive(Properties, Clone, PartialEq, Default)]
 pub struct ButtonProps {
     pub children: Children,
-    #[prop_or(Width::Auto)]
+    #[prop_or(Width::Custom(12))]
     pub width: Width,
-    #[prop_or(Height::Auto)]
+    #[prop_or(Height::Custom(4))]
     pub height: Height,
     #[prop_or_default]
     pub border: Border,
-    #[prop_or_default]
+    #[prop_or(BorderRadius::Large)]
     pub border_radius: BorderRadius,
     #[prop_or_default]
     pub border_color: BorderColor,
@@ -25,7 +25,7 @@ pub struct ButtonProps {
     pub margin: Margin,
     #[prop_or(BackgroundColor::Primary)]
     pub background_color: BackgroundColor,
-    #[prop_or(TextColor::Primary)]
+    #[prop_or(TextColor::TextPrimary)]
     pub font_color: TextColor,
     #[prop_or_default]
     pub font_size: FontSize,

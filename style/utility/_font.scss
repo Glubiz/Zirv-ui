@@ -118,34 +118,34 @@
             color: transparent;
         }
         &-primary {
-            color: var(--color-primary);
+            color: $color-primary;
         }
         &-secondary {
-            color: var(--color-secondary);
+            color: $color-secondary;
         }
         &-teritiary {
-            color: var(--color-tertiery);
+            color: $color-tertiery;
         }
         &-container {
-            color: var(--module-color);
+            color: $module-color;
         }
         &-background {
-            color: var(--background-color);
+            color: $background-color;
         }
         &-text-primary {
-            color: var(--text-color-primary);
+            color: $text-color-primary;
         }
         &-text-secondary {
-            color: var(--text-color-secondary);
+            color: $text-color-secondary;
         }
         &-success {
-            color: var(--color-success);
+            color: $color-success;
         }
         &-warning {
-            color: var(--color-warning);
+            color: $color-warning;
         }
         &-error {
-            color: var(--color-error);
+            color: $color-error;
         }
     }
 }

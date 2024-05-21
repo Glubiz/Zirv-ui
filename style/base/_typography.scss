@@ -1,15 +1,7 @@
 h1, h2, h3, h4, h5, h6 {
-    color: var(--text-color-primary)
+    color: $text-color-primary
 }
 
 p, ul, ol, dl, blockquote, pre, form, table, fieldset, figure {
-    color: var(--text-color-secondary)
-}
-
-.text-primary {
-    color: var(--text-color-primary)
-}
-
-.text-secondary {
-    color: var(--text-color-secondary)
+    color: $text-color-secondary
 }

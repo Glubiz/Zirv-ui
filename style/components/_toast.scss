@@ -6,8 +6,8 @@
     flex-direction: column;
     gap: $flex-gap;
     border: 2px solid transparent;
-    background-color: var(--module-color);
-    color: var(--text-color-secondary);
+    background-color: $module-color;
+    color: $text-color-secondary;
 
     &-loading {
         animation: slide-in;
@@ -21,7 +21,7 @@
     
     & > .toast-title {
         font-weight: bold;
-        color: var(--text-color-primary)
+        color: $text-color-primary;
     }
 }
   

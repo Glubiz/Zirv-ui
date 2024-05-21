@@ -1,3 +1,14 @@
+@import "utility/color";
+@import "utility/border";
+@import "utility/display";
+@import "utility/flex";
+@import "utility/font";
+@import "utility/overflow";
+@import "utility/shadow";
+@import "utility/size";
+@import "utility/spacing";
+@import "utility/zindex";
+
 @import "abstract/functions";
 @import "abstract/mixins";
 @import "abstract/variables";
@@ -18,14 +29,3 @@
 @import "layout/footer";
 @import "layout/header";
 
-@import "utility/background";
-@import "utility/border";
-@import "utility/color";
-@import "utility/display";
-@import "utility/flex";
-@import "utility/font";
-@import "utility/overflow";
-@import "utility/shadow";
-@import "utility/size";
-@import "utility/spacing";
-@import "utility/zindex";

@@ -13,7 +13,6 @@
 
 html {
     font-size: 62.5%;
-    background-color: var(--background-color);
 }
 
 body {
@@ -26,7 +25,7 @@ body {
     font-weight: 400;
     font-size: $default-font-size;
     line-height: 1.7;
-    background-color: var(--background-color);
+    background-color: $background-color;
     gap: $flex-gap;
 }
 

@@ -1,20 +1,16 @@
 button {
-    background-color: var(--color-primary);
-    border: none;
-    color: white;
-    cursor: pointer;
     transition: background-color 0.3s ease;
     
     &:hover {
-        background-color: var(--color-primary);
+        //background-color: scale-color(inherit, 10%);
     }
     
     &:active {
-        background-color: var(--color-primary);
+        background-color: inherit;
     }
     
     &:disabled {
-        background-color: var(--color-disabled);
+        background-color: $color-disabled;
         cursor: not-allowed;
     }
 }

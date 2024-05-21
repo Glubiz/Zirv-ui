@@ -7,9 +7,9 @@ use crate::options::{
 #[derive(Properties, Clone, PartialEq, Default)]
 pub struct ContainerProps {
     pub children: Children,
-    #[prop_or_default]
+    #[prop_or(Width::Auto)]
     pub width: Width,
-    #[prop_or_default]
+    #[prop_or(Height::Auto)]
     pub height: Height,
     #[prop_or_default]
     pub display: Display,

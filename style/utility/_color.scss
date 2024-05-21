@@ -1,37 +1,33 @@
-:root {
-    --background-color: #252e42;
-    --module-color: #35415a;
-    --text-color-primary: #fff;
-    --text-color-secondary: #ccc;
-    --color-primary: #2c698d;
-    --color-secondary: #bae8e8;
-    --color-secondary: #e3f6f5;
-    --color-success: #2ecc71;
-    --color-warning: #f39c12;
-    --color-error: #e74c3c;
-    --color-disabled: #7f8c8d;
-
-}
+$background-color: #252e42;
+$module-color: #35415a;
+$text-color-primary: #fff;
+$text-color-secondary: #ccc;
+$color-primary: #2c698d;
+$color-secondary: #bae8e8;
+$color-tertiery: #e3f6f5;
+$color-success: #2ecc71;
+$color-warning: #f39c12;
+$color-error: #e74c3c;
+$color-disabled: #7f8c8d;
 
 .light-theme{
-
-    --background-color: #fff;
-    --module-color: #bbbbbb;
-    --text-color-primary: #000;
-    --text-color-secondary: #333;
-    --color-primary: #2c698d;
-    --color-secondary: #bae8e8;
-    --color-tertiery: #e3f6f5;
+    $background-color: #fff;
+    $module-color: #bbbbbb;
+    $text-color-primary: #000;
+    $text-color-secondary: #333;
+    $color-primary: #2c698d;
+    $color-secondary: #bae8e8;
+    $color-tertiery: #e3f6f5;
 }
 
 .dark-theme{
-    --background-color: #252e42;
-    --module-color: #35415a;
-    --text-color-primary: #fff;
-    --text-color-secondary: #cccccc;
-    --color-primary: #2c698d;
-    --color-secondary: #bae8e8;
-    --color-secondary: #e3f6f5;
+    $background-color: #252e42;
+    $module-color: #35415a;
+    $text-color-primary: #fff;
+    $text-color-secondary: #cccccc;
+    $color-primary: #2c698d;
+    $color-secondary: #bae8e8;
+    $color-secondary: #e3f6f5;
 }
 
 .background {
@@ -40,34 +36,94 @@
             background-color: transparent;
         }
         &-primary {
-            background-color: var(--color-primary);
+            background-color: $color-primary;
+        }
+        &-primary-dark {
+            background-color: scale-color($color-primary, $lightness: -10%);
+        }
+        &-primary-light {
+            background-color: scale-color($color-primary, $lightness: 10%);
         }
         &-secondary {
-            background-color: var(--color-secondary);
+            background-color: $color-secondary;
+        }
+        &-secondary-dark {
+            background-color: scale-color($color-secondary, $lightness: -10%);
+        }
+        &-secondary-light {
+            background-color: scale-color($color-secondary, $lightness: 10%);
         }
         &-teritiary {
-            background-color: var(--color-tertiery);
+            background-color: $color-tertiery;
+        }
+        &-tertiary-dark {
+            background-color: scale-color($color-tertiery, $lightness: -10%);
+        }
+        &-tertiary-light {
+            background-color: scale-color($color-tertiery, $lightness: 10%);
         }
         &-container {
-            background-color: var(--module-color);
+            background-color: $module-color;
+        }
+        &-container-dark {
+            background-color: scale-color($module-color, $lightness: -10%);
+        }
+        &-container-light {
+            background-color: scale-color($module-color, $lightness: 10%);
         }
         &-background {
-            background-color: var(--background-color);
+            background-color: $background-color;
+        }
+        &-background-dark {
+            background-color: scale-color($background-color, $lightness: -10%);
+        }
+        &-background-light {
+            background-color: scale-color($background-color, $lightness: 10%);
         }
         &-text-primary {
-            background-color: var(--text-color-primary);
+            background-color: $text-color-primary;
+        }
+        &-text-primary-dark {
+            background-color: scale-color($text-color-primary, $lightness: -10%);
+        }
+        &-text-primary-light {
+            background-color: scale-color($text-color-primary, $lightness: 10%);
         }
         &-text-secondary {
-            background-color: var(--text-color-secondary);
+            background-color: $text-color-secondary;
+        }
+        &-text-secondary-dark {
+            background-color: scale-color($text-color-secondary, $lightness: -10%);
+        }
+        &-text-secondary-light {
+            background-color: scale-color($text-color-secondary, $lightness: 10%);
         }
         &-success {
-            background-color: var(--color-success);
+            background-color: $color-success;
+        }
+        &-success-dark {
+            background-color: scale-color($color-success, $lightness: -10%);
+        }
+        &-success-light {
+            background-color: scale-color($color-success, $lightness: 10%);
         }
         &-warning {
-            background-color: var(--color-warning);
+            background-color: $color-warning;
+        }
+        &-warning-dark {
+            background-color: scale-color($color-warning, $lightness: -10%);
+        }
+        &-warning-light {
+            background-color: scale-color($color-warning, $lightness: 10%);
         }
         &-error {
-            background-color: var(--color-error);
+            background-color: $color-error;
+        }
+        &-error-dark {
+            background-color: scale-color($color-error, $lightness: -10%);
+        }
+        &-error-light {
+            background-color: scale-color($color-error, $lightness: 10%);
         }
     }
 }

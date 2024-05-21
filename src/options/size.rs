@@ -14,6 +14,7 @@ pub enum Height {
     Max,
     Fit,
     Inherit,
+    Custom(u8)
 }
 
 impl From<&Height> for Classes {
@@ -30,6 +31,7 @@ impl From<&Height> for Classes {
             Height::Max => classes!("height-max"),
             Height::Fit => classes!("height-fit"),
             Height::Inherit => classes!("height-inherit"),
+            Height::Custom(value) => classes!(format!("height-fixed-{}", value)),
         }
     }
 }
@@ -48,6 +50,7 @@ pub enum Width {
     Max,
     Fit,
     Inherit,
+    Custom(u8)
 }
 
 impl From<&Width> for Classes {
@@ -64,6 +67,7 @@ impl From<&Width> for Classes {
             Width::Max => classes!("width-max"),
             Width::Fit => classes!("width-fit"),
             Width::Inherit => classes!("width-inherit"),
+            Width::Custom(value) => classes!(format!("width-fixed-{}", value)),
         }
     }
 }
