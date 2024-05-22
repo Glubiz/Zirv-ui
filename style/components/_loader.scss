@@ -1,0 +1,57 @@
+.loader {
+    &-spinner {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+
+        &:after {
+            content: " ";
+            display: block;
+            width: 64px;
+            height: 64px;
+            margin: 8px;
+            border-radius: 50%;
+            border: 6px solid $color-primary;
+            border-color: $color-primary transparent $color-primary transparent;
+            animation: classic-spin 1.2s linear infinite;
+        }
+    }
+    &-dots {
+        display: flex;
+        justify-content: space-around;
+        width: 80px;
+    }
+}
+
+.dot {
+    width: 16px;
+    height: 16px;
+    background-color: $color-primary;
+    border-radius: 50%;
+    animation: shifting-dots 1.2s infinite ease-in-out both;
+
+    &:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+    &:nth-child(2) {
+      animation-delay: -0.16s;
+    }
+}
+
+@keyframes shifting-dots {
+    0%, 80%, 100% {
+      transform: scale(0);
+    }
+    40% {
+      transform: scale(1);
+    }
+}
+
+@keyframes classic-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}

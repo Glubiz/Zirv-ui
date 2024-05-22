@@ -2,6 +2,7 @@ pub mod button;
 pub mod options;
 pub mod container;
 pub mod flex;
+pub mod loader;
 pub mod text;
 pub mod toast;
 
@@ -15,6 +16,9 @@ pub use container::{Container, ContainerProps};
 
 #[cfg(feature = "flex")]
 pub use flex::{Flex, FlexProps};
+
+#[cfg(feature = "loader")]
+pub use loader::{Loader, LoaderProps, Style};
 
 #[cfg(feature = "text")]
 pub use text::{

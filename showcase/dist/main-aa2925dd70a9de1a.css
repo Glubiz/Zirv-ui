@@ -105,10 +105,10 @@
   border-radius: 16px;
 }
 .border-radius-rounded {
-  border-radius: 25%;
+  border-radius: 2rem;
 }
 .border-radius-circle {
-  border-radius: 50%;
+  border-radius: 9999px;
 }
 .border-width-none {
   border-width: 0;
@@ -798,6 +798,58 @@ button:disabled {
   padding: 1rem;
 }
 
+.loader-spinner {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.loader-spinner:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #2c698d;
+  border-color: #2c698d transparent #2c698d transparent;
+  animation: classic-spin 1.2s linear infinite;
+}
+.loader-dots {
+  display: flex;
+  justify-content: space-around;
+  width: 80px;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  background-color: #2c698d;
+  border-radius: 50%;
+  animation: shifting-dots 1.2s infinite ease-in-out both;
+}
+.dot:nth-child(1) {
+  animation-delay: -0.32s;
+}
+.dot:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes shifting-dots {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+@keyframes classic-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .toast {
   cursor: pointer;
   padding: 0.6em;

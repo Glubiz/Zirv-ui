@@ -1,4 +1,4 @@
-use zirv_ui::{Container, Headline};
+use zirv_ui::{Container, Headline, Loader, Style};
 use yew::prelude::*;
 use zirv_ui::options::color::BackgroundColor;
 
@@ -9,6 +9,8 @@ pub fn index() -> Html {
         <>
             <Container>
                 <Headline>{"Hello, World!"}</Headline>
+                <Loader style={Style::Spinner} />
+                <Loader style={Style::Dots} />
             </Container>
         </>
     }

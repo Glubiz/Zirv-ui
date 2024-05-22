@@ -11,7 +11,7 @@ pub struct ButtonProps {
     pub height: Height,
     #[prop_or_default]
     pub border: Border,
-    #[prop_or(BorderRadius::Large)]
+    #[prop_or(BorderRadius::Rounded)]
     pub border_radius: BorderRadius,
     #[prop_or_default]
     pub border_color: BorderColor,
