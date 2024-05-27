@@ -1,9 +1,11 @@
 use yew::{classes, Classes};
 
+#[derive(Clone, PartialEq, Debug, Default)]
 pub enum Overflow {
     Visible,
     Hidden,
     Scroll,
+    #[default]
     Auto,
 }
 
@@ -17,3 +19,4 @@ impl From<&Overflow> for Classes {
         }
     }
 }
+

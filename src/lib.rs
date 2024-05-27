@@ -1,8 +1,9 @@
 pub mod button;
-pub mod options;
 pub mod container;
 pub mod flex;
 pub mod loader;
+pub mod options;
+pub mod table;
 pub mod text;
 pub mod toast;
 
@@ -20,20 +21,14 @@ pub use flex::{Flex, FlexProps};
 #[cfg(feature = "loader")]
 pub use loader::{Loader, LoaderProps, Style};
 
+#[cfg(feature = "table")]
+pub use table;
+
 #[cfg(feature = "text")]
 pub use text::{
-    headline::{
-        Headline, 
-        HeadlineProps,
-    },
-    paragraph::{
-        Paragraph, 
-        ParagraphProps,
-    },
-    subheadline::{
-        Subheadline,
-        SubheadlineProps,
-    },
+    headline::{Headline, HeadlineProps},
+    paragraph::{Paragraph, ParagraphProps},
+    subheadline::{Subheadline, SubheadlineProps},
 };
 
 #[cfg(feature = "toast")]

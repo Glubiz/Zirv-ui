@@ -1,14 +1,15 @@
 button {
     transition: background-color 0.3s ease;
-    
+
     &:hover {
+        cursor: pointer;
         //background-color: scale-color(inherit, 10%);
     }
-    
+
     &:active {
         background-color: inherit;
     }
-    
+
     &:disabled {
         background-color: $color-disabled;
         cursor: not-allowed;

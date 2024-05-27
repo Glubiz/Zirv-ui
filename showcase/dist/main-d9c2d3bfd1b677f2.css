@@ -784,6 +784,9 @@ p, ul, ol, dl, blockquote, pre, form, table, fieldset, figure {
 button {
   transition: background-color 0.3s ease;
 }
+button:hover {
+  cursor: pointer;
+}
 button:active {
   background-color: inherit;
 }
