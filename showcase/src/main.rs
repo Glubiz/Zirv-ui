@@ -1,14 +1,15 @@
 mod components;
 mod pages;
 mod router;
+mod sections;
 
 use wasm_bindgen::prelude::*;
 use yew::{function_component, html, Html};
 use yew_nested_router::prelude::{Switch as RouterSwitch, *};
 
+use crate::router::{switch_app_route, AppRoute};
 use components::header::Header;
-use crate::router::{AppRoute, switch_app_route};
-use zirv_ui::{ToastProvider, ToastFactory, Toast};
+use zirv_ui::{Toast, ToastFactory, ToastProvider};
 
 #[cfg(debug_assertions)]
 const LOG_LEVEL: log::Level = log::Level::Trace;
