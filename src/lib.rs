@@ -1,6 +1,7 @@
 pub mod button;
 pub mod container;
 pub mod flex;
+pub mod list;
 pub mod loader;
 pub mod options;
 pub mod table;
@@ -18,11 +19,14 @@ pub use container::{Container, ContainerProps};
 #[cfg(feature = "flex")]
 pub use flex::{Flex, FlexProps};
 
+#[cfg(feature = "list")]
+pub use list::{List, ListProps};
+
 #[cfg(feature = "loader")]
 pub use loader::{Loader, LoaderProps, Style};
 
 #[cfg(feature = "table")]
-pub use table;
+pub use table::{Table, TableProps};
 
 #[cfg(feature = "text")]
 pub use text::{

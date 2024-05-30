@@ -104,20 +104,29 @@ pub fn table(props: &TableProps) -> Html {
         .map(|header| html! { <th>{header}</th> })
         .collect::<Html>();
 
-    let data = props.data.iter().map(|row| {
-        let row = row
-            .iter()
-            .map(|cell| html! { <td class={cell_classes}>{cell}</td> })
-            .collect::<Html>();
-        html! { <tr class={row_classes}>{row}</tr> }
-    });
+    let data = props
+        .data
+        .iter()
+        .map(|row| {
+            let cells = row
+                .iter()
+                .map(|cell| html! { <td class={cell_classes.clone()}>{cell}</td> })
+                .collect::<Html>();
+
+            html! { <tr class={row_classes.clone()}>{cells}</tr> }
+        })
+        .collect::<Html>();
 
     html! {
         <table class={table_classes}>
-            <tr>
-                {headers}
-            </tr>
-            {data}
+            <thead>
+                <tr>
+                    {headers}
+                </tr>
+            </thead>
+            <tbody>
+                {data}
+            </tbody>
         </table>
     }
 }

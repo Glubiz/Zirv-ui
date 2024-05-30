@@ -1,11 +1,6 @@
 use yew::{classes, function_component, html, Children, Classes, Html, Properties};
 
-use crate::options::font::{
-    FontSize,
-    FontWeight,
-    FontStyle,
-    FontFamily,
-};
+use crate::options::font::{FontFamily, FontSize, FontStyle, FontWeight};
 
 #[derive(Properties, Clone, PartialEq)]
 pub struct ParagraphProps {
@@ -18,7 +13,8 @@ pub struct ParagraphProps {
     pub style: FontStyle,
     #[prop_or_default]
     pub family: FontFamily,
-    pub classes: Option<Classes>
+    #[prop_or(None)]
+    pub classes: Option<Classes>,
 }
 
 #[function_component(Paragraph)]
@@ -31,3 +27,4 @@ pub fn paragraph(props: &ParagraphProps) -> Html {
         </p>
     }
 }
+

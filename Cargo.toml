@@ -17,7 +17,7 @@ log = "0.4.21"
 web-sys = "0.3.69"
 
 [features]
-full = ["button", "toast", "loader", "flex", "container", "text", "table"]
+full = ["button", "toast", "loader", "flex", "container", "text", "table", "list"]
 button = []
 toast = []
 loader = []
@@ -25,3 +25,4 @@ flex = []
 container = []
 text = []
 table = []
+list = []
