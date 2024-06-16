@@ -14,8 +14,8 @@ pub struct ListProps<T: Into<String>> {
     pub style: Option<ListStyle>,
 }
 
-#[function_component(List)]
-pub fn list(props: &ListProps) -> Html {
+#[function_component(List<T>)]
+pub fn list<T>(props: &ListProps<T>) -> Html {
     let classes = match &props.style {
         Some(style) => match style {
             ListStyle::Ordered => "list-decimal",

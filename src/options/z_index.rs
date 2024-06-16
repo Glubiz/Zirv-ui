@@ -1,6 +1,8 @@
 use yew::{classes, Classes};
 
+#[derive(Clone, PartialEq, Default)]
 pub enum ZIndex {
+    #[default]
     None,
     Front,
     Middle,
@@ -17,3 +19,4 @@ impl From<&ZIndex> for Classes {
         }
     }
 }
+

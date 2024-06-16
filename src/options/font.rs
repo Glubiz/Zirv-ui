@@ -1,16 +1,59 @@
+//! Text Styling Enums
+//! 
+//! This module defines several enums representing different text styling properties: `FontSize`, `FontWeight`,
+//! `FontStyle`, `FontFamily`, `TextAlign`, `TextTransform`, `TextDecoration`, `TextOverflow`, `TextShadow`, 
+//! `TextStroke`, and `TextColor`. Each enum can be converted into Yew's `Classes` for CSS styling.
+//! 
+//! # Example
+//! 
+//! ```rust
+//! use yew::{html, function_component, Html};
+//! use crate::options::text::{FontSize, TextAlign, TextColor};
+//! use yew::Classes;
+//! 
+//! #[function_component(App)]
+//! fn app() -> Html {
+//!     let font_size_class: Classes = (&FontSize::Large).into();
+//!     let text_align_class: Classes = (&TextAlign::Center).into();
+//!     let text_color_class: Classes = (&TextColor::Primary).into();
+//! 
+//!     html! {
+//!         <div class={classes!(font_size_class, text_align_class, text_color_class)}>
+//!             {"This text has large font size, centered alignment, and primary color"}
+//!         </div>
+//!     }
+//! }
+//! ```
+
 use yew::{classes, Classes};
 
+/// Enum representing the font size options.
 #[derive(Debug, Clone, PartialEq, Default)]
 pub enum FontSize {
+    /// Default font size.
     #[default]
     None,
+    /// Small font size.
     Small,
+    /// Medium font size.
     Medium,
+    /// Large font size.
     Large,
+    /// Extra large font size.
     ExtraLarge,
 }
 
 impl From<&FontSize> for Classes {
+    /// Converts a `FontSize` into Yew's `Classes`.
+    ///
+    /// # Example
+    /// 
+    /// ```rust
+    /// use yew::Classes;
+    /// use crate::options::text::FontSize;
+    /// 
+    /// let font_size_class: Classes = (&FontSize::Large).into();
+    /// ```
     fn from(font_size: &FontSize) -> Self {
         match font_size {
             FontSize::None => classes!("font-size-default"),
@@ -22,16 +65,31 @@ impl From<&FontSize> for Classes {
     }
 }
 
+/// Enum representing the font weight options.
 #[derive(Debug, Clone, PartialEq, Default)]
 pub enum FontWeight {
+    /// Lighter font weight.
     Lighter,
+    /// Normal font weight. This is the default.
     #[default]
     Normal,
+    /// Bold font weight.
     Bold,
+    /// Bolder font weight.
     Bolder,
 }
 
 impl From<&FontWeight> for Classes {
+    /// Converts a `FontWeight` into Yew's `Classes`.
+    ///
+    /// # Example
+    /// 
+    /// ```rust
+    /// use yew::Classes;
+    /// use crate::options::text::FontWeight;
+    /// 
+    /// let font_weight_class: Classes = (&FontWeight::Bold).into();
+    /// ```
     fn from(font_weight: &FontWeight) -> Self {
         match font_weight {
             FontWeight::Lighter => classes!("font-weight-lighter"),
@@ -42,14 +100,27 @@ impl From<&FontWeight> for Classes {
     }
 }
 
+/// Enum representing the font style options.
 #[derive(Debug, Clone, PartialEq, Default)]
 pub enum FontStyle {
+    /// Normal font style. This is the default.
     #[default]
     Normal,
+    /// Italic font style.
     Italic,
 }
 
 impl From<&FontStyle> for Classes {
+    /// Converts a `FontStyle` into Yew's `Classes`.
+    ///
+    /// # Example
+    /// 
+    /// ```rust
+    /// use yew::Classes;
+    /// use crate::options::text::FontStyle;
+    /// 
+    /// let font_style_class: Classes = (&FontStyle::Italic).into();
+    /// ```
     fn from(font_style: &FontStyle) -> Self {
         match font_style {
             FontStyle::Normal => classes!("font-style-normal"),
@@ -58,16 +129,31 @@ impl From<&FontStyle> for Classes {
     }
 }
 
+/// Enum representing the font family options.
 #[derive(Debug, Clone, PartialEq, Default)]
 pub enum FontFamily {
+    /// Arial font family. This is the default.
     #[default]
     Arial,
+    /// Helvetica font family.
     Helvetica,
+    /// Times New Roman font family.
     TimesNewRoman,
+    /// Courier New font family.
     CourierNew,
 }
 
 impl From<&FontFamily> for Classes {
+    /// Converts a `FontFamily` into Yew's `Classes`.
+    ///
+    /// # Example
+    /// 
+    /// ```rust
+    /// use yew::Classes;
+    /// use crate::options::text::FontFamily;
+    /// 
+    /// let font_family_class: Classes = (&FontFamily::Helvetica).into();
+    /// ```
     fn from(font_family: &FontFamily) -> Self {
         match font_family {
             FontFamily::Arial => classes!("font-family-arial"),
@@ -78,16 +164,31 @@ impl From<&FontFamily> for Classes {
     }
 }
 
+/// Enum representing the text align options.
 #[derive(Debug, Clone, PartialEq, Default)]
 pub enum TextAlign {
+    /// Align text to the left. This is the default.
     #[default]
     Left,
+    /// Align text to the center.
     Center,
+    /// Align text to the right.
     Right,
+    /// Justify text.
     Justify,
 }
 
 impl From<&TextAlign> for Classes {
+    /// Converts a `TextAlign` into Yew's `Classes`.
+    ///
+    /// # Example
+    /// 
+    /// ```rust
+    /// use yew::Classes;
+    /// use crate::options::text::TextAlign;
+    /// 
+    /// let text_align_class: Classes = (&TextAlign::Center).into();
+    /// ```
     fn from(text_align: &TextAlign) -> Self {
         match text_align {
             TextAlign::Left => classes!("text-align-left"),
@@ -98,16 +199,31 @@ impl From<&TextAlign> for Classes {
     }
 }
 
+/// Enum representing the text transform options.
 #[derive(Debug, Clone, PartialEq, Default)]
 pub enum TextTransform {
+    /// No text transform. This is the default.
     #[default]
     None,
+    /// Transform text to uppercase.
     Uppercase,
+    /// Transform text to lowercase.
     Lowercase,
+    /// Capitalize text.
     Capitalize,
 }
 
 impl From<&TextTransform> for Classes {
+    /// Converts a `TextTransform` into Yew's `Classes`.
+    ///
+    /// # Example
+    /// 
+    /// ```rust
+    /// use yew::Classes;
+    /// use crate::options::text::TextTransform;
+    /// 
+    /// let text_transform_class: Classes = (&TextTransform::Uppercase).into();
+    /// ```
     fn from(text_transform: &TextTransform) -> Self {
         match text_transform {
             TextTransform::None => classes!("text-transform-none"),
@@ -118,16 +234,31 @@ impl From<&TextTransform> for Classes {
     }
 }
 
+/// Enum representing the text decoration options.
 #[derive(Debug, Clone, PartialEq, Default)]
 pub enum TextDecoration {
+    /// No text decoration. This is the default.
     #[default]
     None,
+    /// Underline text.
     Underline,
+    /// Overline text.
     Overline,
+    /// Line through text.
     LineThrough,
 }
 
 impl From<&TextDecoration> for Classes {
+    /// Converts a `TextDecoration` into Yew's `Classes`.
+    ///
+    /// # Example
+    /// 
+    /// ```rust
+    /// use yew::Classes;
+    /// use crate::options::text::TextDecoration;
+    /// 
+    /// let text_decoration_class: Classes = (&TextDecoration::Underline).into();
+    /// ```
     fn from(text_decoration: &TextDecoration) -> Self {
         match text_decoration {
             TextDecoration::None => classes!("text-decoration-none"),
@@ -138,15 +269,29 @@ impl From<&TextDecoration> for Classes {
     }
 }
 
+/// Enum representing the text overflow options.
 #[derive(Debug, Clone, PartialEq, Default)]
 pub enum TextOverflow {
+    /// No text overflow. This is the default.
     #[default]
     None,
+    /// Wrap text overflow.
     Wrap,
+    /// Ellipsis for text overflow.
     Ellipsis,
 }
 
 impl From<&TextOverflow> for Classes {
+    /// Converts a `TextOverflow` into Yew's `Classes`.
+    ///
+    /// # Example
+    /// 
+    /// ```rust
+    /// use yew::Classes;
+    /// use crate::options::text::TextOverflow;
+    /// 
+    /// let text_overflow_class: Classes = (&TextOverflow::Ellipsis).into();
+    /// ```
     fn from(text_overflow: &TextOverflow) -> Self {
         match text_overflow {
             TextOverflow::None => classes!("text-overflow-nowrap"),
@@ -156,14 +301,27 @@ impl From<&TextOverflow> for Classes {
     }
 }
 
+/// Enum representing the text shadow options.
 #[derive(Debug, Clone, PartialEq, Default)]
 pub enum TextShadow {
+    /// No text shadow. This is the default.
     #[default]
     None,
+    /// Text shadow.
     Shadow,
 }
 
 impl From<&TextShadow> for Classes {
+    /// Converts a `TextShadow` into Yew's `Classes`.
+    ///
+    /// # Example
+    /// 
+    /// ```rust
+    /// use yew::Classes;
+    /// use crate::options::text::TextShadow;
+    /// 
+    /// let text_shadow_class: Classes = (&TextShadow::Shadow).into();
+    /// ```
     fn from(text_shadow: &TextShadow) -> Self {
         match text_shadow {
             TextShadow::None => classes!("text-shadow-none"),
@@ -172,14 +330,27 @@ impl From<&TextShadow> for Classes {
     }
 }
 
+/// Enum representing the text stroke options.
 #[derive(Debug, Clone, PartialEq, Default)]
 pub enum TextStroke {
+    /// No text stroke. This is the default.
     #[default]
     None,
+    /// Text stroke.
     Stroke,
 }
 
 impl From<&TextStroke> for Classes {
+    /// Converts a `TextStroke` into Yew's `Classes`.
+    ///
+    /// # Example
+    /// 
+    /// ```rust
+    /// use yew::Classes;
+    /// use crate::options::text::TextStroke;
+    /// 
+    /// let text_stroke_class: Classes = (&TextStroke::Stroke).into();
+    /// ```
     fn from(text_stroke: &TextStroke) -> Self {
         match text_stroke {
             TextStroke::None => classes!("text-stroke-none"),
@@ -188,23 +359,45 @@ impl From<&TextStroke> for Classes {
     }
 }
 
+/// Enum representing the text color options.
 #[derive(Debug, Clone, PartialEq, Default)]
 pub enum TextColor {
+    /// No text color.
     None,
+    /// Primary text color.
     Primary,
+    /// Secondary text color.
     Secondary,
+    /// Tertiary text color.
     Tertiary,
+    /// Container text color.
     Container,
+    /// Background text color.
     Background,
+    /// Primary text color (default).
     #[default]
     TextPrimary,
+    /// Secondary text color.
     TextSecondary,
+    /// Success text color.
     Success,
+    /// Warning text color.
     Warning,
+    /// Error text color.
     Error,
 }
 
 impl From<&TextColor> for Classes {
+    /// Converts a `TextColor` into Yew's `Classes`.
+    ///
+    /// # Example
+    /// 
+    /// ```rust
+    /// use yew::Classes;
+    /// use crate::options::text::TextColor;
+    /// 
+    /// let text_color_class: Classes = (&TextColor::Primary).into();
+    /// ```
     fn from(text_color: &TextColor) -> Self {
         match text_color {
             TextColor::None => classes!("text-color-none"),

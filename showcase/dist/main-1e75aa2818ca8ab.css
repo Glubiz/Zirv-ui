@@ -208,7 +208,7 @@
 .flex-justify-center {
   justify-content: center;
 }
-.flex-justify-between {
+.flex-justify-space-between {
   justify-content: space-between;
 }
 .flex-justify-around {

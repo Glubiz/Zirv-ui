@@ -1,6 +1,23 @@
+//! Toast Module
+//!
+//! This module provides the `Toast` struct, which represents a toast notification, and implements the `Notifiable`
+//! trait for managing its lifecycle. Toast notifications are used to display brief messages to the user and can be
+//! customized in terms of type, title, text, and appearance. The module also includes various submodules for
+//! components, factories, messages, managers, providers, and utilities.
+//!
+//! # Example
+//!
+//! ```rust
+//! use time::Duration;
+//! use uuid::Uuid;
+//! use crate::toast::Toast;
+//! use crate::toast::utils::ToastType;
+//!
+//! let toast = Toast::new(ToastType::Success, "Success!", "Your action was successful.");
+//! ```
+
 use time::{Duration, OffsetDateTime};
 use uuid::Uuid;
-
 use self::utils::{Notifiable, ToastType};
 
 pub mod component_factory;
@@ -11,6 +28,7 @@ pub mod provider;
 pub mod use_toast;
 pub mod utils;
 
+/// Represents a toast notification.
 #[derive(Debug, Clone, PartialEq)]
 pub struct Toast {
     pub(crate) id: Uuid,
@@ -25,8 +43,20 @@ pub struct Toast {
 }
 
 impl Toast {
+    /// Default lifetime of a toast notification.
     pub const LIFETIME: Duration = Duration::milliseconds(3000);
 
+    /// Creates a new `Toast` notification.
+    ///
+    /// # Parameters
+    ///
+    /// - `toast_type`: The type of the toast (e.g., success, error, info).
+    /// - `title`: The title of the toast notification.
+    /// - `text`: The text content of the toast notification.
+    ///
+    /// # Returns
+    ///
+    /// Returns a new `Toast` instance.
     pub fn new(
         toast_type: ToastType,
         title: impl Into<String>,
@@ -47,10 +77,16 @@ impl Toast {
 }
 
 impl Notifiable for Toast {
+    /// Returns the ID of the toast.
     fn id(&self) -> Uuid {
         self.id
     }
 
+    /// Applies a tick to the toast, decreasing its lifetime.
+    ///
+    /// # Parameters
+    ///
+    /// - `time`: The duration to decrease the lifetime by.
     fn apply_tick(&mut self, time: Duration) {
         self.lifetime = self.lifetime.checked_sub(time).unwrap_or_default();
 
@@ -59,19 +95,31 @@ impl Notifiable for Toast {
         }
     }
 
+    /// Checks if the toast is still alive (i.e., its lifetime is not zero).
+    ///
+    /// # Returns
+    ///
+    /// Returns `true` if the toast is alive, `false` otherwise.
     fn is_alive(&self) -> bool {
         self.lifetime != Duration::default()
     }
 
+    /// Pauses the toast (e.g., when the mouse hovers over it).
     fn mouse_in(&mut self) {
         self.paused = true;
     }
 
+    /// Resumes the toast (e.g., when the mouse leaves it).
     fn mouse_out(&mut self) {
         self.paused = false;
         self.lifetime = self.full_lifetime;
     }
 
+    /// Checks if the toast is paused.
+    ///
+    /// # Returns
+    ///
+    /// Returns `true` if the toast is paused, `false` otherwise.
     fn is_paused(&self) -> bool {
         self.paused
     }

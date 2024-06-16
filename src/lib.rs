@@ -1,8 +1,10 @@
 pub mod button;
 pub mod container;
 pub mod flex;
-pub mod list;
+// pub mod list;
 pub mod loader;
+// pub mod menu;
+pub mod image;
 pub mod options;
 pub mod table;
 pub mod text;
@@ -19,14 +21,24 @@ pub use container::{Container, ContainerProps};
 #[cfg(feature = "flex")]
 pub use flex::{Flex, FlexProps};
 
-#[cfg(feature = "list")]
-pub use list::{List, ListProps};
+// #[cfg(feature = "list")]
+// pub use list::{List, ListProps};
 
 #[cfg(feature = "loader")]
 pub use loader::{Loader, LoaderProps, Style};
 
 #[cfg(feature = "table")]
 pub use table::{Table, TableProps};
+
+// #[cfg(feature = "menu")]
+// pub use menu::{
+//     component::{MenuComponent, MenuComponentProps},
+//     manager::MenuManager,
+//     provider::{MenuProvider, MenuProviderProps},
+//     use_menu::use_menu,
+//     utils::MenuType,
+//     Menu,
+// };
 
 #[cfg(feature = "text")]
 pub use text::{
@@ -45,3 +57,6 @@ pub use toast::{
     utils::ToastType,
     Toast,
 };
+
+#[cfg(feature = "image")]
+pub use image::{Image, ImageProps};
