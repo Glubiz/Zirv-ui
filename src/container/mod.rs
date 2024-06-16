@@ -23,7 +23,7 @@
 use yew::{classes, function_component, html, Children, Classes, Html, Properties};
 
 use crate::options::{
-    color::BackgroundColor, border::{Border, BorderColor, BorderRadius, BorderStyle, BorderWidth}, display::Display, flex::{FlexAlign, FlexDirection, FlexGrow, FlexJustify, FlexShrink, FlexWrap}, size::{Height, Width}, spacing::{Margin, Padding}
+    border::{Border, BorderColor, BorderRadius, BorderStyle, BorderWidth}, color::BackgroundColor, display::Display, flex::{FlexAlign, FlexDirection, FlexGap, FlexGrow, FlexJustify, FlexShrink, FlexWrap}, size::{Height, Width}, spacing::{Margin, Padding}
 };
 
 /// Properties for the `Container` component.
@@ -58,6 +58,9 @@ pub struct ContainerProps {
     /// The flex justify property of the container.
     #[prop_or_default]
     pub flex_justify: FlexJustify,
+    /// The flex gap property of the container.
+    #[prop_or_default]
+    pub flex_gap: FlexGap,
     /// The border properties of the container.
     #[prop_or_default]
     pub border: Border,
@@ -105,6 +108,7 @@ pub struct ContainerProps {
 /// - `flex_shrink`: The flex shrink property of the container.
 /// - `flex_align`: The flex alignment property of the container.
 /// - `flex_justify`: The flex justify property of the container.
+/// - `flex_gap`: The flex gap property of the container.
 /// - `border`: The border properties of the container.
 /// - `border_radius`: The border radius of the container.
 /// - `border_color`: The border color of the container.
@@ -126,6 +130,7 @@ pub fn container(props: &ContainerProps) -> Html {
         &props.flex_shrink,
         &props.flex_align,
         &props.flex_justify,
+        &props.flex_gap,
         &props.border,
         &props.border_radius,
         &props.border_color,

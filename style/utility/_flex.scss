@@ -83,5 +83,18 @@
         }
     }
 
-
+    &-gap {
+        &-none {
+            gap: 0;
+        }
+        &-small {
+            gap: 0.5rem;
+        }
+        &-medium {
+            gap: 1rem;
+        }
+        &-large {
+            gap: 2rem;
+        }
+    }
 }

@@ -1,6 +1,6 @@
 use yew::{function_component, html, Html};
 use zirv_ui::{
-    options::flex::{FlexAlign, FlexDirection, FlexJustify},
+    options::flex::{FlexAlign, FlexDirection, FlexJustify, FlexGap},
     Container, Headline, Paragraph,
 };
 

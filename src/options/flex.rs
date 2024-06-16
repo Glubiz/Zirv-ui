@@ -229,15 +229,35 @@ impl From<&FlexShrink> for Classes {
     }
 }
 
+#[derive(Debug, Clone, PartialEq, Default)]
+pub enum FlexGap {
+    None,
+    #[default]
+    Small,
+    Medium,
+    Large,
+}
+
+impl From<&FlexGap> for Classes {
+    fn from(flex_gap: &FlexGap) -> Self {
+        match flex_gap {
+            FlexGap::None => classes!("flex-gap-none"),
+            FlexGap::Small => classes!("flex-gap-small"),
+            FlexGap::Medium => classes!("flex-gap-medium"),
+            FlexGap::Large => classes!("flex-gap-large"),
+        }
+    }
+}
+
 /// Enum representing the combined flex properties.
 #[derive(Debug, Clone, PartialEq)]
 pub enum Flex {
     /// No flex properties.
     None,
     /// Flex row with specified alignment, justification, and wrapping.
-    Row(FlexAlign, FlexJustify, FlexWrap),
+    Row(FlexAlign, FlexJustify, FlexWrap, FlexGap),
     /// Flex column with specified alignment, justification, and wrapping.
-    Column(FlexAlign, FlexJustify, FlexWrap),
+    Column(FlexAlign, FlexJustify, FlexWrap, FlexGap),
 }
 
 impl From<&Flex> for Classes {
@@ -254,18 +274,20 @@ impl From<&Flex> for Classes {
     fn from(flex: &Flex) -> Self {
         match flex {
             Flex::None => classes!("flex-none"),
-            Flex::Row(align, justify, wrap) => {
+            Flex::Row(align, justify, wrap, gap) => {
                 let mut classes = classes!("flex-row");
                 classes.push(align);
                 classes.push(justify);
                 classes.push(wrap);
+                classes.push(gap);
                 classes
             }
-            Flex::Column(align, justify, wrap) => {
+            Flex::Column(align, justify, wrap, gap) => {
                 let mut classes = classes!("flex-column");
                 classes.push(align);
                 classes.push(justify);
                 classes.push(wrap);
+                classes.push(gap);
                 classes
             }
         }
