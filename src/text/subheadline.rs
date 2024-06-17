@@ -7,7 +7,7 @@
 //! 
 //! ```rust
 //! use yew::{html, function_component, Html};
-//! use crate::components::subheadline::{Subheadline, SubheadlineProps};
+//! use zirv_ui::{Subheadline, SubheadlineProps};
 //! use crate::options::font::{FontSize, FontWeight, FontStyle, FontFamily};
 //! 
 //! #[function_component(App)]

@@ -9,8 +9,8 @@
 //!
 //! ```rust
 //! use yew::{html, function_component, Html};
-//! use crate::components::toast::{ToastProvider, ToastProviderProps, ToastManager, Toast};
-//! use crate::components::toast::utils::ToastType;
+//! use zirv_ui::{ToastProvider, ToastProviderProps, ToastManager, Toast};
+//! use zirv_ui::utils::ToastType;
 //! use uuid::Uuid;
 //!
 //! #[derive(Clone, PartialEq)]

@@ -7,7 +7,7 @@
 //! 
 //! ```rust
 //! use yew::{html, function_component, Html};
-//! use crate::components::paragraph::{Paragraph, ParagraphProps};
+//! use zirv_ui::{Paragraph, ParagraphProps};
 //! use crate::options::font::{FontSize, FontWeight, FontStyle, FontFamily};
 //! 
 //! #[function_component(App)]

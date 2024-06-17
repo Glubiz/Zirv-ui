@@ -7,7 +7,7 @@
 //! 
 //! ```rust
 //! use yew::{html};
-//! use crate::components::loader::{Loader, LoaderProps, Style};
+//! use zirv_ui::{Loader, LoaderProps, Style};
 //! 
 //! #[function_component(App)]
 //! fn app() -> Html {

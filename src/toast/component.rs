@@ -8,7 +8,7 @@
 //! 
 //! ```rust
 //! use yew::{html, function_component, Html, Callback, MouseEvent};
-//! use crate::components::toast::{ToastComponent, ToastComponentProps};
+//! use zirv_ui::{ToastComponent, ToastComponentProps};
 //! use crate::toast::Toast;
 //! 
 //! #[function_component(App)]

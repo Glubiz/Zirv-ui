@@ -1,3 +1,39 @@
+//! Component Library
+//!
+//! This module serves as the main entry point for the component library. It organizes and exports
+//! various UI components and utilities, which can be optionally included based on feature flags.
+//! The feature flags allow for selective inclusion of components to reduce the overall bundle size
+//! and dependencies.
+//!
+//! # Example
+//!
+//! To use the components in your Yew application, enable the appropriate features in your `Cargo.toml`:
+//!
+//! ```toml
+//! [dependencies.zirv_ui]
+//! version = "0.1.0"
+//! features = ["button", "container", "flex", "loader", "table", "text", "toast", "image"]
+//! ```
+//!
+//! Then, import and use the components as needed:
+//!
+//! ```rust
+//! use zirv_ui::{Button, ButtonProps, Container, ContainerProps};
+//!
+//! fn view() -> Html {
+//!     html! {
+//!         <>
+//!             <Button onclick={Callback::from(|_| log::info!("Button clicked"))}>
+//!                 {"Click me"}
+//!             </Button>
+//!             <Container>
+//!                 {"This is a container"}
+//!             </Container>
+//!         </>
+//!     }
+//! }
+//! ```
+
 pub mod button;
 pub mod container;
 pub mod flex;

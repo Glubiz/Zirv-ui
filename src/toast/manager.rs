@@ -8,7 +8,7 @@
 //!
 //! ```rust
 //! use yew::{html, Callback, MouseEvent};
-//! use crate::components::toast::{ToastManager, ToastsList, Action, Toast};
+//! use zirv_ui::{ToastManager, ToastsList, Action, Toast};
 //! use uuid::Uuid;
 //!
 //! #[derive(Clone, PartialEq)]

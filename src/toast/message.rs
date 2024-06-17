@@ -7,7 +7,7 @@
 //! 
 //! ```rust
 //! use yew::{html, function_component, Html};
-//! use crate::components::toast::{Toast, ToastProps};
+//! use zirv_ui::{Toast, ToastProps};
 //! 
 //! #[function_component(App)]
 //! fn app() -> Html {

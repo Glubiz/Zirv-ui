@@ -8,7 +8,7 @@
 //! 
 //! ```rust
 //! use yew::{html, Callback};
-//! use crate::components::button::{Button, ButtonProps};
+//! use zirv_ui::{Button, ButtonProps};
 //! 
 //! #[function_component(App)]
 //! fn app() -> Html {

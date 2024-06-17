@@ -8,7 +8,7 @@
 //! 
 //! ```rust
 //! use yew::{html, function_component, Html};
-//! use crate::components::table::{Table, TableProps};
+//! use zirv_ui::{Table, TableProps};
 //! use crate::options::size::Width;
 //! 
 //! #[function_component(App)]

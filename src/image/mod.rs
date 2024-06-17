@@ -7,7 +7,7 @@
 //! 
 //! ```rust
 //! use yew::{html};
-//! use crate::components::image::{Image, ImageProps};
+//! use zirv_ui::{Image, ImageProps};
 //! 
 //! #[function_component(App)]
 //! fn app() -> Html {
