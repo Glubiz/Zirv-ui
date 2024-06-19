@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "for compiling sass",
   "scripts": {
+    "clean-dist": "rm -rf style/dist/*",
     "compile-scss": "sass style:style/dist"
   },
   "repository": {
