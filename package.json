@@ -4,7 +4,7 @@
   "description": "for compiling sass",
   "scripts": {
     "clean-dist": "rm -rf style/dist/*",
-    "compile-scss": "sass style:style/dist"
+    "compile-scss": "npm run clean-dist && sass style:style/dist"
   },
   "repository": {
     "type": "git",
