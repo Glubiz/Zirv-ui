@@ -14,5 +14,8 @@
   "bugs": {
     "url": "https://github.com/Glubiz/Zirv-ui/issues"
   },
-  "homepage": "https://github.com/Glubiz/Zirv-ui#readme"
+  "homepage": "https://github.com/Glubiz/Zirv-ui#readme",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
 }
