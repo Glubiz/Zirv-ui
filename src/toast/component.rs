@@ -3,31 +3,6 @@
 //! This module provides a customizable `ToastComponent` for the Yew framework. The `ToastComponent` 
 //! is used to display toast notifications with various properties and event handlers for click, 
 //! mouse enter, and mouse leave events.
-//! 
-//! # Example
-//! 
-//! ```rust
-//! use yew::{html, function_component, Html, Callback, MouseEvent};
-//! use zirv_ui::{ToastComponent, ToastComponentProps};
-//! use crate::toast::Toast;
-//! 
-//! #[function_component(App)]
-//! fn app() -> Html {
-//!     let toast = Toast {
-//!         title: "Notification".to_string(),
-//!         text: "This is a toast notification.".to_string(),
-//!         ..Default::default()
-//!     };
-//! 
-//!     let onclick = Callback::from(|_: MouseEvent| { /* handle click */ });
-//!     let onenter = Callback::from(|_: MouseEvent| { /* handle mouse enter */ });
-//!     let onleave = Callback::from(|_: MouseEvent| { /* handle mouse leave */ });
-//! 
-//!     html! {
-//!         <ToastComponent toast={toast} {onclick} {onenter} {onleave} />
-//!     }
-//! }
-//! ```
 
 use yew::{classes, function_component, html, Callback, Html, MouseEvent, Properties};
 use crate::toast::utils::Notifiable;

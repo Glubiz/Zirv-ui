@@ -3,66 +3,6 @@
 //! This module provides functionality for managing toast notifications in a Yew application. 
 //! It includes the `ToastManager` to manage the creation and dispatching of toast notifications 
 //! and the `ToastsList` to handle the collection and state updates of toasts.
-//! 
-//! # Example
-//!
-//! ```rust
-//! use yew::{html, Callback, MouseEvent};
-//! use zirv_ui::{ToastManager, ToastsList, Action, Toast};
-//! use uuid::Uuid;
-//!
-//! #[derive(Clone, PartialEq)]
-//! struct MyToast {
-//!     id: Uuid,
-//!     title: String,
-//!     text: String,
-//!     is_paused: bool,
-//!     duration: i64,
-//! }
-//!
-//! impl Toast for MyToast {
-//!     fn id(&self) -> Uuid {
-//!         self.id
-//!     }
-//!
-//!     fn text(&self) -> &str {
-//!         &self.text
-//!     }
-//!
-//!     fn is_paused(&self) -> bool {
-//!         self.is_paused
-//!     }
-//!
-//!     fn apply_tick(&mut self, duration: time::Duration) {
-//!         if self.duration > 0 {
-//!             self.duration -= duration.whole_milliseconds();
-//!         }
-//!     }
-//!
-//!     fn is_alive(&self) -> bool {
-//!         self.duration > 0
-//!     }
-//!
-//!     fn mouse_in(&mut self) {
-//!         self.is_paused = true;
-//!     }
-//!
-//!     fn mouse_out(&mut self) {
-//!         self.is_paused = false;
-//!     }
-//! }
-//!
-//! let toast_manager = ToastManager::<MyToast>::default();
-//! let toast = MyToast {
-//!     id: Uuid::new_v4(),
-//!     title: "New Toast".to_string(),
-//!     text: "This is a toast notification".to_string(),
-//!     is_paused: false,
-//!     duration: 5000,
-//! };
-//!
-//! toast_manager.spawn(toast);
-//! ```
 
 use std::fmt::Debug;
 use std::rc::Rc;

@@ -2,20 +2,6 @@
 //! 
 //! This module provides a simple toast notification component for the Yew framework. The `Toast` component
 //! displays a message with a specific type that determines its styling.
-//! 
-//! # Example
-//! 
-//! ```rust
-//! use yew::{html, function_component, Html};
-//! use zirv_ui::{Toast, ToastProps};
-//! 
-//! #[function_component(App)]
-//! fn app() -> Html {
-//!     html! {
-//!         <Toast message="This is a toast notification" toast_type="success" />
-//!     }
-//! }
-//! ```
 
 use yew::prelude::*;
 

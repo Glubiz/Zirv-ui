@@ -3,28 +3,6 @@
 //! This module defines the `ToastFactory` struct and implements the `NotifiableComponentFactory` trait
 //! for creating `Toast` components in the Yew framework. The `ToastFactory` is responsible for generating
 //! `ToastComponent` instances with specific callbacks for click, mouse enter, and mouse leave events.
-//! 
-//! # Example
-//! 
-//! ```rust
-//! use yew::{html, function_component, Html, Callback, MouseEvent};
-//! use zirv_ui::{ToastFactory, Toast};
-//! use crate::utils::NotifiableComponentFactory;
-//! 
-//! #[function_component(App)]
-//! fn app() -> Html {
-//!     let factory = ToastFactory::default();
-//!     let toast = Toast { message: "Hello, world!".to_string(), ..Default::default() };
-//! 
-//!     let onclick = Callback::from(|_: MouseEvent| { /* handle click */ });
-//!     let onenter = Callback::from(|_: MouseEvent| { /* handle mouse enter */ });
-//!     let onleave = Callback::from(|_: MouseEvent| { /* handle mouse leave */ });
-//! 
-//!     html! {
-//!         { factory.component(toast, onclick, onenter, onleave) }
-//!     }
-//! }
-//! ```
 
 use yew::{html, Callback, Html, MouseEvent};
 use super::utils::NotifiableComponentFactory;

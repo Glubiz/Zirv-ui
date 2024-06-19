@@ -3,18 +3,6 @@
 //! This module provides the `Toast` struct, which represents a toast notification, and implements the `Notifiable`
 //! trait for managing its lifecycle. Toast notifications are used to display brief messages to the user and can be
 //! customized in terms of type, title, text, and appearance. The module also includes various submodules for
-//! components, factories, messages, managers, providers, and utilities.
-//!
-//! # Example
-//!
-//! ```rust
-//! use time::Duration;
-//! use uuid::Uuid;
-//! use crate::toast::Toast;
-//! use crate::toast::utils::ToastType;
-//!
-//! let toast = Toast::new(ToastType::Success, "Success!", "Your action was successful.");
-//! ```
 
 use time::{Duration, OffsetDateTime};
 use uuid::Uuid;

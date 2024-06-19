@@ -1,0 +1,18 @@
+{
+  "name": "zirv-ui",
+  "version": "1.0.0",
+  "description": "for compiling sass",
+  "scripts": {
+    "compile-scss": "sass style:style/dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Glubiz/Zirv-ui.git"
+  },
+  "author": "Jonathan Solskov Jensen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Glubiz/Zirv-ui/issues"
+  },
+  "homepage": "https://github.com/Glubiz/Zirv-ui#readme"
+}
