@@ -23,18 +23,18 @@
 //! ```
 
 use yew::{classes, function_component, html, Callback, Children, Classes, Html, MouseEvent, Properties};
-use crate::{border::{Border, BorderColor, BorderRadius, BorderStyle, BorderWidth}, color::BackgroundColor, font::{FontSize, TextColor}, size::{Height, Width}, spacing::{Margin, Padding}};
+use crate::{border::{Border, BorderColor, BorderRadius, BorderStyle, BorderWidth}, color::BackgroundColor, font::{FontSize, TextColor}, size::{CustomType, Height, Width}, spacing::{Margin, Padding}};
 
 /// Properties for the `Button` component.
 #[derive(Properties, Clone, PartialEq, Default)]
 pub struct ButtonProps {
     /// The content to be rendered inside the button.
     pub children: Children,
-    /// The width of the button. Default is `Width::Custom(12)`.
-    #[prop_or(Width::Custom(12))]
+    /// The width of the button. Default is `Width::Custom(12, CustomType::Fixed)`.
+    #[prop_or(Width::Custom(12, CustomType::Fixed))]
     pub width: Width,
-    /// The height of the button. Default is `Height::Custom(4)`.
-    #[prop_or(Height::Custom(4))]
+    /// The height of the button. Default is `Height::Custom(4, CustomType::Fixed)`.
+    #[prop_or(Height::Custom(4, CustomType::Fixed))]
     pub height: Height,
     /// The border properties of the button.
     #[prop_or_default]

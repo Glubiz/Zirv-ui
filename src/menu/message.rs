@@ -1,14 +1,14 @@
 use yew::prelude::*;
 
 use crate::options::{
-    size::{Height, Width},
+    size::{Height, Width, CustomType},
     z_index::ZIndex,
 };
 
 #[derive(Properties, PartialEq, Default)]
 pub struct MenuProps {
     pub children: Children,
-    #[prop_or(Width::Custom(12))]
+    #[prop_or(Width::Custom(12, CustomType::Fixed))]
     pub width: Width,
     #[prop_or(Height::Full)]
     pub height: Height,

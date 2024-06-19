@@ -2,7 +2,7 @@ use yew::prelude::*;
 use zirv_ui::{
     options::{
         flex::FlexJustify,
-        size::{Height, Width},
+        size::{Height, Width, CustomType},
     },
     use_toast, Button, Container, Image, Toast, ToastType,
 };
@@ -18,7 +18,7 @@ pub fn header() -> Html {
     html! {
         <>
             <Container flex_justify={FlexJustify::SpaceBetween}>
-                <Image src="../images/logo.png" alt="Logo" height={Height::Custom(4)} width={Width::Custom(4)} />
+                <Image src="../images/logo.png" alt="Logo" height={Height::Custom(4, CustomType:Fixed)} width={Width::Custom(4, CustomType:Fixed)} />
                 <Button onclick={onclick}>{"Show Toast"}</Button>
             </Container>
         </>
