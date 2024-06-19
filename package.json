@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/Glubiz/Zirv-ui#readme",
   "dependencies": {
-    "sass": "1.77.6"
+    "sass": "^1.77.6"
   }
 }
