@@ -25,6 +25,13 @@
 
 use yew::{classes, Classes};
 
+#[derive(Debug, Clone, PartialEq, Default)]
+pub enum CustomType {
+    #[default]
+    Fixed,
+    Percent
+}
+
 /// Enum representing the height property options.
 #[derive(Debug, Clone, PartialEq, Default)]
 pub enum Height {
@@ -52,7 +59,7 @@ pub enum Height {
     /// Inherit height.
     Inherit,
     /// Custom height.
-    Custom(u8),
+    Custom(u8, CustomType),
 }
 
 impl From<&Height> for Classes {
@@ -79,7 +86,10 @@ impl From<&Height> for Classes {
             Height::Max => classes!("height-max"),
             Height::Fit => classes!("height-fit"),
             Height::Inherit => classes!("height-inherit"),
-            Height::Custom(value) => classes!(format!("height-fixed-{}", value)),
+            Height::Custom(value, _type) => match _type {
+                CustomType::Fixed => classes!(format!("height-fixed-{}", value)),
+                CustomType::Percent => classes!(format!("height-percent-{}", value)),
+            }
         }
     }
 }
@@ -111,7 +121,7 @@ pub enum Width {
     /// Inherit width.
     Inherit,
     /// Custom width.
-    Custom(u8),
+    Custom(u8, CustomType),
 }
 
 impl From<&Width> for Classes {
@@ -138,7 +148,10 @@ impl From<&Width> for Classes {
             Width::Max => classes!("width-max"),
             Width::Fit => classes!("width-fit"),
             Width::Inherit => classes!("width-inherit"),
-            Width::Custom(value) => classes!(format!("width-fixed-{}", value)),
+            Width::Custom(value, _type) => match _type {
+                CustomType::Fixed => classes!(format!("width-fixed-{}", value)),
+                CustomType::Percent => classes!(format!("width-percent-{}", value)),   
+            }
         }
     }
 }
@@ -170,7 +183,7 @@ pub enum MinHeight {
     /// Inherit minimum height.
     Inherit,
     /// Custom minimum height.
-    Custom(u8),
+    Custom(u8, CustomType),
 }
 
 impl From<&MinHeight> for Classes {
@@ -197,7 +210,10 @@ impl From<&MinHeight> for Classes {
             MinHeight::Max => classes!("min-height-max"),
             MinHeight::Fit => classes!("min-height-fit"),
             MinHeight::Inherit => classes!("min-height-inherit"),
-            MinHeight::Custom(value) => classes!(format!("min-height-fixed-{}", value)),
+            MinHeight::Custom(value, _type) => match _type {
+                CustomType::Fixed => classes!(format!("min-height-fixed-{}", value)),
+                CustomType::Percent => classes!(format!("min-height-percent-{}", value)),   
+            },
         }
     }
 }
@@ -229,7 +245,7 @@ pub enum MaxHeight {
     /// Inherit maximum height.
     Inherit,
     /// Custom maximum height.
-    Custom(u8),
+    Custom(u8, CustomType),
 }
 
 impl From<&MaxHeight> for Classes {
@@ -256,7 +272,10 @@ impl From<&MaxHeight> for Classes {
             MaxHeight::Max => classes!("max-height-max"),
             MaxHeight::Fit => classes!("max-height-fit"),
             MaxHeight::Inherit => classes!("max-height-inherit"),
-            MaxHeight::Custom(value) => classes!(format!("max-height-fixed-{}", value)),
+            MaxHeight::Custom(value, _type) => match _type {
+                CustomType::Fixed => classes!(format!("max-height-fixed-{}", value)),
+                CustomType::Percent => classes!(format!("max-height-percent-{}", value)),   
+            },
         }
     }
 }
@@ -288,7 +307,7 @@ pub enum MinWidth {
     /// Inherit minimum width.
     Inherit,
     /// Custom minimum width.
-    Custom(u8),
+    Custom(u8, CustomType),
 }
 
 impl From<&MinWidth> for Classes {
@@ -315,7 +334,10 @@ impl From<&MinWidth> for Classes {
             MinWidth::Max => classes!("min-width-max"),
             MinWidth::Fit => classes!("min-width-fit"),
             MinWidth::Inherit => classes!("min-width-inherit"),
-            MinWidth::Custom(value) => classes!(format!("min-width-fixed-{}", value)),
+            MinWidth::Custom(value, _type) => match _type {
+                CustomType::Fixed => classes!(format!("min-width-fixed-{}", value)),
+                CustomType::Percent => classes!(format!("min-width-percent-{}", value)),   
+            },
         }
     }
 }
@@ -347,7 +369,7 @@ pub enum MaxWidth {
     /// Inherit maximum width.
     Inherit,
     /// Custom maximum width.
-    Custom(u8),
+    Custom(u8, CustomType),
 }
 
 impl From<&MaxWidth> for Classes {
@@ -374,7 +396,10 @@ impl From<&MaxWidth> for Classes {
             MaxWidth::Max => classes!("max-width-max"),
             MaxWidth::Fit => classes!("max-width-fit"),
             MaxWidth::Inherit => classes!("max-width-inherit"),
-            MaxWidth::Custom(value) => classes!(format!("max-width-fixed-{}", value)),
+            MaxWidth::Custom(value, _type) => match _type {
+                CustomType::Fixed => classes!(format!("max-width-fixed-{}", value)),
+                CustomType::Percent => classes!(format!("max-width-percent-{}", value)),   
+            },
         }
     }
 }

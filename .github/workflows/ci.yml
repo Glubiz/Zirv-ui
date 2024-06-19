@@ -53,7 +53,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/my-rust-app:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/zirv-ui:latest
 
   deploy:
     runs-on: ubuntu-latest
