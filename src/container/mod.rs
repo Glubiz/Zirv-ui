@@ -8,7 +8,7 @@
 //! 
 //! ```rust
 //! use yew::{html, Children};
-//! use zirv_ui>::{Container, ContainerProps};
+//! use zirv_ui::{Container, ContainerProps};
 //! 
 //! #[function_component(App)]
 //! fn app() -> Html {
