@@ -1,26 +1,32 @@
 //! Toast Management Module
 //!
-//! This module provides functionality for managing toast notifications in a Yew application. 
-//! It includes the `ToastManager` to manage the creation and dispatching of toast notifications 
+//! This module provides functionality for managing toast notifications in a Yew application.
+//! It includes the `ToastManager` to manage the creation and dispatching of toast notifications
 //! and the `ToastsList` to handle the collection and state updates of toasts.
 
+use super::utils::Notifiable;
 use std::fmt::Debug;
 use std::rc::Rc;
 use time::Duration;
 use uuid::Uuid;
 use yew::{Reducible, UseReducerDispatcher};
-use super::utils::Notifiable;
 
 /// The `ToastManager` is responsible for managing the creation and dispatching of toast notifications.
 ///
 /// # Properties
 /// - `sender`: An optional dispatcher to send actions to the `ToastsList`.
 #[derive(Clone, PartialEq)]
-pub struct ToastManager<T> where T: Notifiable + PartialEq + Clone {
+pub struct ToastManager<T>
+where
+    T: Notifiable + PartialEq + Clone,
+{
     pub(crate) sender: Option<UseReducerDispatcher<ToastsList<T>>>,
 }
 
-impl<T> ToastManager<T> where T: Notifiable + PartialEq + Clone {
+impl<T> ToastManager<T>
+where
+    T: Notifiable + PartialEq + Clone,
+{
     /// Spawns a new toast notification.
     ///
     /// # Parameters
@@ -32,7 +38,10 @@ impl<T> ToastManager<T> where T: Notifiable + PartialEq + Clone {
     }
 }
 
-impl<T> Default for ToastManager<T> where T: Notifiable + PartialEq + Clone {
+impl<T> Default for ToastManager<T>
+where
+    T: Notifiable + PartialEq + Clone,
+{
     fn default() -> Self {
         Self {
             sender: Default::default(),
@@ -49,7 +58,10 @@ impl<T> Default for ToastManager<T> where T: Notifiable + PartialEq + Clone {
 /// - `Pause(id)`: Pauses a toast notification by its ID.
 /// - `Continue(id)`: Continues a toast notification by its ID.
 #[derive(Debug)]
-pub enum Action<T> where T: Notifiable + PartialEq + Clone {
+pub enum Action<T>
+where
+    T: Notifiable + PartialEq + Clone,
+{
     New(T),
     Close(Uuid),
     Tick,
@@ -84,7 +96,10 @@ impl<T> ToastsList<T> {
     }
 }
 
-impl<T> Reducible for ToastsList<T> where T: Notifiable + PartialEq + Clone {
+impl<T> Reducible for ToastsList<T>
+where
+    T: Notifiable + PartialEq + Clone,
+{
     type Action = Action<T>;
 
     /// Reduces the state based on the action received.
@@ -100,12 +115,7 @@ impl<T> Reducible for ToastsList<T> where T: Notifiable + PartialEq + Clone {
                 Rc::new(Self { toasts })
             }
             Action::Close(id) => {
-                let toasts = self
-                    .toasts
-                    .clone()
-                    .into_iter()
-                    .filter(|t| t.id() != id)
-                    .collect();
+                let toasts = self.toasts.clone().into_iter().filter(|t| t.id() != id).collect();
 
                 Rc::new(Self { toasts })
             }

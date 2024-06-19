@@ -4,14 +4,14 @@
 //! trait for managing its lifecycle. Toast notifications are used to display brief messages to the user and can be
 //! customized in terms of type, title, text, and appearance. The module also includes various submodules for
 
+use self::utils::{Notifiable, ToastType};
 use time::{Duration, OffsetDateTime};
 use uuid::Uuid;
-use self::utils::{Notifiable, ToastType};
 
-pub mod component_factory;
 pub mod component;
-pub mod message;
+pub mod component_factory;
 pub mod manager;
+pub mod message;
 pub mod provider;
 pub mod use_toast;
 pub mod utils;
@@ -45,11 +45,7 @@ impl Toast {
     /// # Returns
     ///
     /// Returns a new `Toast` instance.
-    pub fn new(
-        toast_type: ToastType,
-        title: impl Into<String>,
-        text: impl Into<String>,
-    ) -> Self {
+    pub fn new(toast_type: ToastType, title: impl Into<String>, text: impl Into<String>) -> Self {
         Self {
             id: Uuid::new_v4(),
             toast_type,

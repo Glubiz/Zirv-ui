@@ -1,15 +1,15 @@
 //! Container Component
-//! 
+//!
 //! This module provides a customizable container component for the Yew framework. The `Container` component
 //! supports various layout and styling options such as width, height, display, flexbox properties, border properties,
 //! padding, margin, and background color. It also supports custom classes and can contain child elements.
-//! 
+//!
 //! # Example
-//! 
+//!
 //! ```rust
 //! use yew::{html, Html, Children, function_component};
 //! use zirv_ui::{Container, ContainerProps};
-//! 
+//!
 //! #[function_component(App)]
 //! fn app() -> Html {
 //!     html! {
@@ -23,7 +23,12 @@
 use yew::{classes, function_component, html, Children, Classes, Html, Properties};
 
 use crate::options::{
-    border::{Border, BorderColor, BorderRadius, BorderStyle, BorderWidth}, color::BackgroundColor, display::Display, flex::{FlexAlign, FlexDirection, FlexGap, FlexGrow, FlexJustify, FlexShrink, FlexWrap}, size::{Height, Width}, spacing::{Margin, Padding}
+    border::{Border, BorderColor, BorderRadius, BorderStyle, BorderWidth},
+    color::BackgroundColor,
+    display::Display,
+    flex::{FlexAlign, FlexDirection, FlexGap, FlexGrow, FlexJustify, FlexShrink, FlexWrap},
+    size::{Height, Width},
+    spacing::{Margin, Padding},
 };
 
 /// Properties for the `Container` component.
@@ -87,7 +92,7 @@ pub struct ContainerProps {
     pub background_color: BackgroundColor,
     /// Additional CSS classes to apply to the container.
     #[prop_or(None)]
-    pub classes: Option<Classes>
+    pub classes: Option<Classes>,
 }
 
 /// The `Container` component.

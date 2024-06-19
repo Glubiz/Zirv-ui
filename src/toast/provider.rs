@@ -5,20 +5,17 @@
 //! It leverages the `ToastManager` and `ToastsList` to handle the lifecycle of toasts and the `NotifiableComponentFactory`
 //! to create the toast components.
 
-use std::marker::PhantomData;
-use yew::{
-    classes, function_component, html, use_effect_with, use_reducer_eq, Callback, Children,
-    ContextProvider, Html, Properties,
-};
 use super::manager::{Action, ToastManager, ToastsList};
 use super::utils::{Notifiable, NotifiableComponentFactory};
+use std::marker::PhantomData;
+use yew::{
+    classes, function_component, html, use_effect_with, use_reducer_eq, Callback, Children, ContextProvider, Html,
+    Properties,
+};
 
 /// Properties for the `ToastProvider` component.
 #[derive(Properties, PartialEq, Clone)]
-pub struct ToastProviderProps<
-    T: Notifiable + PartialEq,
-    F: NotifiableComponentFactory<T> + PartialEq + Clone,
-> {
+pub struct ToastProviderProps<T: Notifiable + PartialEq, F: NotifiableComponentFactory<T> + PartialEq + Clone> {
     /// The child components to render within the provider.
     pub children: Children,
     /// The component creator used to create toast components.
@@ -40,10 +37,7 @@ pub struct ToastProviderProps<
 /// - `component_creator`: The component creator used to create toast components.
 /// - `_toast`: A phantom data marker for the toast type.
 #[function_component(ToastProvider)]
-pub fn toast_provider<
-    T: Notifiable + PartialEq + Clone,
-    F: NotifiableComponentFactory<T> + PartialEq + Clone,
->(
+pub fn toast_provider<T: Notifiable + PartialEq + Clone, F: NotifiableComponentFactory<T> + PartialEq + Clone>(
     props: &ToastProviderProps<T, F>,
 ) -> Html {
     let toasts = use_reducer_eq(ToastsList::<T>::default);
@@ -52,23 +46,20 @@ pub fn toast_provider<
         sender: Some(toasts.dispatcher()),
     };
 
-    use_effect_with(
-        (!toasts.is_empty(), toasts.dispatcher()),
-        |(is_active, sender)| {
-            use gloo::timers::callback::Interval;
+    use_effect_with((!toasts.is_empty(), toasts.dispatcher()), |(is_active, sender)| {
+        use gloo::timers::callback::Interval;
 
-            let sender = sender.clone();
-            let is_active = *is_active;
+        let sender = sender.clone();
+        let is_active = *is_active;
 
-            let interval = Interval::new(ToastsList::<T>::TIME_TICK_MILLIS as u32, move || {
-                if is_active {
-                    sender.dispatch(Action::Tick);
-                }
-            });
+        let interval = Interval::new(ToastsList::<T>::TIME_TICK_MILLIS as u32, move || {
+            if is_active {
+                sender.dispatch(Action::Tick);
+            }
+        });
 
-            move || drop(interval)
-        },
-    );
+        move || drop(interval)
+    });
 
     let children = props.children.clone();
     let dispatcher = toasts.dispatcher();

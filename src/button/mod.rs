@@ -1,19 +1,19 @@
 //! Button Component
-//! 
+//!
 //! This module provides a customizable button component for the Yew framework. The `Button` component
 //! allows for various styling options such as width, height, border properties, padding, margin, background color,
 //! font color, and font size. It also supports custom classes and an `onclick` callback.
-//! 
+//!
 //! # Example
-//! 
+//!
 //! ```rust
 //! use yew::{html, Html, Callback, function_component};
 //! use zirv_ui::{Button, ButtonProps};
-//! 
+//!
 //! #[function_component(App)]
 //! fn app() -> Html {
 //!     let onclick = Callback::from(|_| log::info!("Button clicked!"));
-//! 
+//!
 //!     html! {
 //!         <Button onclick={onclick}>
 //!             {"Click Me"}
@@ -22,8 +22,14 @@
 //! }
 //! ```
 
+use crate::{
+    border::{Border, BorderColor, BorderRadius, BorderStyle, BorderWidth},
+    color::BackgroundColor,
+    font::{FontSize, TextColor},
+    size::{CustomType, Height, Width},
+    spacing::{Margin, Padding},
+};
 use yew::{classes, function_component, html, Callback, Children, Classes, Html, MouseEvent, Properties};
-use crate::{border::{Border, BorderColor, BorderRadius, BorderStyle, BorderWidth}, color::BackgroundColor, font::{FontSize, TextColor}, size::{CustomType, Height, Width}, spacing::{Margin, Padding}};
 
 /// Properties for the `Button` component.
 #[derive(Properties, Clone, PartialEq, Default)]
@@ -70,7 +76,7 @@ pub struct ButtonProps {
     #[prop_or(None)]
     pub classes: Option<Classes>,
     /// Callback to be executed when the button is clicked.
-    pub onclick: Callback<MouseEvent>
+    pub onclick: Callback<MouseEvent>,
 }
 
 /// The `Button` component.

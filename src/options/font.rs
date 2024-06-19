@@ -1,21 +1,21 @@
 //! Text Styling Enums
-//! 
+//!
 //! This module defines several enums representing different text styling properties: `FontSize`, `FontWeight`,
-//! `FontStyle`, `FontFamily`, `TextAlign`, `TextTransform`, `TextDecoration`, `TextOverflow`, `TextShadow`, 
+//! `FontStyle`, `FontFamily`, `TextAlign`, `TextTransform`, `TextDecoration`, `TextOverflow`, `TextShadow`,
 //! `TextStroke`, and `TextColor`. Each enum can be converted into Yew's `Classes` for CSS styling.
-//! 
+//!
 //! # Example
-//! 
+//!
 //! ```rust
 //! use yew::{html, function_component, Html, Classes, classes};
 //! use zirv_ui::options::font::{FontSize, TextAlign, TextColor};
-//! 
+//!
 //! #[function_component(App)]
 //! fn app() -> Html {
 //!     let font_size_class: Classes = (&FontSize::Large).into();
 //!     let text_align_class: Classes = (&TextAlign::Center).into();
 //!     let text_color_class: Classes = (&TextColor::Primary).into();
-//! 
+//!
 //!     html! {
 //!         <div class={classes!(font_size_class, text_align_class, text_color_class)}>
 //!             {"This text has large font size, centered alignment, and primary color"}
@@ -46,11 +46,11 @@ impl From<&FontSize> for Classes {
     /// Converts a `FontSize` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::font::FontSize;
-    /// 
+    ///
     /// let font_size_class: Classes = (&FontSize::Large).into();
     /// ```
     fn from(font_size: &FontSize) -> Self {
@@ -82,11 +82,11 @@ impl From<&FontWeight> for Classes {
     /// Converts a `FontWeight` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::font::FontWeight;
-    /// 
+    ///
     /// let font_weight_class: Classes = (&FontWeight::Bold).into();
     /// ```
     fn from(font_weight: &FontWeight) -> Self {
@@ -113,11 +113,11 @@ impl From<&FontStyle> for Classes {
     /// Converts a `FontStyle` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::font::FontStyle;
-    /// 
+    ///
     /// let font_style_class: Classes = (&FontStyle::Italic).into();
     /// ```
     fn from(font_style: &FontStyle) -> Self {
@@ -146,11 +146,11 @@ impl From<&FontFamily> for Classes {
     /// Converts a `FontFamily` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::font::FontFamily;
-    /// 
+    ///
     /// let font_family_class: Classes = (&FontFamily::Helvetica).into();
     /// ```
     fn from(font_family: &FontFamily) -> Self {
@@ -181,11 +181,11 @@ impl From<&TextAlign> for Classes {
     /// Converts a `TextAlign` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::font::TextAlign;
-    /// 
+    ///
     /// let text_align_class: Classes = (&TextAlign::Center).into();
     /// ```
     fn from(text_align: &TextAlign) -> Self {
@@ -216,11 +216,11 @@ impl From<&TextTransform> for Classes {
     /// Converts a `TextTransform` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::font::TextTransform;
-    /// 
+    ///
     /// let text_transform_class: Classes = (&TextTransform::Uppercase).into();
     /// ```
     fn from(text_transform: &TextTransform) -> Self {
@@ -251,11 +251,11 @@ impl From<&TextDecoration> for Classes {
     /// Converts a `TextDecoration` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::font::TextDecoration;
-    /// 
+    ///
     /// let text_decoration_class: Classes = (&TextDecoration::Underline).into();
     /// ```
     fn from(text_decoration: &TextDecoration) -> Self {
@@ -284,11 +284,11 @@ impl From<&TextOverflow> for Classes {
     /// Converts a `TextOverflow` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::font::TextOverflow;
-    /// 
+    ///
     /// let text_overflow_class: Classes = (&TextOverflow::Ellipsis).into();
     /// ```
     fn from(text_overflow: &TextOverflow) -> Self {
@@ -314,11 +314,11 @@ impl From<&TextShadow> for Classes {
     /// Converts a `TextShadow` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::font::TextShadow;
-    /// 
+    ///
     /// let text_shadow_class: Classes = (&TextShadow::Shadow).into();
     /// ```
     fn from(text_shadow: &TextShadow) -> Self {
@@ -343,11 +343,11 @@ impl From<&TextStroke> for Classes {
     /// Converts a `TextStroke` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::font::TextStroke;
-    /// 
+    ///
     /// let text_stroke_class: Classes = (&TextStroke::Stroke).into();
     /// ```
     fn from(text_stroke: &TextStroke) -> Self {
@@ -390,11 +390,11 @@ impl From<&TextColor> for Classes {
     /// Converts a `TextColor` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::font::TextColor;
-    /// 
+    ///
     /// let text_color_class: Classes = (&TextColor::Primary).into();
     /// ```
     fn from(text_color: &TextColor) -> Self {

@@ -1,14 +1,14 @@
 //! Loader Component
-//! 
+//!
 //! This module provides a customizable loader component for the Yew framework. The `Loader` component
 //! supports two styles: `Dots` and `Spinner`. It is used to display a loading animation in your application.
-//! 
+//!
 //! # Example
-//! 
+//!
 //! ```rust
 //! use yew::{html, Html, function_component};
 //! use zirv_ui::{Loader, LoaderProps, Style};
-//! 
+//!
 //! #[function_component(App)]
 //! fn app() -> Html {
 //!     html! {

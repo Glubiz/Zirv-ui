@@ -1,18 +1,18 @@
 //! BackgroundColor Enum
-//! 
+//!
 //! This module defines the `BackgroundColor` enum, which represents various background color options.
 //! It also provides an implementation to convert `BackgroundColor` into Yew's `Classes` for CSS styling.
-//! 
+//!
 //! # Example
-//! 
+//!
 //! ```rust
 //! use yew::{html, function_component, Html, Classes};
 //! use zirv_ui::options::color::BackgroundColor;
-//! 
+//!
 //! #[function_component(App)]
 //! fn app() -> Html {
 //!     let background_class: Classes = (&BackgroundColor::Primary).into();
-//! 
+//!
 //!     html! {
 //!         <div class={background_class}>
 //!             {"This div has a primary background color"}
@@ -95,11 +95,11 @@ impl From<&BackgroundColor> for Classes {
     /// Converts a `BackgroundColor` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::color::BackgroundColor;
-    /// 
+    ///
     /// let background_class: Classes = (&BackgroundColor::Primary).into();
     /// ```
     fn from(background_color: &BackgroundColor) -> Self {

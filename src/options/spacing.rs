@@ -1,17 +1,17 @@
 //! Spacing Enums
-//! 
+//!
 //! This module defines the `Padding` and `Margin` enums, which represent various spacing property options for CSS.
 //! It also provides an implementation to convert these enums into Yew's `Classes` for CSS styling.
-//! 
+//!
 //! # Example
-//! 
+//!
 //! ```rust
 //! use yew::{html, function_component, Html, Classes, classes};
 //! use zirv_ui::options::spacing::{Padding, Margin};
-//! 
+//!
 //! #[function_component(App)]
 //! fn app() -> Html {
-//! 
+//!
 //!     html! {
 //!         <div class={classes!(&Margin::Medium, &Padding::Medium)}>
 //!             {"This div has large padding and medium margin"}
@@ -40,11 +40,11 @@ impl From<&Padding> for Classes {
     /// Converts a `Padding` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::spacing::Padding;
-    /// 
+    ///
     /// let padding_class: Classes = (&Padding::Large).into();
     /// ```
     fn from(padding: &Padding) -> Self {
@@ -75,11 +75,11 @@ impl From<&Margin> for Classes {
     /// Converts a `Margin` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::spacing::Margin;
-    /// 
+    ///
     /// let margin_class: Classes = (&Margin::Medium).into();
     /// ```
     fn from(margin: &Margin) -> Self {

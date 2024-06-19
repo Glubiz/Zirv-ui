@@ -1,5 +1,5 @@
 //! Toast Component
-//! 
+//!
 //! This module provides a simple toast notification component for the Yew framework. The `Toast` component
 //! displays a message with a specific type that determines its styling.
 

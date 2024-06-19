@@ -1,18 +1,18 @@
 //! Display Enum
-//! 
+//!
 //! This module defines the `Display` enum, which represents various display property options for CSS.
 //! It also provides an implementation to convert `Display` into Yew's `Classes` for CSS styling.
-//! 
+//!
 //! # Example
-//! 
+//!
 //! ```rust
 //! use yew::{html, function_component, Html, Classes};
 //! use zirv_ui::options::display::Display;
-//! 
+//!
 //! #[function_component(App)]
 //! fn app() -> Html {
 //!     let display_class: Classes = (&Display::Flex).into();
-//! 
+//!
 //!     html! {
 //!         <div class={display_class}>
 //!             {"This div has a flex display"}
@@ -45,11 +45,11 @@ impl From<&Display> for Classes {
     /// Converts a `Display` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::display::Display;
-    /// 
+    ///
     /// let display_class: Classes = (&Display::Flex).into();
     /// ```
     fn from(display: &Display) -> Self {

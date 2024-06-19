@@ -19,4 +19,3 @@ impl From<&ZIndex> for Classes {
         }
     }
 }
-

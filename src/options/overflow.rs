@@ -1,19 +1,19 @@
 //! Overflow Enum
-//! 
+//!
 //! This module defines the `Overflow` enum, which represents various overflow property options for CSS.
 //! It also provides an implementation to convert `Overflow` into Yew's `Classes` for CSS styling.
-//! 
+//!
 //! # Example
-//! 
+//!
 //! ```rust
 //! use yew::{html, function_component, Html};
 //! use zirv_ui::options::overflow::Overflow;
 //! use yew::Classes;
-//! 
+//!
 //! #[function_component(App)]
 //! fn app() -> Html {
 //!     let overflow_class: Classes = (&Overflow::Scroll).into();
-//! 
+//!
 //!     html! {
 //!         <div class={overflow_class}>
 //!             {"This div has scroll overflow"}
@@ -42,11 +42,11 @@ impl From<&Overflow> for Classes {
     /// Converts an `Overflow` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::overflow::Overflow;
-    /// 
+    ///
     /// let overflow_class: Classes = (&Overflow::Hidden).into();
     /// ```
     fn from(overflow: &Overflow) -> Self {

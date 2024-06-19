@@ -1,19 +1,19 @@
 //! Flexbox Enums
-//! 
+//!
 //! This module defines several enums representing different flexbox properties: `FlexDirection`, `FlexWrap`,
 //! `FlexAlign`, `FlexJustify`, `FlexGrow`, `FlexShrink`, and `Flex`. Each enum can be converted into Yew's `Classes`
 //! for CSS styling.
-//! 
+//!
 //! # Example
-//! 
+//!
 //! ```rust
 //! use yew::{html, function_component, Html, Classes};
 //! use zirv_ui::options::flex::{Flex, FlexAlign, FlexDirection, FlexJustify, FlexWrap, FlexGap};
-//! 
+//!
 //! #[function_component(App)]
 //! fn app() -> Html {
 //!     let flex_class: Classes = (&Flex::Row(FlexAlign::Center, FlexJustify::SpaceBetween, FlexWrap::Wrap, FlexGap::Small)).into();
-//! 
+//!
 //!     html! {
 //!         <div class={flex_class}>
 //!             {"This div has a flex display with specified properties"}
@@ -42,11 +42,11 @@ impl From<&FlexDirection> for Classes {
     /// Converts a `FlexDirection` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::flex::FlexDirection;
-    /// 
+    ///
     /// let direction_class: Classes = (&FlexDirection::Row).into();
     /// ```
     fn from(flex_direction: &FlexDirection) -> Self {
@@ -75,11 +75,11 @@ impl From<&FlexWrap> for Classes {
     /// Converts a `FlexWrap` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::flex::FlexWrap;
-    /// 
+    ///
     /// let wrap_class: Classes = (&FlexWrap::Wrap).into();
     /// ```
     fn from(flex_wrap: &FlexWrap) -> Self {
@@ -111,11 +111,11 @@ impl From<&FlexAlign> for Classes {
     /// Converts a `FlexAlign` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::flex::FlexAlign;
-    /// 
+    ///
     /// let align_class: Classes = (&FlexAlign::Center).into();
     /// ```
     fn from(flex_align: &FlexAlign) -> Self {
@@ -151,11 +151,11 @@ impl From<&FlexJustify> for Classes {
     /// Converts a `FlexJustify` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::flex::FlexJustify;
-    /// 
+    ///
     /// let justify_class: Classes = (&FlexJustify::SpaceBetween).into();
     /// ```
     fn from(flex_justify: &FlexJustify) -> Self {
@@ -184,11 +184,11 @@ impl From<&FlexGrow> for Classes {
     /// Converts a `FlexGrow` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::flex::FlexGrow;
-    /// 
+    ///
     /// let grow_class: Classes = (&FlexGrow::Grow).into();
     /// ```
     fn from(flex_grow: &FlexGrow) -> Self {
@@ -213,11 +213,11 @@ impl From<&FlexShrink> for Classes {
     /// Converts a `FlexShrink` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::flex::FlexShrink;
-    /// 
+    ///
     /// let shrink_class: Classes = (&FlexShrink::Shrink).into();
     /// ```
     fn from(flex_shrink: &FlexShrink) -> Self {
@@ -263,11 +263,11 @@ impl From<&Flex> for Classes {
     /// Converts a `Flex` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::flex::{Flex, FlexAlign, FlexJustify, FlexWrap, FlexGap};
-    /// 
+    ///
     /// let flex_class: Classes = (&Flex::Row(FlexAlign::Center, FlexJustify::SpaceBetween, FlexWrap::Wrap, FlexGap::Small)).into();
     /// ```
     fn from(flex: &Flex) -> Self {

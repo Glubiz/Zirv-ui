@@ -1,20 +1,20 @@
 //! Size Enums
-//! 
+//!
 //! This module defines several enums representing different size properties: `Height`, `Width`, `MinHeight`,
 //! `MaxHeight`, `MinWidth`, and `MaxWidth`. Each enum can be converted into Yew's `Classes` for CSS styling.
-//! 
+//!
 //! # Example
-//! 
+//!
 //! ```rust
 //! use yew::{html, function_component, Html, classes};
 //! use zirv_ui::options::size::{Height, Width};
 //! use yew::Classes;
-//! 
+//!
 //! #[function_component(App)]
 //! fn app() -> Html {
 //!     let height_class: Classes = (&Height::Large).into();
 //!     let width_class: Classes = (&Width::Full).into();
-//! 
+//!
 //!     html! {
 //!         <div class={classes!(height_class, width_class)}>
 //!             {"This div has large height and full width"}
@@ -29,7 +29,7 @@ use yew::{classes, Classes};
 pub enum CustomType {
     #[default]
     Fixed,
-    Percent
+    Percent,
 }
 
 /// Enum representing the height property options.
@@ -66,11 +66,11 @@ impl From<&Height> for Classes {
     /// Converts a `Height` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::size::Height;
-    /// 
+    ///
     /// let height_class: Classes = (&Height::Large).into();
     /// ```
     fn from(height: &Height) -> Self {
@@ -89,7 +89,7 @@ impl From<&Height> for Classes {
             Height::Custom(value, _type) => match _type {
                 CustomType::Fixed => classes!(format!("height-fixed-{}", value)),
                 CustomType::Percent => classes!(format!("height-percent-{}", value)),
-            }
+            },
         }
     }
 }
@@ -128,11 +128,11 @@ impl From<&Width> for Classes {
     /// Converts a `Width` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::size::Width;
-    /// 
+    ///
     /// let width_class: Classes = (&Width::Full).into();
     /// ```
     fn from(width: &Width) -> Self {
@@ -150,8 +150,8 @@ impl From<&Width> for Classes {
             Width::Inherit => classes!("width-inherit"),
             Width::Custom(value, _type) => match _type {
                 CustomType::Fixed => classes!(format!("width-fixed-{}", value)),
-                CustomType::Percent => classes!(format!("width-percent-{}", value)),   
-            }
+                CustomType::Percent => classes!(format!("width-percent-{}", value)),
+            },
         }
     }
 }
@@ -190,11 +190,11 @@ impl From<&MinHeight> for Classes {
     /// Converts a `MinHeight` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::size::MinHeight;
-    /// 
+    ///
     /// let min_height_class: Classes = (&MinHeight::Large).into();
     /// ```
     fn from(min_height: &MinHeight) -> Self {
@@ -212,7 +212,7 @@ impl From<&MinHeight> for Classes {
             MinHeight::Inherit => classes!("min-height-inherit"),
             MinHeight::Custom(value, _type) => match _type {
                 CustomType::Fixed => classes!(format!("min-height-fixed-{}", value)),
-                CustomType::Percent => classes!(format!("min-height-percent-{}", value)),   
+                CustomType::Percent => classes!(format!("min-height-percent-{}", value)),
             },
         }
     }
@@ -252,11 +252,11 @@ impl From<&MaxHeight> for Classes {
     /// Converts a `MaxHeight` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::size::MaxHeight;
-    /// 
+    ///
     /// let max_height_class: Classes = (&MaxHeight::Large).into();
     /// ```
     fn from(max_height: &MaxHeight) -> Self {
@@ -274,7 +274,7 @@ impl From<&MaxHeight> for Classes {
             MaxHeight::Inherit => classes!("max-height-inherit"),
             MaxHeight::Custom(value, _type) => match _type {
                 CustomType::Fixed => classes!(format!("max-height-fixed-{}", value)),
-                CustomType::Percent => classes!(format!("max-height-percent-{}", value)),   
+                CustomType::Percent => classes!(format!("max-height-percent-{}", value)),
             },
         }
     }
@@ -314,11 +314,11 @@ impl From<&MinWidth> for Classes {
     /// Converts a `MinWidth` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::size::MinWidth;
-    /// 
+    ///
     /// let min_width_class: Classes = (&MinWidth::Large).into();
     /// ```
     fn from(min_width: &MinWidth) -> Self {
@@ -336,7 +336,7 @@ impl From<&MinWidth> for Classes {
             MinWidth::Inherit => classes!("min-width-inherit"),
             MinWidth::Custom(value, _type) => match _type {
                 CustomType::Fixed => classes!(format!("min-width-fixed-{}", value)),
-                CustomType::Percent => classes!(format!("min-width-percent-{}", value)),   
+                CustomType::Percent => classes!(format!("min-width-percent-{}", value)),
             },
         }
     }
@@ -376,11 +376,11 @@ impl From<&MaxWidth> for Classes {
     /// Converts a `MaxWidth` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::size::MaxWidth;
-    /// 
+    ///
     /// let max_width_class: Classes = (&MaxWidth::Large).into();
     /// ```
     fn from(max_width: &MaxWidth) -> Self {
@@ -398,7 +398,7 @@ impl From<&MaxWidth> for Classes {
             MaxWidth::Inherit => classes!("max-width-inherit"),
             MaxWidth::Custom(value, _type) => match _type {
                 CustomType::Fixed => classes!(format!("max-width-fixed-{}", value)),
-                CustomType::Percent => classes!(format!("max-width-percent-{}", value)),   
+                CustomType::Percent => classes!(format!("max-width-percent-{}", value)),
             },
         }
     }

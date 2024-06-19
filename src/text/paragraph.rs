@@ -1,15 +1,15 @@
 //! Paragraph Component
-//! 
+//!
 //! This module provides a customizable paragraph component for the Yew framework. The `Paragraph` component
 //! supports various styling options for font size, weight, style, and family, as well as additional CSS classes.
-//! 
+//!
 //! # Example
-//! 
+//!
 //! ```rust
 //! use yew::{html, function_component, Html};
 //! use zirv_ui::{Paragraph, ParagraphProps};
 //! use zirv_ui::options::font::{FontSize, FontWeight, FontStyle, FontFamily};
-//! 
+//!
 //! #[function_component(App)]
 //! fn app() -> Html {
 //!     html! {
@@ -20,8 +20,8 @@
 //! }
 //! ```
 
-use yew::{classes, function_component, html, Children, Classes, Html, Properties};
 use crate::options::font::{FontFamily, FontSize, FontStyle, FontWeight};
+use yew::{classes, function_component, html, Children, Classes, Html, Properties};
 
 /// Properties for the `Paragraph` component.
 #[derive(Properties, Clone, PartialEq)]

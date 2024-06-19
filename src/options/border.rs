@@ -1,18 +1,18 @@
 //! Border and BorderStyle Enums
-//! 
+//!
 //! This module defines several enums representing different border properties: `BorderRadius`, `BorderWidth`,
 //! `BorderStyle`, `BorderColor`, and `Border`. Each enum can be converted into Yew's `Classes` for CSS styling.
-//! 
+//!
 //! # Example
-//! 
+//!
 //! ```rust
 //! use yew::{html, function_component, Html, Classes};
 //! use zirv_ui::options::border::{Border, BorderColor, BorderRadius, BorderStyle, BorderWidth};
-//! 
+//!
 //! #[function_component(App)]
 //! fn app() -> Html {
 //!     let border_class: Classes = (&Border::All(BorderWidth::Medium, BorderStyle::Solid, BorderColor::Primary)).into();
-//! 
+//!
 //!     html! {
 //!         <div class={border_class}>
 //!             {"This div has a medium solid primary border"}
@@ -43,11 +43,11 @@ impl From<&BorderRadius> for Classes {
     /// Converts a `BorderRadius` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::border::BorderRadius;
-    /// 
+    ///
     /// let radius_class: Classes = (&BorderRadius::Medium).into();
     /// ```
     fn from(border_radius: &BorderRadius) -> Self {
@@ -79,11 +79,11 @@ impl From<&BorderWidth> for Classes {
     /// Converts a `BorderWidth` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::border::BorderWidth;
-    /// 
+    ///
     /// let width_class: Classes = (&BorderWidth::Medium).into();
     /// ```
     fn from(border_width: &BorderWidth) -> Self {
@@ -116,11 +116,11 @@ impl From<&BorderStyle> for Classes {
     /// Converts a `BorderStyle` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::border::BorderStyle;
-    /// 
+    ///
     /// let style_class: Classes = (&BorderStyle::Solid).into();
     /// ```
     fn from(border_style: &BorderStyle) -> Self {
@@ -158,11 +158,11 @@ impl From<&BorderColor> for Classes {
     /// Converts a `BorderColor` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::border::BorderColor;
-    /// 
+    ///
     /// let color_class: Classes = (&BorderColor::Primary).into();
     /// ```
     fn from(border_color: &BorderColor) -> Self {
@@ -200,11 +200,11 @@ impl From<&Border> for Classes {
     /// Converts a `Border` into Yew's `Classes`.
     ///
     /// # Example
-    /// 
+    ///
     /// ```rust
     /// use yew::Classes;
     /// use zirv_ui::options::border::{Border, BorderWidth, BorderStyle, BorderColor};
-    /// 
+    ///
     /// let border_class: Classes = (&Border::All(BorderWidth::Medium, BorderStyle::Solid, BorderColor::Primary)).into();
     /// ```
     fn from(border: &Border) -> Self {

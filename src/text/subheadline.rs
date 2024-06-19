@@ -1,14 +1,14 @@
 //! Subheadline Component
-//! 
+//!
 //! This module provides a customizable subheadline component for the Yew framework. The `Subheadline` component
 //! supports various styling options for font size, weight, style, and family, as well as additional CSS classes.
-//! 
+//!
 //! # Example
-//! 
+//!
 //! ```rust
 //! use yew::{html, function_component, Html};
 //! use zirv_ui::{Subheadline, SubheadlineProps};
-//! 
+//!
 //! #[function_component(App)]
 //! fn app() -> Html {
 //!     html! {
@@ -19,8 +19,8 @@
 //! }
 //! ```
 
+use crate::options::font::{FontFamily, FontSize, FontStyle, FontWeight};
 use yew::{classes, function_component, html, Children, Classes, Html, Properties};
-use crate::options::font::{FontSize, FontWeight, FontStyle, FontFamily};
 
 /// Properties for the `Subheadline` component.
 #[derive(Properties, Clone, PartialEq)]
