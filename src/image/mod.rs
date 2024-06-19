@@ -33,6 +33,9 @@ pub struct ImageProps {
     /// The width of the image. Default is `Width::Auto`.
     #[prop_or(Width::Auto)]
     pub width: Width,
+    /// Toggle lazy loading for the image. Default is `true`.
+    #[prop_or("true".into())]
+    pub lazy_loading: String,
     /// Additional CSS classes to apply to the image.
     #[prop_or(None)]
     pub classes: Option<Classes>,
@@ -55,6 +58,6 @@ pub fn image(props: &ImageProps) -> Html {
     let classes = classes!(&props.height, &props.width, &props.classes);
 
     html! {
-        <img src={props.src.clone()} alt={props.alt.clone()} class={classes} />
+        <img src={props.src.clone()} alt={props.alt.clone()} lazy={props.lazy_loading.clone()} class={classes} />
     }
 }

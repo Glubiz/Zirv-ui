@@ -247,3 +247,248 @@
         }
     }
 }
+
+.min {
+    &-height {
+        &-none {
+            min-height: 0;
+        }
+        &-full {
+            min-height: 100%;
+        }
+        &-screen {
+            min-height: 100vh;
+        }
+        &-auto {
+            min-height: auto;
+        }
+        &-min {
+            min-height: min-content;
+        }
+        &-max {
+            min-height: max-content;
+        }
+        &-fit {
+            min-height: fit-content;
+        }
+        &-inherit {
+            min-height: inherit;
+        }
+        &-small {
+            min-height: 25%;
+        }
+        &-medium {
+            min-height: 50%;
+        }
+        &-large {
+            min-height: 75%;
+        }
+        &-fixed {
+            &-1 {
+                min-height: 1rem;
+            }
+            &-2 {
+                min-height: 2rem;
+            }
+            &-3 {
+                min-height: 3rem;
+            }
+            &-4 {
+                min-height: 4rem;
+            }
+            &-5 {
+                min-height: 5rem;
+            }
+            &-6 {
+                min-height: 6rem;
+            }
+            &-7 {
+                min-height: 7rem;
+            }
+            &-8 {
+                min-height: 8rem;
+            }
+            &-9 {
+                min-height: 9rem;
+            }
+            &-10 {
+                min-height: 10rem;
+            }
+            &-12 {
+                min-height: 12rem;
+            }
+            &-14 {
+                min-height: 14rem;
+            }
+            &-16 {
+                min-height: 16rem;
+            }
+            &-20 {
+                min-height: 20rem;
+            }
+            &-24 {
+                min-height: 24rem;
+            }
+            &-28 {
+                min-height: 28rem;
+            }
+            &-32 {
+                min-height: 32rem;
+            }
+            &-36 {
+                min-height: 36rem;
+            }
+            &-40 {
+                min-height: 40rem;
+            }
+            &-44 {
+                min-height: 44rem;
+            }
+            &-48 {
+                min-height: 48rem;
+            }
+            &-52 {
+                min-height: 52rem;
+            }
+            &-56 {
+                min-height: 56rem;
+            }
+            &-60 {
+                min-height: 60rem;
+            }
+            &-64 {
+                min-height: 64rem;
+            }
+            &-72 {
+                min-height: 72rem;
+            }
+            &-80 {
+                min-height: 80rem;
+            }
+            &-96 {
+                min-height: 96rem;
+            }
+        }
+    }
+    &-width {
+        &-none {
+            min-width: 0;
+        }
+        &-full {
+            min-width: 100%;
+        }
+        &-screen {
+            min-width: 100vw;
+        }
+        &-auto {
+            min-width: auto;
+        }
+        &-min {
+            min-width: min-content;
+        }
+        &-max {
+            min-width: max-content;
+        }
+        &-fit {
+            min-width: fit-content;
+        }
+        &-inherit {
+            min-width: inherit;
+        }
+        &-small {
+            min-width: 25%;
+        }
+        &-medium {
+            min-width: 50%;
+        }
+        &-large {
+            min-width: 75%;
+        }
+        &-fixed {
+            &-1 {
+                min-width: 1rem;
+            }
+            &-2 {
+                min-width: 2rem;
+            }
+            &-3 {
+                min-width: 3rem;
+            }
+            &-4 {
+                min-width: 4rem;
+            }
+            &-5 {
+                min-width: 5rem;
+            }
+            &-6 {
+                min-width: 6rem;
+            }
+            &-7 {
+                min-width: 7rem;
+            }
+            &-8 {
+                min-width: 8rem;
+            }
+            &-9 {
+                min-width: 9rem;
+            }
+            &-10 {
+                min-width: 10rem;
+            }
+            &-12 {
+                min-width: 12rem;
+            }
+            &-14 {
+                min-width: 14rem;
+            }
+            &-16 {
+                min-width: 16rem;
+            }
+            &-20 {
+                min-width: 20rem;
+            }
+            &-24 {
+                min-width: 24rem;
+            }
+            &-28 {
+                min-width: 28rem;
+            }
+            &-32 {
+                min-width: 32rem;
+            }
+            &-36 {
+                min-width: 36rem;
+            }
+            &-40 {
+                min-width: 40rem;
+            }
+            &-44 {
+                min-width: 44rem;
+            }
+            &-48 {
+                min-width: 48rem;
+            }
+            &-52 {
+                min-width: 52rem;
+            }
+            &-56 {
+                min-width: 56rem;
+            }
+            &-60 {
+                min-width: 60rem;
+            }
+            &-64 {
+                min-width: 64rem;
+            }
+            &-72 {
+                min-width: 72rem;
+            }
+            &-80 {
+                min-width: 80rem;
+            }
+            &-96 {
+                min-width: 96rem;
+            }
+        }
+    }
+}
