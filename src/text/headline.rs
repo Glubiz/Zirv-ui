@@ -8,7 +8,7 @@
 //! ```rust
 //! use yew::{html, function_component, Html};
 //! use zirv_ui::{Headline, HeadlineProps};
-//! use crate::options::font::{FontSize, FontWeight, FontStyle, FontFamily};
+//! use zirv_ui::options::font::{FontSize, FontWeight, FontStyle, FontFamily};
 //! 
 //! #[function_component(App)]
 //! fn app() -> Html {

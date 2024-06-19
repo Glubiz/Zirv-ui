@@ -6,7 +6,7 @@
 //! # Example
 //! 
 //! ```rust
-//! use yew::{html};
+//! use yew::{html, Html, function_component};
 //! use zirv_ui::{Image, ImageProps};
 //! 
 //! #[function_component(App)]

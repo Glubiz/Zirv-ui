@@ -3,24 +3,6 @@
 //! This module provides a flexible container component for the Yew framework. The `Flex` component
 //! supports various flexbox layout options such as direction, wrap, alignment, justification, grow, and shrink.
 //! It can also accept custom classes and render child elements.
-//!
-//! # Example
-//!
-//! ```rust
-//! use yew::{html, Children};
-//! use zirv_ui::{Flex, FlexProps};
-//!
-//! #[function_component(App)]
-//! fn app() -> Html {
-//!     html! {
-//!         <Flex direction={FlexDirection::Row} justify={FlexJustify::Center} align={FlexAlign::Center}>
-//!             <p>{"Item 1"}</p>
-//!             <p>{"Item 2"}</p>
-//!             <p>{"Item 3"}</p>
-//!         </Flex>
-//!     }
-//! }
-//! ```
 
 use crate::options::{
     display::Display,

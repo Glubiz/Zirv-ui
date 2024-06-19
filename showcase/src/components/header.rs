@@ -18,7 +18,7 @@ pub fn header() -> Html {
     html! {
         <>
             <Container flex_justify={FlexJustify::SpaceBetween}>
-                <Image src="../images/logo.png" alt="Logo" height={Height::Custom(4, CustomType:Fixed)} width={Width::Custom(4, CustomType:Fixed)} />
+                <Image src="../images/logo.png" alt="Logo" height={Height::Custom(4, CustomType::Fixed)} width={Width::Custom(4, CustomType::Fixed)} />
                 <Button onclick={onclick}>{"Show Toast"}</Button>
             </Container>
         </>

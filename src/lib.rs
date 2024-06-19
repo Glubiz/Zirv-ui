@@ -18,6 +18,7 @@
 //! Then, import and use the components as needed:
 //!
 //! ```rust
+//! use yew::{html, Html, Callback};
 //! use zirv_ui::{Button, ButtonProps, Container, ContainerProps};
 //!
 //! fn view() -> Html {

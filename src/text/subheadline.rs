@@ -8,12 +8,11 @@
 //! ```rust
 //! use yew::{html, function_component, Html};
 //! use zirv_ui::{Subheadline, SubheadlineProps};
-//! use crate::options::font::{FontSize, FontWeight, FontStyle, FontFamily};
 //! 
 //! #[function_component(App)]
 //! fn app() -> Html {
 //!     html! {
-//!         <Subheadline size={FontSize::Medium} weight={FontWeight::Bold} style={FontStyle::Italic} family={FontFamily::Arial}>
+//!         <Subheadline>
 //!             {"This is a customizable subheadline"}
 //!         </Subheadline>
 //!     }
@@ -41,6 +40,7 @@ pub struct SubheadlineProps {
     #[prop_or_default]
     pub family: FontFamily,
     /// Additional CSS classes to apply to the subheadline.
+    #[prop_or(None)]
     pub classes: Option<Classes>,
 }
 

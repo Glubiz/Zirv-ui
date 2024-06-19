@@ -6,9 +6,8 @@
 //! # Example
 //! 
 //! ```rust
-//! use yew::{html, function_component, Html};
-//! use crate::options::border::{Border, BorderColor, BorderRadius, BorderStyle, BorderWidth};
-//! use yew::Classes;
+//! use yew::{html, function_component, Html, Classes};
+//! use zirv_ui::options::border::{Border, BorderColor, BorderRadius, BorderStyle, BorderWidth};
 //! 
 //! #[function_component(App)]
 //! fn app() -> Html {
@@ -47,7 +46,7 @@ impl From<&BorderRadius> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::border::BorderRadius;
+    /// use zirv_ui::options::border::BorderRadius;
     /// 
     /// let radius_class: Classes = (&BorderRadius::Medium).into();
     /// ```
@@ -83,7 +82,7 @@ impl From<&BorderWidth> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::border::BorderWidth;
+    /// use zirv_ui::options::border::BorderWidth;
     /// 
     /// let width_class: Classes = (&BorderWidth::Medium).into();
     /// ```
@@ -120,7 +119,7 @@ impl From<&BorderStyle> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::border::BorderStyle;
+    /// use zirv_ui::options::border::BorderStyle;
     /// 
     /// let style_class: Classes = (&BorderStyle::Solid).into();
     /// ```
@@ -162,7 +161,7 @@ impl From<&BorderColor> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::border::BorderColor;
+    /// use zirv_ui::options::border::BorderColor;
     /// 
     /// let color_class: Classes = (&BorderColor::Primary).into();
     /// ```
@@ -204,7 +203,7 @@ impl From<&Border> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::border::{Border, BorderWidth, BorderStyle, BorderColor};
+    /// use zirv_ui::options::border::{Border, BorderWidth, BorderStyle, BorderColor};
     /// 
     /// let border_class: Classes = (&Border::All(BorderWidth::Medium, BorderStyle::Solid, BorderColor::Primary)).into();
     /// ```

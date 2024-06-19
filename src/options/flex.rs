@@ -7,13 +7,12 @@
 //! # Example
 //! 
 //! ```rust
-//! use yew::{html, function_component, Html};
-//! use crate::options::flex::{Flex, FlexAlign, FlexDirection, FlexJustify, FlexWrap};
-//! use yew::Classes;
+//! use yew::{html, function_component, Html, Classes};
+//! use zirv_ui::options::flex::{Flex, FlexAlign, FlexDirection, FlexJustify, FlexWrap, FlexGap};
 //! 
 //! #[function_component(App)]
 //! fn app() -> Html {
-//!     let flex_class: Classes = (&Flex::Row(FlexAlign::Center, FlexJustify::SpaceBetween, FlexWrap::Wrap)).into();
+//!     let flex_class: Classes = (&Flex::Row(FlexAlign::Center, FlexJustify::SpaceBetween, FlexWrap::Wrap, FlexGap::Small)).into();
 //! 
 //!     html! {
 //!         <div class={flex_class}>
@@ -46,7 +45,7 @@ impl From<&FlexDirection> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::flex::FlexDirection;
+    /// use zirv_ui::options::flex::FlexDirection;
     /// 
     /// let direction_class: Classes = (&FlexDirection::Row).into();
     /// ```
@@ -79,7 +78,7 @@ impl From<&FlexWrap> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::flex::FlexWrap;
+    /// use zirv_ui::options::flex::FlexWrap;
     /// 
     /// let wrap_class: Classes = (&FlexWrap::Wrap).into();
     /// ```
@@ -115,7 +114,7 @@ impl From<&FlexAlign> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::flex::FlexAlign;
+    /// use zirv_ui::options::flex::FlexAlign;
     /// 
     /// let align_class: Classes = (&FlexAlign::Center).into();
     /// ```
@@ -155,7 +154,7 @@ impl From<&FlexJustify> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::flex::FlexJustify;
+    /// use zirv_ui::options::flex::FlexJustify;
     /// 
     /// let justify_class: Classes = (&FlexJustify::SpaceBetween).into();
     /// ```
@@ -188,7 +187,7 @@ impl From<&FlexGrow> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::flex::FlexGrow;
+    /// use zirv_ui::options::flex::FlexGrow;
     /// 
     /// let grow_class: Classes = (&FlexGrow::Grow).into();
     /// ```
@@ -217,7 +216,7 @@ impl From<&FlexShrink> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::flex::FlexShrink;
+    /// use zirv_ui::options::flex::FlexShrink;
     /// 
     /// let shrink_class: Classes = (&FlexShrink::Shrink).into();
     /// ```
@@ -267,9 +266,9 @@ impl From<&Flex> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::flex::{Flex, FlexAlign, FlexJustify, FlexWrap};
+    /// use zirv_ui::options::flex::{Flex, FlexAlign, FlexJustify, FlexWrap, FlexGap};
     /// 
-    /// let flex_class: Classes = (&Flex::Row(FlexAlign::Center, FlexJustify::SpaceBetween, FlexWrap::Wrap)).into();
+    /// let flex_class: Classes = (&Flex::Row(FlexAlign::Center, FlexJustify::SpaceBetween, FlexWrap::Wrap, FlexGap::Small)).into();
     /// ```
     fn from(flex: &Flex) -> Self {
         match flex {

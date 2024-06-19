@@ -7,7 +7,7 @@
 //! 
 //! ```rust
 //! use yew::{html, function_component, Html};
-//! use crate::options::box_shadow::BoxShadow;
+//! use zirv_ui::options::shadow::BoxShadow;
 //! use yew::Classes;
 //! 
 //! #[function_component(App)]
@@ -41,7 +41,7 @@ impl From<&BoxShadow> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::box_shadow::BoxShadow;
+    /// use zirv_ui::options::shadow::BoxShadow;
     /// 
     /// let box_shadow_class: Classes = (&BoxShadow::Some).into();
     /// ```

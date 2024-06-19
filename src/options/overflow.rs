@@ -7,7 +7,7 @@
 //! 
 //! ```rust
 //! use yew::{html, function_component, Html};
-//! use crate::options::overflow::Overflow;
+//! use zirv_ui::options::overflow::Overflow;
 //! use yew::Classes;
 //! 
 //! #[function_component(App)]
@@ -45,7 +45,7 @@ impl From<&Overflow> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::overflow::Overflow;
+    /// use zirv_ui::options::overflow::Overflow;
     /// 
     /// let overflow_class: Classes = (&Overflow::Hidden).into();
     /// ```

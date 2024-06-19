@@ -6,8 +6,8 @@
 //! # Example
 //! 
 //! ```rust
-//! use yew::{html, function_component, Html};
-//! use crate::options::size::{Height, Width};
+//! use yew::{html, function_component, Html, classes};
+//! use zirv_ui::options::size::{Height, Width};
 //! use yew::Classes;
 //! 
 //! #[function_component(App)]
@@ -69,7 +69,7 @@ impl From<&Height> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::size::Height;
+    /// use zirv_ui::options::size::Height;
     /// 
     /// let height_class: Classes = (&Height::Large).into();
     /// ```
@@ -131,7 +131,7 @@ impl From<&Width> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::size::Width;
+    /// use zirv_ui::options::size::Width;
     /// 
     /// let width_class: Classes = (&Width::Full).into();
     /// ```
@@ -193,7 +193,7 @@ impl From<&MinHeight> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::size::MinHeight;
+    /// use zirv_ui::options::size::MinHeight;
     /// 
     /// let min_height_class: Classes = (&MinHeight::Large).into();
     /// ```
@@ -255,7 +255,7 @@ impl From<&MaxHeight> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::size::MaxHeight;
+    /// use zirv_ui::options::size::MaxHeight;
     /// 
     /// let max_height_class: Classes = (&MaxHeight::Large).into();
     /// ```
@@ -317,7 +317,7 @@ impl From<&MinWidth> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::size::MinWidth;
+    /// use zirv_ui::options::size::MinWidth;
     /// 
     /// let min_width_class: Classes = (&MinWidth::Large).into();
     /// ```
@@ -379,7 +379,7 @@ impl From<&MaxWidth> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::size::MaxWidth;
+    /// use zirv_ui::options::size::MaxWidth;
     /// 
     /// let max_width_class: Classes = (&MaxWidth::Large).into();
     /// ```

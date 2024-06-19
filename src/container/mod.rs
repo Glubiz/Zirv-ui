@@ -7,7 +7,7 @@
 //! # Example
 //! 
 //! ```rust
-//! use yew::{html, Children};
+//! use yew::{html, Html, Children, function_component};
 //! use zirv_ui::{Container, ContainerProps};
 //! 
 //! #[function_component(App)]

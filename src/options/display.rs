@@ -6,9 +6,8 @@
 //! # Example
 //! 
 //! ```rust
-//! use yew::{html, function_component, Html};
-//! use crate::options::display::Display;
-//! use yew::Classes;
+//! use yew::{html, function_component, Html, Classes};
+//! use zirv_ui::options::display::Display;
 //! 
 //! #[function_component(App)]
 //! fn app() -> Html {
@@ -49,7 +48,7 @@ impl From<&Display> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::display::Display;
+    /// use zirv_ui::options::display::Display;
     /// 
     /// let display_class: Classes = (&Display::Flex).into();
     /// ```

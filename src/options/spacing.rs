@@ -6,17 +6,14 @@
 //! # Example
 //! 
 //! ```rust
-//! use yew::{html, function_component, Html};
-//! use crate::options::spacing::{Padding, Margin};
-//! use yew::Classes;
+//! use yew::{html, function_component, Html, Classes, classes};
+//! use zirv_ui::options::spacing::{Padding, Margin};
 //! 
 //! #[function_component(App)]
 //! fn app() -> Html {
-//!     let padding_class: Classes = (&Padding::Large).into();
-//!     let margin_class: Classes = (&Margin::Medium).into();
 //! 
 //!     html! {
-//!         <div class={classes!(padding_class, margin_class)}>
+//!         <div class={classes!(&Margin::Medium, &Padding::Medium)}>
 //!             {"This div has large padding and medium margin"}
 //!         </div>
 //!     }
@@ -46,7 +43,7 @@ impl From<&Padding> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::spacing::Padding;
+    /// use zirv_ui::options::spacing::Padding;
     /// 
     /// let padding_class: Classes = (&Padding::Large).into();
     /// ```
@@ -81,7 +78,7 @@ impl From<&Margin> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::spacing::Margin;
+    /// use zirv_ui::options::spacing::Margin;
     /// 
     /// let margin_class: Classes = (&Margin::Medium).into();
     /// ```

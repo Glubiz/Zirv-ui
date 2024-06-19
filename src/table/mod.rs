@@ -9,7 +9,7 @@
 //! ```rust
 //! use yew::{html, function_component, Html};
 //! use zirv_ui::{Table, TableProps};
-//! use crate::options::size::Width;
+//! use zirv_ui::options::size::Width;
 //! 
 //! #[function_component(App)]
 //! fn app() -> Html {

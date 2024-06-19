@@ -6,9 +6,8 @@
 //! # Example
 //! 
 //! ```rust
-//! use yew::{html, function_component, Html};
-//! use crate::options::color::BackgroundColor;
-//! use yew::Classes;
+//! use yew::{html, function_component, Html, Classes};
+//! use zirv_ui::options::color::BackgroundColor;
 //! 
 //! #[function_component(App)]
 //! fn app() -> Html {
@@ -99,7 +98,7 @@ impl From<&BackgroundColor> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::color::BackgroundColor;
+    /// use zirv_ui::options::color::BackgroundColor;
     /// 
     /// let background_class: Classes = (&BackgroundColor::Primary).into();
     /// ```

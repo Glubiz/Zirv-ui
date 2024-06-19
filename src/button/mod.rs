@@ -7,7 +7,7 @@
 //! # Example
 //! 
 //! ```rust
-//! use yew::{html, Callback};
+//! use yew::{html, Html, Callback, function_component};
 //! use zirv_ui::{Button, ButtonProps};
 //! 
 //! #[function_component(App)]

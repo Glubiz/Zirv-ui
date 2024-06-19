@@ -7,9 +7,8 @@
 //! # Example
 //! 
 //! ```rust
-//! use yew::{html, function_component, Html};
-//! use crate::options::text::{FontSize, TextAlign, TextColor};
-//! use yew::Classes;
+//! use yew::{html, function_component, Html, Classes, classes};
+//! use zirv_ui::options::font::{FontSize, TextAlign, TextColor};
 //! 
 //! #[function_component(App)]
 //! fn app() -> Html {
@@ -50,7 +49,7 @@ impl From<&FontSize> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::text::FontSize;
+    /// use zirv_ui::options::font::FontSize;
     /// 
     /// let font_size_class: Classes = (&FontSize::Large).into();
     /// ```
@@ -86,7 +85,7 @@ impl From<&FontWeight> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::text::FontWeight;
+    /// use zirv_ui::options::font::FontWeight;
     /// 
     /// let font_weight_class: Classes = (&FontWeight::Bold).into();
     /// ```
@@ -117,7 +116,7 @@ impl From<&FontStyle> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::text::FontStyle;
+    /// use zirv_ui::options::font::FontStyle;
     /// 
     /// let font_style_class: Classes = (&FontStyle::Italic).into();
     /// ```
@@ -150,7 +149,7 @@ impl From<&FontFamily> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::text::FontFamily;
+    /// use zirv_ui::options::font::FontFamily;
     /// 
     /// let font_family_class: Classes = (&FontFamily::Helvetica).into();
     /// ```
@@ -185,7 +184,7 @@ impl From<&TextAlign> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::text::TextAlign;
+    /// use zirv_ui::options::font::TextAlign;
     /// 
     /// let text_align_class: Classes = (&TextAlign::Center).into();
     /// ```
@@ -220,7 +219,7 @@ impl From<&TextTransform> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::text::TextTransform;
+    /// use zirv_ui::options::font::TextTransform;
     /// 
     /// let text_transform_class: Classes = (&TextTransform::Uppercase).into();
     /// ```
@@ -255,7 +254,7 @@ impl From<&TextDecoration> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::text::TextDecoration;
+    /// use zirv_ui::options::font::TextDecoration;
     /// 
     /// let text_decoration_class: Classes = (&TextDecoration::Underline).into();
     /// ```
@@ -288,7 +287,7 @@ impl From<&TextOverflow> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::text::TextOverflow;
+    /// use zirv_ui::options::font::TextOverflow;
     /// 
     /// let text_overflow_class: Classes = (&TextOverflow::Ellipsis).into();
     /// ```
@@ -318,7 +317,7 @@ impl From<&TextShadow> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::text::TextShadow;
+    /// use zirv_ui::options::font::TextShadow;
     /// 
     /// let text_shadow_class: Classes = (&TextShadow::Shadow).into();
     /// ```
@@ -347,7 +346,7 @@ impl From<&TextStroke> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::text::TextStroke;
+    /// use zirv_ui::options::font::TextStroke;
     /// 
     /// let text_stroke_class: Classes = (&TextStroke::Stroke).into();
     /// ```
@@ -394,7 +393,7 @@ impl From<&TextColor> for Classes {
     /// 
     /// ```rust
     /// use yew::Classes;
-    /// use crate::options::text::TextColor;
+    /// use zirv_ui::options::font::TextColor;
     /// 
     /// let text_color_class: Classes = (&TextColor::Primary).into();
     /// ```
