@@ -1,4 +1,7 @@
-use yew::{classes, Classes};
+use yew::{
+    classes,
+    Classes,
+};
 
 #[derive(Clone, PartialEq, Default)]
 pub enum ZIndex {

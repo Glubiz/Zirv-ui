@@ -4,9 +4,18 @@
 //! is used to display toast notifications with various properties and event handlers for click,
 //! mouse enter, and mouse leave events.
 
+use yew::{
+    classes,
+    function_component,
+    html,
+    Callback,
+    Html,
+    MouseEvent,
+    Properties,
+};
+
 use super::Toast;
 use crate::toast::utils::Notifiable;
-use yew::{classes, function_component, html, Callback, Html, MouseEvent, Properties};
 
 /// Properties for the `ToastComponent`.
 #[derive(Properties, Clone, PartialEq)]

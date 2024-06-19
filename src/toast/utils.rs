@@ -6,9 +6,16 @@
 //! enum for categorizing toasts.
 
 use std::any::Any;
+
 use time::Duration;
 use uuid::Uuid;
-use yew::{classes, Callback, Classes, Html, MouseEvent};
+use yew::{
+    classes,
+    Callback,
+    Classes,
+    Html,
+    MouseEvent,
+};
 
 /// Trait defining a notifiable toast notification.
 ///

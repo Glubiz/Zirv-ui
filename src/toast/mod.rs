@@ -1,12 +1,20 @@
 //! Toast Module
 //!
-//! This module provides the `Toast` struct, which represents a toast notification, and implements the `Notifiable`
-//! trait for managing its lifecycle. Toast notifications are used to display brief messages to the user and can be
-//! customized in terms of type, title, text, and appearance. The module also includes various submodules for
+//! This module provides the `Toast` struct, which represents a toast notification, and implements
+//! the `Notifiable` trait for managing its lifecycle. Toast notifications are used to display brief
+//! messages to the user and can be customized in terms of type, title, text, and appearance. The
+//! module also includes various submodules for
 
-use self::utils::{Notifiable, ToastType};
-use time::{Duration, OffsetDateTime};
+use time::{
+    Duration,
+    OffsetDateTime,
+};
 use uuid::Uuid;
+
+use self::utils::{
+    Notifiable,
+    ToastType,
+};
 
 pub mod component;
 pub mod component_factory;

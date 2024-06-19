@@ -1,13 +1,21 @@
 //! Image Component
 //!
 //! This module provides a customizable image component for the Yew framework. The `Image` component
-//! supports various properties such as source URL, alt text, height, width, and additional CSS classes.
+//! supports various properties such as source URL, alt text, height, width, and additional CSS
+//! classes.
 //!
 //! # Example
 //!
 //! ```rust
-//! use yew::{html, Html, function_component};
-//! use zirv_ui::{Image, ImageProps};
+//! use yew::{
+//!     function_component,
+//!     html,
+//!     Html,
+//! };
+//! use zirv_ui::{
+//!     Image,
+//!     ImageProps,
+//! };
 //!
 //! #[function_component(App)]
 //! fn app() -> Html {
@@ -17,8 +25,19 @@
 //! }
 //! ```
 
-use crate::options::size::{Height, Width};
-use yew::{classes, function_component, html, Classes, Html, Properties};
+use yew::{
+    classes,
+    function_component,
+    html,
+    Classes,
+    Html,
+    Properties,
+};
+
+use crate::options::size::{
+    Height,
+    Width,
+};
 
 /// Properties for the `Image` component.
 #[derive(Clone, PartialEq, Default, Properties)]

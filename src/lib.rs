@@ -7,7 +7,8 @@
 //!
 //! # Example
 //!
-//! To use the components in your Yew application, enable the appropriate features in your `Cargo.toml`:
+//! To use the components in your Yew application, enable the appropriate features in your
+//! `Cargo.toml`:
 //!
 //! ```toml
 //! [dependencies.zirv_ui]
@@ -18,8 +19,17 @@
 //! Then, import and use the components as needed:
 //!
 //! ```rust
-//! use yew::{html, Html, Callback};
-//! use zirv_ui::{Button, ButtonProps, Container, ContainerProps};
+//! use yew::{
+//!     html,
+//!     Callback,
+//!     Html,
+//! };
+//! use zirv_ui::{
+//!     Button,
+//!     ButtonProps,
+//!     Container,
+//!     ContainerProps,
+//! };
 //!
 //! fn view() -> Html {
 //!     html! {
@@ -47,26 +57,40 @@ pub mod table;
 pub mod text;
 pub mod toast;
 
-pub use options::*;
-
 #[cfg(feature = "button")]
-pub use button::{Button, ButtonProps};
-
+pub use button::{
+    Button,
+    ButtonProps,
+};
 #[cfg(feature = "container")]
-pub use container::{Container, ContainerProps};
-
+pub use container::{
+    Container,
+    ContainerProps,
+};
 #[cfg(feature = "flex")]
-pub use flex::{Flex, FlexProps};
-
+pub use flex::{
+    Flex,
+    FlexProps,
+};
+#[cfg(feature = "image")]
+pub use image::{
+    Image,
+    ImageProps,
+};
 // #[cfg(feature = "list")]
 // pub use list::{List, ListProps};
-
 #[cfg(feature = "loader")]
-pub use loader::{Loader, LoaderProps, Style};
-
+pub use loader::{
+    Loader,
+    LoaderProps,
+    Style,
+};
+pub use options::*;
 #[cfg(feature = "table")]
-pub use table::{Table, TableProps};
-
+pub use table::{
+    Table,
+    TableProps,
+};
 // #[cfg(feature = "menu")]
 // pub use menu::{
 //     component::{MenuComponent, MenuComponentProps},
@@ -76,24 +100,34 @@ pub use table::{Table, TableProps};
 //     utils::MenuType,
 //     Menu,
 // };
-
 #[cfg(feature = "text")]
 pub use text::{
-    headline::{Headline, HeadlineProps},
-    paragraph::{Paragraph, ParagraphProps},
-    subheadline::{Subheadline, SubheadlineProps},
+    headline::{
+        Headline,
+        HeadlineProps,
+    },
+    paragraph::{
+        Paragraph,
+        ParagraphProps,
+    },
+    subheadline::{
+        Subheadline,
+        SubheadlineProps,
+    },
 };
-
 #[cfg(feature = "toast")]
 pub use toast::{
-    component::{ToastComponent, ToastComponentProps},
+    component::{
+        ToastComponent,
+        ToastComponentProps,
+    },
     component_factory::ToastFactory,
     manager::ToastManager,
-    provider::{ToastProvider, ToastProviderProps},
+    provider::{
+        ToastProvider,
+        ToastProviderProps,
+    },
     use_toast::use_toast,
     utils::ToastType,
     Toast,
 };
-
-#[cfg(feature = "image")]
-pub use image::{Image, ImageProps};

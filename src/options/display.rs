@@ -1,12 +1,18 @@
 //! Display Enum
 //!
-//! This module defines the `Display` enum, which represents various display property options for CSS.
-//! It also provides an implementation to convert `Display` into Yew's `Classes` for CSS styling.
+//! This module defines the `Display` enum, which represents various display property options for
+//! CSS. It also provides an implementation to convert `Display` into Yew's `Classes` for CSS
+//! styling.
 //!
 //! # Example
 //!
 //! ```rust
-//! use yew::{html, function_component, Html, Classes};
+//! use yew::{
+//!     function_component,
+//!     html,
+//!     Classes,
+//!     Html,
+//! };
 //! use zirv_ui::options::display::Display;
 //!
 //! #[function_component(App)]
@@ -21,7 +27,10 @@
 //! }
 //! ```
 
-use yew::{classes, Classes};
+use yew::{
+    classes,
+    Classes,
+};
 
 /// Enum representing the display property options.
 #[derive(Debug, Clone, PartialEq, Default)]

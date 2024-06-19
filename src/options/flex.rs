@@ -1,18 +1,36 @@
 //! Flexbox Enums
 //!
-//! This module defines several enums representing different flexbox properties: `FlexDirection`, `FlexWrap`,
-//! `FlexAlign`, `FlexJustify`, `FlexGrow`, `FlexShrink`, and `Flex`. Each enum can be converted into Yew's `Classes`
-//! for CSS styling.
+//! This module defines several enums representing different flexbox properties: `FlexDirection`,
+//! `FlexWrap`, `FlexAlign`, `FlexJustify`, `FlexGrow`, `FlexShrink`, and `Flex`. Each enum can be
+//! converted into Yew's `Classes` for CSS styling.
 //!
 //! # Example
 //!
 //! ```rust
-//! use yew::{html, function_component, Html, Classes};
-//! use zirv_ui::options::flex::{Flex, FlexAlign, FlexDirection, FlexJustify, FlexWrap, FlexGap};
+//! use yew::{
+//!     function_component,
+//!     html,
+//!     Classes,
+//!     Html,
+//! };
+//! use zirv_ui::options::flex::{
+//!     Flex,
+//!     FlexAlign,
+//!     FlexDirection,
+//!     FlexGap,
+//!     FlexJustify,
+//!     FlexWrap,
+//! };
 //!
 //! #[function_component(App)]
 //! fn app() -> Html {
-//!     let flex_class: Classes = (&Flex::Row(FlexAlign::Center, FlexJustify::SpaceBetween, FlexWrap::Wrap, FlexGap::Small)).into();
+//!     let flex_class: Classes = (&Flex::Row(
+//!         FlexAlign::Center,
+//!         FlexJustify::SpaceBetween,
+//!         FlexWrap::Wrap,
+//!         FlexGap::Small,
+//!     ))
+//!         .into();
 //!
 //!     html! {
 //!         <div class={flex_class}>
@@ -22,7 +40,10 @@
 //! }
 //! ```
 
-use yew::{classes, Classes};
+use yew::{
+    classes,
+    Classes,
+};
 
 /// Enum representing the flex direction options.
 #[derive(Debug, Clone, PartialEq, Default)]
@@ -266,9 +287,17 @@ impl From<&Flex> for Classes {
     ///
     /// ```rust
     /// use yew::Classes;
-    /// use zirv_ui::options::flex::{Flex, FlexAlign, FlexJustify, FlexWrap, FlexGap};
+    /// use zirv_ui::options::flex::{
+    ///     Flex,
+    ///     FlexAlign,
+    ///     FlexGap,
+    ///     FlexJustify,
+    ///     FlexWrap,
+    /// };
     ///
-    /// let flex_class: Classes = (&Flex::Row(FlexAlign::Center, FlexJustify::SpaceBetween, FlexWrap::Wrap, FlexGap::Small)).into();
+    /// let flex_class: Classes =
+    ///     (&Flex::Row(FlexAlign::Center, FlexJustify::SpaceBetween, FlexWrap::Wrap, FlexGap::Small))
+    ///         .into();
     /// ```
     fn from(flex: &Flex) -> Self {
         match flex {

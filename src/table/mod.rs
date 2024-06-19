@@ -1,22 +1,37 @@
 //! Table Component
 //!
 //! This module provides a customizable table component for the Yew framework. The `Table` component
-//! supports various layout and styling options for the table, rows, and cells, such as border properties,
-//! width, height, padding, margin, text alignment, and overflow.
+//! supports various layout and styling options for the table, rows, and cells, such as border
+//! properties, width, height, padding, margin, text alignment, and overflow.
 //!
 //! # Example
 //!
 //! ```rust
-//! use yew::{html, function_component, Html};
-//! use zirv_ui::{Table, TableProps};
-//! use zirv_ui::options::size::Width;
+//! use yew::{
+//!     function_component,
+//!     html,
+//!     Html,
+//! };
+//! use zirv_ui::{
+//!     options::size::Width,
+//!     Table,
+//!     TableProps,
+//! };
 //!
 //! #[function_component(App)]
 //! fn app() -> Html {
 //!     let headers = vec!["Header 1".to_string(), "Header 2".to_string(), "Header 3".to_string()];
 //!     let data = vec![
-//!         vec!["Row 1, Cell 1".to_string(), "Row 1, Cell 2".to_string(), "Row 1, Cell 3".to_string()],
-//!         vec!["Row 2, Cell 1".to_string(), "Row 2, Cell 2".to_string(), "Row 2, Cell 3".to_string()],
+//!         vec![
+//!             "Row 1, Cell 1".to_string(),
+//!             "Row 1, Cell 2".to_string(),
+//!             "Row 1, Cell 3".to_string(),
+//!         ],
+//!         vec![
+//!             "Row 2, Cell 1".to_string(),
+//!             "Row 2, Cell 2".to_string(),
+//!             "Row 2, Cell 3".to_string(),
+//!         ],
 //!     ];
 //!
 //!     html! {
@@ -25,13 +40,27 @@
 //! }
 //! ```
 
+use yew::{
+    classes,
+    function_component,
+    html,
+    Html,
+    Properties,
+};
+
 use crate::options::{
-    border::{BorderRadius, BorderStyle, BorderWidth},
+    border::{
+        BorderRadius,
+        BorderStyle,
+        BorderWidth,
+    },
     font::TextAlign,
     overflow::Overflow,
-    size::{Height, Width},
+    size::{
+        Height,
+        Width,
+    },
 };
-use yew::{classes, function_component, html, Html, Properties};
 
 /// Properties for the `Table` component.
 #[derive(Clone, PartialEq, Properties, Default)]
@@ -119,8 +148,9 @@ pub struct TableProps {
 
 /// The `Table` component.
 ///
-/// The `Table` component is used to display tabular data with customizable properties for the table, rows, and cells.
-/// It supports various styling options such as border properties, width, height, padding, margin, text alignment, and overflow.
+/// The `Table` component is used to display tabular data with customizable properties for the
+/// table, rows, and cells. It supports various styling options such as border properties, width,
+/// height, padding, margin, text alignment, and overflow.
 ///
 /// # Properties
 ///
@@ -186,20 +216,13 @@ pub fn table(props: &TableProps) -> Html {
         &props.cell_text_align,
     };
 
-    let headers = props
-        .headers
-        .iter()
-        .map(|header| html! { <th>{header}</th> })
-        .collect::<Html>();
+    let headers = props.headers.iter().map(|header| html! { <th>{header}</th> }).collect::<Html>();
 
     let data = props
         .data
         .iter()
         .map(|row| {
-            let cells = row
-                .iter()
-                .map(|cell| html! { <td class={cell_classes.clone()}>{cell}</td> })
-                .collect::<Html>();
+            let cells = row.iter().map(|cell| html! { <td class={cell_classes.clone()}>{cell}</td> }).collect::<Html>();
 
             html! { <tr class={row_classes.clone()}>{cells}</tr> }
         })

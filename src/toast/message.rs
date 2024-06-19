@@ -1,7 +1,7 @@
 //! Toast Component
 //!
-//! This module provides a simple toast notification component for the Yew framework. The `Toast` component
-//! displays a message with a specific type that determines its styling.
+//! This module provides a simple toast notification component for the Yew framework. The `Toast`
+//! component displays a message with a specific type that determines its styling.
 
 use yew::prelude::*;
 
@@ -16,8 +16,8 @@ pub struct ToastProps {
 
 /// The `Toast` component.
 ///
-/// The `Toast` component displays a message with a specific type that determines its styling. The type can be
-/// used to apply different CSS classes for styling purposes.
+/// The `Toast` component displays a message with a specific type that determines its styling. The
+/// type can be used to apply different CSS classes for styling purposes.
 ///
 /// # Properties
 ///

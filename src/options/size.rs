@@ -1,14 +1,23 @@
 //! Size Enums
 //!
-//! This module defines several enums representing different size properties: `Height`, `Width`, `MinHeight`,
-//! `MaxHeight`, `MinWidth`, and `MaxWidth`. Each enum can be converted into Yew's `Classes` for CSS styling.
+//! This module defines several enums representing different size properties: `Height`, `Width`,
+//! `MinHeight`, `MaxHeight`, `MinWidth`, and `MaxWidth`. Each enum can be converted into Yew's
+//! `Classes` for CSS styling.
 //!
 //! # Example
 //!
 //! ```rust
-//! use yew::{html, function_component, Html, classes};
-//! use zirv_ui::options::size::{Height, Width};
-//! use yew::Classes;
+//! use yew::{
+//!     classes,
+//!     function_component,
+//!     html,
+//!     Classes,
+//!     Html,
+//! };
+//! use zirv_ui::options::size::{
+//!     Height,
+//!     Width,
+//! };
 //!
 //! #[function_component(App)]
 //! fn app() -> Html {
@@ -23,7 +32,10 @@
 //! }
 //! ```
 
-use yew::{classes, Classes};
+use yew::{
+    classes,
+    Classes,
+};
 
 #[derive(Debug, Clone, PartialEq, Default)]
 pub enum CustomType {

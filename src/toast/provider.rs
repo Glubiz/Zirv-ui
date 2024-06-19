@@ -1,16 +1,35 @@
 //! Toast Provider Component
 //!
-//! This module provides the `ToastProvider` component for the Yew framework. The `ToastProvider` component
-//! is responsible for managing and displaying toast notifications within a specified context.
-//! It leverages the `ToastManager` and `ToastsList` to handle the lifecycle of toasts and the `NotifiableComponentFactory`
-//! to create the toast components.
+//! This module provides the `ToastProvider` component for the Yew framework. The `ToastProvider`
+//! component is responsible for managing and displaying toast notifications within a specified
+//! context. It leverages the `ToastManager` and `ToastsList` to handle the lifecycle of toasts and
+//! the `NotifiableComponentFactory` to create the toast components.
 
-use super::manager::{Action, ToastManager, ToastsList};
-use super::utils::{Notifiable, NotifiableComponentFactory};
 use std::marker::PhantomData;
+
 use yew::{
-    classes, function_component, html, use_effect_with, use_reducer_eq, Callback, Children, ContextProvider, Html,
+    classes,
+    function_component,
+    html,
+    use_effect_with,
+    use_reducer_eq,
+    Callback,
+    Children,
+    ContextProvider,
+    Html,
     Properties,
+};
+
+use super::{
+    manager::{
+        Action,
+        ToastManager,
+        ToastsList,
+    },
+    utils::{
+        Notifiable,
+        NotifiableComponentFactory,
+    },
 };
 
 /// Properties for the `ToastProvider` component.
@@ -27,9 +46,9 @@ pub struct ToastProviderProps<T: Notifiable + PartialEq, F: NotifiableComponentF
 
 /// The `ToastProvider` component.
 ///
-/// The `ToastProvider` component is responsible for managing and displaying toast notifications within a specified context.
-/// It leverages the `ToastManager` and `ToastsList` to handle the lifecycle of toasts and the `NotifiableComponentFactory`
-/// to create the toast components.
+/// The `ToastProvider` component is responsible for managing and displaying toast notifications
+/// within a specified context. It leverages the `ToastManager` and `ToastsList` to handle the
+/// lifecycle of toasts and the `NotifiableComponentFactory` to create the toast components.
 ///
 /// # Properties
 ///
@@ -42,9 +61,7 @@ pub fn toast_provider<T: Notifiable + PartialEq + Clone, F: NotifiableComponentF
 ) -> Html {
     let toasts = use_reducer_eq(ToastsList::<T>::default);
 
-    let manager = ToastManager {
-        sender: Some(toasts.dispatcher()),
-    };
+    let manager = ToastManager { sender: Some(toasts.dispatcher()) };
 
     use_effect_with((!toasts.is_empty(), toasts.dispatcher()), |(is_active, sender)| {
         use gloo::timers::callback::Interval;

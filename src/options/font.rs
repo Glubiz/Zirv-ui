@@ -1,14 +1,25 @@
 //! Text Styling Enums
 //!
-//! This module defines several enums representing different text styling properties: `FontSize`, `FontWeight`,
-//! `FontStyle`, `FontFamily`, `TextAlign`, `TextTransform`, `TextDecoration`, `TextOverflow`, `TextShadow`,
-//! `TextStroke`, and `TextColor`. Each enum can be converted into Yew's `Classes` for CSS styling.
+//! This module defines several enums representing different text styling properties: `FontSize`,
+//! `FontWeight`, `FontStyle`, `FontFamily`, `TextAlign`, `TextTransform`, `TextDecoration`,
+//! `TextOverflow`, `TextShadow`, `TextStroke`, and `TextColor`. Each enum can be converted into
+//! Yew's `Classes` for CSS styling.
 //!
 //! # Example
 //!
 //! ```rust
-//! use yew::{html, function_component, Html, Classes, classes};
-//! use zirv_ui::options::font::{FontSize, TextAlign, TextColor};
+//! use yew::{
+//!     classes,
+//!     function_component,
+//!     html,
+//!     Classes,
+//!     Html,
+//! };
+//! use zirv_ui::options::font::{
+//!     FontSize,
+//!     TextAlign,
+//!     TextColor,
+//! };
 //!
 //! #[function_component(App)]
 //! fn app() -> Html {
@@ -24,7 +35,10 @@
 //! }
 //! ```
 
-use yew::{classes, Classes};
+use yew::{
+    classes,
+    Classes,
+};
 
 /// Enum representing the font size options.
 #[derive(Debug, Clone, PartialEq, Default)]

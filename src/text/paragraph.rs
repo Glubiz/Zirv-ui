@@ -1,7 +1,8 @@
 //! Paragraph Component
 //!
-//! This module provides a customizable paragraph component for the Yew framework. The `Paragraph` component
-//! supports various styling options for font size, weight, style, and family, as well as additional CSS classes.
+//! This module provides a customizable paragraph component for the Yew framework. The `Paragraph`
+//! component supports various styling options for font size, weight, style, and family, as well as
+//! additional CSS classes.
 //!
 //! # Example
 //!
@@ -20,8 +21,22 @@
 //! }
 //! ```
 
-use crate::options::font::{FontFamily, FontSize, FontStyle, FontWeight};
-use yew::{classes, function_component, html, Children, Classes, Html, Properties};
+use yew::{
+    classes,
+    function_component,
+    html,
+    Children,
+    Classes,
+    Html,
+    Properties,
+};
+
+use crate::options::font::{
+    FontFamily,
+    FontSize,
+    FontStyle,
+    FontWeight,
+};
 
 /// Properties for the `Paragraph` component.
 #[derive(Properties, Clone, PartialEq)]

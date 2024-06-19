@@ -1,7 +1,8 @@
 //! Headline Component
 //!
-//! This module provides a customizable headline component for the Yew framework. The `Headline` component
-//! supports various styling options for font size, weight, style, and family, as well as additional CSS classes.
+//! This module provides a customizable headline component for the Yew framework. The `Headline`
+//! component supports various styling options for font size, weight, style, and family, as well as
+//! additional CSS classes.
 //!
 //! # Example
 //!
@@ -20,8 +21,22 @@
 //! }
 //! ```
 
-use crate::options::font::{FontFamily, FontSize, FontStyle, FontWeight};
-use yew::{classes, function_component, html, Children, Classes, Html, Properties};
+use yew::{
+    classes,
+    function_component,
+    html,
+    Children,
+    Classes,
+    Html,
+    Properties,
+};
+
+use crate::options::font::{
+    FontFamily,
+    FontSize,
+    FontStyle,
+    FontWeight,
+};
 
 /// Properties for the `Headline` component.
 #[derive(Properties, Clone, PartialEq)]
@@ -47,8 +62,9 @@ pub struct HeadlineProps {
 
 /// The `Headline` component.
 ///
-/// The `Headline` component is used to display a headline (typically an `<h1>` element) with customizable
-/// properties for font size, weight, style, and family, as well as additional CSS classes.
+/// The `Headline` component is used to display a headline (typically an `<h1>` element) with
+/// customizable properties for font size, weight, style, and family, as well as additional CSS
+/// classes.
 ///
 /// # Properties
 ///

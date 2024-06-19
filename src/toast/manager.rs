@@ -4,14 +4,22 @@
 //! It includes the `ToastManager` to manage the creation and dispatching of toast notifications
 //! and the `ToastsList` to handle the collection and state updates of toasts.
 
-use super::utils::Notifiable;
-use std::fmt::Debug;
-use std::rc::Rc;
+use std::{
+    fmt::Debug,
+    rc::Rc,
+};
+
 use time::Duration;
 use uuid::Uuid;
-use yew::{Reducible, UseReducerDispatcher};
+use yew::{
+    Reducible,
+    UseReducerDispatcher,
+};
 
-/// The `ToastManager` is responsible for managing the creation and dispatching of toast notifications.
+use super::utils::Notifiable;
+
+/// The `ToastManager` is responsible for managing the creation and dispatching of toast
+/// notifications.
 ///
 /// # Properties
 /// - `sender`: An optional dispatcher to send actions to the `ToastsList`.
@@ -43,9 +51,7 @@ where
     T: Notifiable + PartialEq + Clone,
 {
     fn default() -> Self {
-        Self {
-            sender: Default::default(),
-        }
+        Self { sender: Default::default() }
     }
 }
 
@@ -80,9 +86,7 @@ pub struct ToastsList<T> {
 
 impl<T> Default for ToastsList<T> {
     fn default() -> Self {
-        Self {
-            toasts: Default::default(),
-        }
+        Self { toasts: Default::default() }
     }
 }
 

@@ -1,13 +1,22 @@
 //! Toast Factory
 //!
-//! This module defines the `ToastFactory` struct and implements the `NotifiableComponentFactory` trait
-//! for creating `Toast` components in the Yew framework. The `ToastFactory` is responsible for generating
-//! `ToastComponent` instances with specific callbacks for click, mouse enter, and mouse leave events.
+//! This module defines the `ToastFactory` struct and implements the `NotifiableComponentFactory`
+//! trait for creating `Toast` components in the Yew framework. The `ToastFactory` is responsible
+//! for generating `ToastComponent` instances with specific callbacks for click, mouse enter, and
+//! mouse leave events.
 
-use super::component::ToastComponent;
-use super::utils::NotifiableComponentFactory;
-use super::Toast;
-use yew::{html, Callback, Html, MouseEvent};
+use yew::{
+    html,
+    Callback,
+    Html,
+    MouseEvent,
+};
+
+use super::{
+    component::ToastComponent,
+    utils::NotifiableComponentFactory,
+    Toast,
+};
 
 /// A factory for creating `ToastComponent` instances.
 #[derive(Clone, PartialEq, Default)]

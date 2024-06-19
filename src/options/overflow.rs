@@ -1,14 +1,19 @@
 //! Overflow Enum
 //!
-//! This module defines the `Overflow` enum, which represents various overflow property options for CSS.
-//! It also provides an implementation to convert `Overflow` into Yew's `Classes` for CSS styling.
+//! This module defines the `Overflow` enum, which represents various overflow property options for
+//! CSS. It also provides an implementation to convert `Overflow` into Yew's `Classes` for CSS
+//! styling.
 //!
 //! # Example
 //!
 //! ```rust
-//! use yew::{html, function_component, Html};
+//! use yew::{
+//!     function_component,
+//!     html,
+//!     Classes,
+//!     Html,
+//! };
 //! use zirv_ui::options::overflow::Overflow;
-//! use yew::Classes;
 //!
 //! #[function_component(App)]
 //! fn app() -> Html {
@@ -22,7 +27,10 @@
 //! }
 //! ```
 
-use yew::{classes, Classes};
+use yew::{
+    classes,
+    Classes,
+};
 
 /// Enum representing the overflow property options.
 #[derive(Clone, PartialEq, Debug, Default)]

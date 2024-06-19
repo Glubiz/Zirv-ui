@@ -1,12 +1,18 @@
 //! BackgroundColor Enum
 //!
-//! This module defines the `BackgroundColor` enum, which represents various background color options.
-//! It also provides an implementation to convert `BackgroundColor` into Yew's `Classes` for CSS styling.
+//! This module defines the `BackgroundColor` enum, which represents various background color
+//! options. It also provides an implementation to convert `BackgroundColor` into Yew's `Classes`
+//! for CSS styling.
 //!
 //! # Example
 //!
 //! ```rust
-//! use yew::{html, function_component, Html, Classes};
+//! use yew::{
+//!     function_component,
+//!     html,
+//!     Classes,
+//!     Html,
+//! };
 //! use zirv_ui::options::color::BackgroundColor;
 //!
 //! #[function_component(App)]
@@ -21,7 +27,10 @@
 //! }
 //! ```
 
-use yew::{classes, Classes};
+use yew::{
+    classes,
+    Classes,
+};
 
 /// Enum representing the background color options.
 pub enum BackgroundColor {

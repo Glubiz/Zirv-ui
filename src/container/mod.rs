@@ -1,14 +1,23 @@
 //! Container Component
 //!
-//! This module provides a customizable container component for the Yew framework. The `Container` component
-//! supports various layout and styling options such as width, height, display, flexbox properties, border properties,
-//! padding, margin, and background color. It also supports custom classes and can contain child elements.
+//! This module provides a customizable container component for the Yew framework. The `Container`
+//! component supports various layout and styling options such as width, height, display, flexbox
+//! properties, border properties, padding, margin, and background color. It also supports custom
+//! classes and can contain child elements.
 //!
 //! # Example
 //!
 //! ```rust
-//! use yew::{html, Html, Children, function_component};
-//! use zirv_ui::{Container, ContainerProps};
+//! use yew::{
+//!     function_component,
+//!     html,
+//!     Children,
+//!     Html,
+//! };
+//! use zirv_ui::{
+//!     Container,
+//!     ContainerProps,
+//! };
 //!
 //! #[function_component(App)]
 //! fn app() -> Html {
@@ -20,15 +29,43 @@
 //! }
 //! ```
 
-use yew::{classes, function_component, html, Children, Classes, Html, Properties};
+use yew::{
+    classes,
+    function_component,
+    html,
+    Children,
+    Classes,
+    Html,
+    Properties,
+};
 
 use crate::options::{
-    border::{Border, BorderColor, BorderRadius, BorderStyle, BorderWidth},
+    border::{
+        Border,
+        BorderColor,
+        BorderRadius,
+        BorderStyle,
+        BorderWidth,
+    },
     color::BackgroundColor,
     display::Display,
-    flex::{FlexAlign, FlexDirection, FlexGap, FlexGrow, FlexJustify, FlexShrink, FlexWrap},
-    size::{Height, Width},
-    spacing::{Margin, Padding},
+    flex::{
+        FlexAlign,
+        FlexDirection,
+        FlexGap,
+        FlexGrow,
+        FlexJustify,
+        FlexShrink,
+        FlexWrap,
+    },
+    size::{
+        Height,
+        Width,
+    },
+    spacing::{
+        Margin,
+        Padding,
+    },
 };
 
 /// Properties for the `Container` component.
@@ -97,9 +134,9 @@ pub struct ContainerProps {
 
 /// The `Container` component.
 ///
-/// The `Container` component is a versatile layout element that can be customized with various properties for
-/// width, height, display, flexbox layout, borders, padding, margin, and background color. It can also accept
-/// additional CSS classes and render child elements.
+/// The `Container` component is a versatile layout element that can be customized with various
+/// properties for width, height, display, flexbox layout, borders, padding, margin, and background
+/// color. It can also accept additional CSS classes and render child elements.
 ///
 /// # Properties
 ///
@@ -121,7 +158,8 @@ pub struct ContainerProps {
 /// - `border_style`: The border style of the container.
 /// - `padding`: The padding inside the container.
 /// - `margin`: The margin outside the container.
-/// - `background_color`: The background color of the container. Default is `BackgroundColor::Container`.
+/// - `background_color`: The background color of the container. Default is
+///   `BackgroundColor::Container`.
 /// - `classes`: Additional CSS classes to apply to the container.
 #[function_component(Container)]
 pub fn container(props: &ContainerProps) -> Html {

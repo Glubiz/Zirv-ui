@@ -1,14 +1,19 @@
 //! BoxShadow Enum
 //!
-//! This module defines the `BoxShadow` enum, which represents various box shadow property options for CSS.
-//! It also provides an implementation to convert `BoxShadow` into Yew's `Classes` for CSS styling.
+//! This module defines the `BoxShadow` enum, which represents various box shadow property options
+//! for CSS. It also provides an implementation to convert `BoxShadow` into Yew's `Classes` for CSS
+//! styling.
 //!
 //! # Example
 //!
 //! ```rust
-//! use yew::{html, function_component, Html};
+//! use yew::{
+//!     function_component,
+//!     html,
+//!     Classes,
+//!     Html,
+//! };
 //! use zirv_ui::options::shadow::BoxShadow;
-//! use yew::Classes;
 //!
 //! #[function_component(App)]
 //! fn app() -> Html {
@@ -22,7 +27,10 @@
 //! }
 //! ```
 
-use yew::{classes, Classes};
+use yew::{
+    classes,
+    Classes,
+};
 
 /// Enum representing the box shadow property options.
 #[derive(Debug, Clone, PartialEq, Default)]
