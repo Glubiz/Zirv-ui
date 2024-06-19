@@ -16,11 +16,11 @@ use super::utils::Notifiable;
 /// # Properties
 /// - `sender`: An optional dispatcher to send actions to the `ToastsList`.
 #[derive(Clone, PartialEq)]
-pub struct ToastManager<T: Notifiable + PartialEq + Clone> {
+pub struct ToastManager<T> where T: Notifiable + PartialEq + Clone {
     pub(crate) sender: Option<UseReducerDispatcher<ToastsList<T>>>,
 }
 
-impl<T: Notifiable + PartialEq + Clone> ToastManager<T> {
+impl<T> ToastManager<T> where T: Notifiable + PartialEq + Clone {
     /// Spawns a new toast notification.
     ///
     /// # Parameters
@@ -32,7 +32,7 @@ impl<T: Notifiable + PartialEq + Clone> ToastManager<T> {
     }
 }
 
-impl<T: Notifiable + PartialEq + Clone> Default for ToastManager<T> {
+impl<T> Default for ToastManager<T> where T: Notifiable + PartialEq + Clone {
     fn default() -> Self {
         Self {
             sender: Default::default(),
@@ -49,7 +49,7 @@ impl<T: Notifiable + PartialEq + Clone> Default for ToastManager<T> {
 /// - `Pause(id)`: Pauses a toast notification by its ID.
 /// - `Continue(id)`: Continues a toast notification by its ID.
 #[derive(Debug)]
-pub enum Action<T: Notifiable + PartialEq + Clone> {
+pub enum Action<T> where T: Notifiable + PartialEq + Clone {
     New(T),
     Close(Uuid),
     Tick,
@@ -84,7 +84,7 @@ impl<T> ToastsList<T> {
     }
 }
 
-impl<T: Notifiable + PartialEq + Clone> Reducible for ToastsList<T> {
+impl<T> Reducible for ToastsList<T> where T: Notifiable + PartialEq + Clone {
     type Action = Action<T>;
 
     /// Reduces the state based on the action received.

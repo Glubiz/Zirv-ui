@@ -10,6 +10,8 @@ use time::Duration;
 use uuid::Uuid;
 use yew::{classes, Callback, Classes, Html, MouseEvent};
 
+pub type T: Notifiable + PartialEq + Clone;
+
 /// Trait defining a notifiable toast notification.
 ///
 /// This trait provides methods for managing the lifecycle of a toast notification,

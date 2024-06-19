@@ -88,6 +88,6 @@ use super::utils::Notifiable;
 /// }
 /// ```
 #[hook]
-pub fn use_toast<T: Notifiable + PartialEq + Clone>() -> ToastManager<T> {
+pub fn use_toast<T>() -> ToastManager<T> where T: Notifiable + PartialEq + Clone, {
     use_context::<ToastManager<T>>().unwrap_or_default()
 }
