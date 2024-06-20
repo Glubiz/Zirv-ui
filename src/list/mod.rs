@@ -1,4 +1,4 @@
-use yew::{function_component, html, Html, Properties};
+use yew::{classes, function_component, html, Classes, Html, Properties};
 
 #[derive(Clone, PartialEq, Default)]
 pub enum ListStyle {
@@ -8,34 +8,39 @@ pub enum ListStyle {
 }
 
 #[derive(Clone, PartialEq, Properties)]
-pub struct ListProps<T: Into<String>> {
-    pub data: Vec<T>,
+pub struct ListProps {
+    pub data: Vec<String>,
     #[prop_or_default]
     pub style: Option<ListStyle>,
+    #[prop_or(None)]
+    pub classes: Option<Classes>,
 }
 
-#[function_component(List<T>)]
-pub fn list<T>(props: &ListProps<T>) -> Html {
-    let classes = match &props.style {
-        Some(style) => match style {
-            ListStyle::Ordered => "list-decimal",
-            ListStyle::Unordered => "list-disc",
-        },
-        None => "list-disc",
-    };
-
+#[function_component(List)]
+pub fn list<T>(props: &ListProps) -> Html {
     match &props.style {
         Some(style) => {
-            html! {
-                <ol class={classes}>
-                    {"List"}
-                </ol>
+            match style {
+                ListStyle::Ordered => {
+                    html! {
+                        <ol class={classes!(&props.classes)}>
+                            {props.data.iter().map(|item| html! { <li>{item}</li> }).collect::<Vec<_>>()}
+                        </ol>
+                    }
+                }
+                ListStyle::Unordered => {
+                    html! {
+                        <ul class={classes!(&props.classes)}>
+                            {props.data.iter().map(|item| html! { <li>{item}</li> }).collect::<Vec<_>>()}
+                        </ul>
+                    }
+                }
             }
         }
         None => {
             html! {
-                <ul class={classes}>
-                    {"List"}
+                <ul class={classes!(&props.classes)}>
+                    {props.data.iter().map(|item| html! { <li>{item}</li> }).collect::<Vec<_>>()}
                 </ul>
             }
         }

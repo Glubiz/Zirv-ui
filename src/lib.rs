@@ -48,7 +48,7 @@
 pub mod button;
 pub mod container;
 pub mod flex;
-// pub mod list;
+pub mod list;
 pub mod loader;
 // pub mod menu;
 pub mod image;
@@ -77,8 +77,8 @@ pub use image::{
     Image,
     ImageProps,
 };
-// #[cfg(feature = "list")]
-// pub use list::{List, ListProps};
+#[cfg(feature = "list")]
+pub use list::{List, ListProps};
 #[cfg(feature = "loader")]
 pub use loader::{
     Loader,
