@@ -78,7 +78,10 @@ pub use image::{
     ImageProps,
 };
 #[cfg(feature = "list")]
-pub use list::{List, ListProps};
+pub use list::{
+    List,
+    ListProps,
+};
 #[cfg(feature = "loader")]
 pub use loader::{
     Loader,
