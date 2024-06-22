@@ -46,6 +46,7 @@
 //! ```
 
 pub mod button;
+pub mod code_block;
 pub mod container;
 pub mod flex;
 pub mod image;
@@ -56,12 +57,16 @@ pub mod options;
 pub mod table;
 pub mod text;
 pub mod toast;
-pub mod code_block;
 
 #[cfg(feature = "button")]
 pub use button::{
     Button,
     ButtonProps,
+};
+#[cfg(feature = "code_block")]
+pub use code_block::{
+    CodeBlock,
+    CodeBlockProps,
 };
 #[cfg(feature = "container")]
 pub use container::{
@@ -139,10 +144,4 @@ pub use toast::{
     use_toast::use_toast,
     utils::ToastType,
     Toast,
-};
-
-#[cfg(feature = "code_block")]
-pub use code_block::{
-    CodeBlock,
-    CodeBlockProps,
 };
