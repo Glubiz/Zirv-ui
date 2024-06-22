@@ -5,11 +5,12 @@ mod sections;
 
 use wasm_bindgen::prelude::*;
 use yew::{function_component, html, Html};
-use yew_nested_router::prelude::{Switch as RouterSwitch, *};
+use yew_router::{Routable, switch:: Switch, router::BrowserRouter};
 
-use crate::router::{switch_app_route, AppRoute};
 use components::header::Header;
-use zirv_ui::{Toast, ToastFactory, ToastProvider};
+use zirv_ui::{Toast, ToastFactory, ToastProvider, MenuItem, MenuProvider, Menu};
+
+use crate::router::{Route, switch};
 
 #[cfg(debug_assertions)]
 const LOG_LEVEL: log::Level = log::Level::Trace;
@@ -24,12 +25,26 @@ pub fn main() -> Result<(), JsValue> {
 pub fn app() -> Html {
     let component_creator = ToastFactory;
 
+    let menu_items = vec![
+        MenuItem {
+            text: "Home".to_string(),
+            url: Route::Index.to_path(),
+        },
+        MenuItem {
+            text: "Getting Started".to_string(),
+            url: Route::GettingStarted.to_path(),
+        },
+    ];
+
     html! {
         <ToastProvider<Toast, ToastFactory> {component_creator}>
-            <Header/>
-            <Router<AppRoute> default={AppRoute::Index}>
-                <RouterSwitch<AppRoute> render={switch_app_route} />
-            </Router<AppRoute>>
+            <MenuProvider>
+                <Header/>
+                <Menu items={menu_items} />
+                <BrowserRouter>
+                    <Switch<Route> render={switch} />
+                </BrowserRouter>
+            </MenuProvider>
         </ToastProvider<Toast, ToastFactory>>
     }
 }

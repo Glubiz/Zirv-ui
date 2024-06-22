@@ -1,39 +1,29 @@
-use std::marker::PhantomData;
+use yew::{function_component, html, use_state, Callback, Children, Html, Properties, ContextProvider};
 
-use yew::{function_component, html, Callback, Children, ContextProvider, Html, Properties};
+use crate::menu::use_menu::MenuState;
 
-use super::manager::MenuManager;
-
-#[derive(Properties, PartialEq, Clone)]
-pub struct MenuProviderProps<T: PartialEq + Clone, F: PartialEq + Clone> {
+#[derive(Clone, PartialEq, Properties)]
+pub struct MenuProviderProps {
     pub children: Children,
-    pub component_creator: F,
-    #[prop_or_default]
-    pub _menu: PhantomData<T>,
 }
 
 #[function_component(MenuProvider)]
-pub fn menu_provider<T: PartialEq + Clone, F: PartialEq + Clone>(props: &MenuProviderProps<T, F>) -> Html {
-    let manager = MenuManager {
-        sender: Some(menu.dispatcher()),
+pub fn menu_provider(props: &MenuProviderProps) -> Html {
+    let is_open = use_state(|| false);
+
+    let toggle = {
+        let is_open = is_open.clone();
+        Callback::from(move |_| is_open.set(!*is_open))
     };
 
-    let dispatcher = toasts.dispatcher();
-
-    let creator = &props.component_creator;
+    let menu_state = MenuState {
+        is_open: *is_open,
+        toggle,
+    };
 
     html! {
-        <ContextProvider<ManuManager<T>> context={manager}>
-            <div class={classes!("menu")}>
-                let onclick = {
-                    let dispatcher = dispatcher.clone();
-                    Callback::from(move |_| {
-                        dispatcher.dispatch(Action::Close(id));
-                    })
-                };
-
-                creator.component(toast, onclick)
-            </div>
-        </ContextProvider<ToastManager<T>>>
+        <ContextProvider<MenuState> context={menu_state}>
+            {props.children.clone()}
+        </ContextProvider<MenuState>>
     }
 }

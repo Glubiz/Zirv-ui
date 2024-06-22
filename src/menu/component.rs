@@ -1,26 +1,35 @@
-use yew::{classes, function_component, html, Callback, Html, MouseEvent, Properties};
+use yew::prelude::*;
 
-use super::message::Menu;
+use crate::menu::use_menu::MenuState;
 
-#[derive(Properties, Clone, PartialEq)]
-pub struct MenuComponentProps {
-    pub menu: Menu,
-    pub onclick: Callback<MouseEvent>,
+#[derive(PartialEq)]
+pub struct MenuItem {
+    pub text: String,
+    pub url: String,
 }
 
-#[function_component(MenuComponent)]
-pub fn menu_component(props: &MenuComponentProps) -> Html {
-    let onclick = &props.onclick;
+#[derive(Properties, PartialEq)]
+pub struct MenuProps {
+    pub items: Vec<MenuItem>,
+}
 
-    let mut classes = vec![classes!("menu")];
+#[function_component(Menu)]
+pub fn menu(props: &MenuProps) -> Html {
+    let menu_state = use_context::<MenuState>().expect("No context found!");
 
-    if let Some(additional_classes) = &props.menu.classes {
-        classes.push(classes!(additional_classes));
-    }
+    let menu_class = if menu_state.is_open { "menu open" } else { "menu" };
+    let backdrop_class = if menu_state.is_open { "menu-backdrop open" } else { "menu-backdrop" };
 
     html! {
-        <div {onclick} class={classes}>
-            {props.menu.children.clone()}
-        </div>
+        <>
+            <div class={backdrop_class} onclick={menu_state.toggle.clone()}></div>
+            <nav class={menu_class}>
+                <ul>
+                    { for props.items.iter().map(|item| html! {
+                        <li><a href={item.url.clone()}>{ &item.text }</a></li>
+                    }) }
+                </ul>
+            </nav>
+        </>
     }
 }

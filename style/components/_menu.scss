@@ -1,0 +1,83 @@
+.menu {
+    position: fixed;
+    top: 0;
+    left: -25rem; // Hide the menu offscreen
+    width: 25rem;
+    height: 100vh;
+    background-color: $module-color;
+    transition: left 0.3s ease;
+    z-index: 10;
+
+    &.open {
+        left: 0; // Slide in the menu
+    }
+
+    & > ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        & > li > a {
+            display: block;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            color: $text-color-primary;
+
+            &:hover {
+                background-color: scale-color($module-color, $lightness: -10%);
+            }
+        }
+    }
+
+    &-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0);
+        transition: background-color 0.3s ease;
+        z-index: 5;
+        pointer-events: none;
+
+        &.open {
+            background-color: rgba(0, 0, 0, 0.5); // Fade in the backdrop
+            pointer-events: all;
+        }
+    }
+
+    &-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 50px;
+        border: none;
+        cursor: pointer;
+        z-index: 20;
+        padding: 1rem;
+        border-radius: 9999px;
+        background-color: $color-primary;
+        aspect-ratio: 1 / 1;
+
+        & > div {
+            width: 30px;
+            height: 3px;
+            background-color: $text-color-primary;
+            transition: all 0.3s ease;
+        }
+
+        &.open {
+            & > .bar1 {
+                transform: rotate(-45deg) translate(-7px, 7px);
+            }
+
+            & > .bar2 {
+                opacity: 0;
+            }
+
+            & > .bar3 {
+                transform: rotate(45deg) translate(-7px, -7px);
+            }
+        }
+    }
+}

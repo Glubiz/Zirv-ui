@@ -15,7 +15,7 @@ wasm-logger = "0.2"
 yew = { version = "0.21", features = ["csr"] }
 yew-hooks = "0.3"
 yew-more-hooks = { version = "0.3.0", features = ["yew-hooks"] }
-yew-nested-router = "0.7.0"
+yew-router = "0.18"
 zirv-ui = { path = "../", features = ["full"]}
 
 # release profile settings to reduce the final binary size

@@ -27,6 +27,7 @@ full = [
   "table",
   "image",
   "list",
+  "menu",
 ]
 button = []
 toast = []
@@ -37,3 +38,4 @@ text = []
 table = []
 image = []
 list = []
+menu = []

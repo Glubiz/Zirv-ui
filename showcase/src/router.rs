@@ -1,18 +1,22 @@
-use crate::pages::index::Index;
+use crate::pages::{index::Index, getting_started::GettingStarted, not_found::NotFound};
+use yew::{html, Html};
+use yew_router::Routable;
 
-use yew::{
-    html, Html,
-};
-use yew_nested_router::Target;
-
-#[derive(Debug, Default, Clone, PartialEq, Eq, Target)]
-pub enum AppRoute {
-    #[default]
+#[derive(Debug, Clone, Copy, PartialEq, Routable)]
+pub enum Route {
+    #[at("/")]
     Index,
+    #[at("/getting-started")]
+    GettingStarted,
+    #[not_found]
+    #[at("/404")]
+    NotFound,
 }
 
-pub fn switch_app_route(target: AppRoute) -> Html {
-    match target {
-        AppRoute::Index => html! {<Index/>},
+pub fn switch(routes: Route) -> Html {
+    match routes {
+        Route::Index => html! { <Index /> },
+        Route::GettingStarted => html! { <GettingStarted /> },
+        Route::NotFound => html! { <NotFound /> },
     }
 }

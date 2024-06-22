@@ -50,7 +50,7 @@ pub mod container;
 pub mod flex;
 pub mod list;
 pub mod loader;
-// pub mod menu;
+pub mod menu;
 pub mod image;
 pub mod options;
 pub mod table;
@@ -94,15 +94,13 @@ pub use table::{
     Table,
     TableProps,
 };
-// #[cfg(feature = "menu")]
-// pub use menu::{
-//     component::{MenuComponent, MenuComponentProps},
-//     manager::MenuManager,
-//     provider::{MenuProvider, MenuProviderProps},
-//     use_menu::use_menu,
-//     utils::MenuType,
-//     Menu,
-// };
+#[cfg(feature = "menu")]
+pub use menu::{
+    component::{Menu, MenuProps, MenuItem},
+    use_menu::use_menu,
+    button::MenuButton,
+    provider::{MenuProvider, MenuProviderProps},
+};
 #[cfg(feature = "text")]
 pub use text::{
     headline::{
