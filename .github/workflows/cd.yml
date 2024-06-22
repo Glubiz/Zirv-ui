@@ -68,5 +68,5 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker build -t ${{ secrets.GH_DOCKER_USERNAME }}/zirv-ui:${{ steps.docker-meta.outputs.tag }} -f showcase/Dockerfile showcase
+        docker build -t ${{ secrets.GH_DOCKER_USERNAME }}/zirv-ui:${{ steps.docker-meta.outputs.tag }} .
         docker push ${{ secrets.GH_DOCKER_USERNAME }}/zirv-ui:${{ steps.docker-meta.outputs.tag }}
