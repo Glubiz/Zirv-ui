@@ -56,6 +56,7 @@ pub mod options;
 pub mod table;
 pub mod text;
 pub mod toast;
+pub mod code_block;
 
 #[cfg(feature = "button")]
 pub use button::{
@@ -131,4 +132,10 @@ pub use toast::{
     use_toast::use_toast,
     utils::ToastType,
     Toast,
+};
+
+#[cfg(feature = "code_block")]
+pub use code_block::{
+    CodeBlock,
+    CodeBlockProps,
 };

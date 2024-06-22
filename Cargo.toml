@@ -28,6 +28,7 @@ full = [
   "image",
   "list",
   "menu",
+  "code_block"
 ]
 button = []
 toast = []
@@ -39,3 +40,4 @@ table = []
 image = []
 list = []
 menu = []
+code_block = []
