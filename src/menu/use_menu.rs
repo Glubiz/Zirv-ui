@@ -1,4 +1,9 @@
-use yew::{hook, use_context, Callback, MouseEvent};
+use yew::{
+    hook,
+    use_context,
+    Callback,
+    MouseEvent,
+};
 
 #[derive(Clone, PartialEq)]
 pub struct MenuState {
@@ -6,8 +11,7 @@ pub struct MenuState {
     pub toggle: Callback<MouseEvent>,
 }
 
-impl Default for MenuState
-{
+impl Default for MenuState {
     fn default() -> Self {
         Self { is_open: false, toggle: Callback::noop() }
     }
