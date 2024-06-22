@@ -251,8 +251,8 @@ impl From<&FlexShrink> for Classes {
 
 #[derive(Debug, Clone, PartialEq, Default)]
 pub enum FlexGap {
-    None,
     #[default]
+    None,
     Small,
     Medium,
     Large,

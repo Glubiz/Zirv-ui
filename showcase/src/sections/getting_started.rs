@@ -14,7 +14,10 @@ pub fn getting_started() -> Html {
                 <CodeBlock>{"cargo add zirv_ui"}</CodeBlock>
                 <Paragraph>{"After installing the package, you need to add the styling to the index.html. This can be done by adding the following snippet to the head:"}</Paragraph>
                 <CodeBlock>{"<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/Glubiz/Zirv-ui@main/style/dist/main.css\">"}</CodeBlock>
-
+                <Paragraph>{"Now you can start using the components in your project. To use the components, you need to import them in your project:"}</Paragraph>
+                <CodeBlock>{"use zirv_ui::Button;"}</CodeBlock>
+                <Paragraph>{"After importing the components, you can start using them in your project:"}</Paragraph>
+                <CodeBlock>{"<Button onclick={Callback::from(|_| log::info!(\"Button clicked\"))}>Click me</Button>"}</CodeBlock>
             </Container>
         </section>
     }
