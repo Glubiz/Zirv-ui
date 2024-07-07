@@ -1,11 +1,18 @@
-use yew::{
-    classes, function_component, html, AttrValue, Callback, Html, Properties
+use syntect::{
+    highlighting::ThemeSet,
+    html::highlighted_html_for_string,
+    parsing::SyntaxSet,
 };
-
-use syntect::highlighting::ThemeSet;
-use syntect::parsing::SyntaxSet;
-use syntect::html::highlighted_html_for_string;
 use wasm_bindgen::JsCast;
+use yew::{
+    classes,
+    function_component,
+    html,
+    AttrValue,
+    Callback,
+    Html,
+    Properties,
+};
 
 use crate::{
     border::BorderRadius,
@@ -31,28 +38,24 @@ pub struct CodeBlockProps {
 #[function_component(CodeBlock)]
 pub fn code_block(props: &CodeBlockProps) -> Html {
     let classes = classes!(&props.padding, &props.background_color, &props.text_color, &props.border_radius,);
-    
+
     let syntax_set = SyntaxSet::load_defaults_newlines();
     let theme_set = ThemeSet::load_defaults();
-    
-    let syntax = syntax_set.find_syntax_by_extension(&props.language)
-        .unwrap_or_else(|| syntax_set.find_syntax_plain_text());
-    
+
+    let syntax =
+        syntax_set.find_syntax_by_extension(&props.language).unwrap_or_else(|| syntax_set.find_syntax_plain_text());
+
     let theme = &theme_set.themes["base16-ocean.dark"];
-    
-    let highlighted_html = highlighted_html_for_string(
-        &props.code,
-        &syntax_set,
-        syntax,
-        theme
-    ).unwrap_or_else(|_| props.code.clone());
+
+    let highlighted_html =
+        highlighted_html_for_string(&props.code, &syntax_set, syntax, theme).unwrap_or_else(|_| props.code.clone());
 
     let onclick = {
         let code = props.code.clone();
         Callback::from(move |_| {
             let window = web_sys::window().expect("no global `window` exists");
             let document = window.document().expect("should have a document on window");
-            
+
             // Create a temporary textarea element
             let temp = document.create_element("textarea").unwrap();
             let temp = temp.dyn_into::<web_sys::HtmlTextAreaElement>().unwrap();
@@ -63,7 +66,7 @@ pub fn code_block(props: &CodeBlockProps) -> Html {
 
             // Select the text
             temp.select();
-            
+
             // Inform the user that the text has been copied
             window.alert_with_message("Code copied to clipboard. Please use Ctrl+V or Cmd+V to paste.").unwrap();
 
@@ -71,7 +74,6 @@ pub fn code_block(props: &CodeBlockProps) -> Html {
             document.body().unwrap().remove_child(&temp).unwrap();
         })
     };
-
 
     html! {
         <div class={classes}>

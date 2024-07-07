@@ -2,94 +2,94 @@
   background-color: transparent;
 }
 .background-color-primary {
-  background-color: #2c698d;
+  background-color: var(--color-primary);
 }
 .background-color-primary-dark {
-  background-color: #285f7f;
+  background-color: var(--color-primary-dark);
 }
 .background-color-primary-light {
-  background-color: #347ba6;
+  background-color: var(--color-primary-light);
 }
 .background-color-secondary {
-  background-color: #bae8e8;
+  background-color: var(--color-secondary);
 }
 .background-color-secondary-dark {
-  background-color: #9bdede;
+  background-color: var(--color-secondary-dark);
 }
 .background-color-secondary-light {
-  background-color: #c1eaea;
+  background-color: var(--color-secondary-light);
 }
 .background-color-teritiary {
-  background-color: #e3f6f5;
+  background-color: var(--color-tertiery);
 }
 .background-color-tertiary-dark {
-  background-color: #bfeae8;
+  background-color: var(--color-tertiery-dark);
 }
 .background-color-tertiary-light {
-  background-color: #e6f7f6;
+  background-color: var(--color-tertiery-light);
 }
 .background-color-container {
-  background-color: #35415a;
+  background-color: var(--module-color);
 }
 .background-color-container-dark {
-  background-color: #303b51;
+  background-color: var(--module-color-dark);
 }
 .background-color-container-light {
-  background-color: #435271;
+  background-color: var(--module-color-light);
 }
 .background-color-background {
-  background-color: #252e42;
+  background-color: var(--background-color);
 }
 .background-color-background-dark {
-  background-color: #21293b;
+  background-color: var(--background-color-dark);
 }
 .background-color-background-light {
-  background-color: #34405c;
+  background-color: var(--background-color-light);
 }
 .background-color-text-primary {
-  background-color: #fff;
+  background-color: var(--text-color-primary);
 }
 .background-color-text-primary-dark {
-  background-color: #e6e6e6;
+  background-color: var(--text-color-primary-dark);
 }
 .background-color-text-primary-light {
-  background-color: white;
+  background-color: var(--text-color-primary-light);
 }
 .background-color-text-secondary {
-  background-color: #ccc;
+  background-color: var(--text-color-secondary);
 }
 .background-color-text-secondary-dark {
-  background-color: #b8b8b8;
+  background-color: var(--text-color-secondary-dark);
 }
 .background-color-text-secondary-light {
-  background-color: #d1d1d1;
+  background-color: var(--text-color-secondary-light);
 }
 .background-color-success {
-  background-color: #2ecc71;
+  background-color: var(--color-success);
 }
 .background-color-success-dark {
-  background-color: #29b866;
+  background-color: var(--color-success-dark);
 }
 .background-color-success-light {
-  background-color: #40d47f;
+  background-color: var(--color-success-light);
 }
 .background-color-warning {
-  background-color: #f39c12;
+  background-color: var(--color-warning);
 }
 .background-color-warning-dark {
-  background-color: #e08e0b;
+  background-color: var(--color-warning-dark);
 }
 .background-color-warning-light {
-  background-color: #f4a62a;
+  background-color: var(--color-warning-light);
 }
 .background-color-error {
-  background-color: #e74c3c;
+  background-color: var(--color-error);
 }
 .background-color-error-dark {
-  background-color: #e43422;
+  background-color: var(--color-error-dark);
 }
 .background-color-error-light {
-  background-color: #e95e50;
+  background-color: var(--color-error-light);
 }
 
 .border-radius-none {
@@ -141,22 +141,22 @@
   border-color: transparent;
 }
 .border-color-primary {
-  border-color: #2c698d;
+  border-color: var(--color-primary);
 }
 .border-color-secondary {
-  border-color: #bae8e8;
+  border-color: var(--color-secondary);
 }
 .border-color-tertiary {
-  border-color: --color-tertiary;
+  border-color: var(--color-tertiary);
 }
 .border-color-success {
-  border-color: #2ecc71;
+  border-color: var(--color-success);
 }
 .border-color-warning {
-  border-color: #f39c12;
+  border-color: var(--color-warning);
 }
 .border-color-error {
-  border-color: #e74c3c;
+  border-color: var(--color-error);
 }
 
 .display-none {
@@ -350,34 +350,34 @@
   color: transparent;
 }
 .text-color-primary {
-  color: #2c698d;
+  color: var(--color-primary);
 }
 .text-color-secondary {
-  color: #bae8e8;
+  color: var(--color-secondary);
 }
 .text-color-teritiary {
-  color: #e3f6f5;
+  color: var(--color-tertiery);
 }
 .text-color-container {
-  color: #35415a;
+  color: var(--module-color);
 }
 .text-color-background {
-  color: #252e42;
+  color: var(--background-color);
 }
 .text-color-text-primary {
-  color: #fff;
+  color: var(--text-color-primary);
 }
 .text-color-text-secondary {
-  color: #ccc;
+  color: var(--text-color-secondary);
 }
 .text-color-success {
-  color: #2ecc71;
+  color: var(--color-success);
 }
 .text-color-warning {
-  color: #f39c12;
+  color: var(--color-warning);
 }
 .text-color-error {
-  color: #e74c3c;
+  color: var(--color-error);
 }
 
 h1 .text-size-default {
@@ -1593,7 +1593,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
-  background-color: #252e42;
+  background-color: var(--background-color);
   gap: 1rem;
 }
 
@@ -1615,11 +1615,11 @@ main {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #fff;
+  color: var(--text-color-primary);
 }
 
 p, ul, ol, dl, blockquote, pre, form, table, fieldset, figure {
-  color: #ccc;
+  color: var(--text-color-secondary);
   margin-bottom: 0.5rem;
 }
 
@@ -1633,13 +1633,13 @@ button:active {
   background-color: inherit;
 }
 button:disabled {
-  background-color: #7f8c8d;
+  background-color: var(--color-disabled);
   cursor: not-allowed;
 }
 
 .container {
   border-radius: 8px;
-  background-color: #35415a;
+  background-color: var(--module-color);
   padding: 1rem;
 }
 
@@ -1655,8 +1655,8 @@ button:disabled {
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #2c698d;
-  border-color: #2c698d transparent #2c698d transparent;
+  border: 6px solid var(--color-primary);
+  border-color: var(--color-primary) transparent var(--color-primary) transparent;
   animation: classic-spin 1.2s linear infinite;
 }
 .loader-dots {
@@ -1668,7 +1668,7 @@ button:disabled {
 .dot {
   width: 16px;
   height: 16px;
-  background-color: #2c698d;
+  background-color: var(--color-primary);
   border-radius: 50%;
   animation: shifting-dots 1.2s infinite ease-in-out both;
 }
@@ -1701,7 +1701,7 @@ button:disabled {
   left: -25rem;
   width: 25rem;
   height: 100vh;
-  background-color: #35415a;
+  background-color: var(--module-color);
   transition: left 0.3s ease;
   z-index: 10;
 }
@@ -1717,10 +1717,10 @@ button:disabled {
   display: block;
   padding: 1rem 2rem;
   text-decoration: none;
-  color: #fff;
+  color: var(--text-color-primary);
 }
 .menu > ul > li > a:hover {
-  background-color: #303b51;
+  background-color: var(--module-color-dark);
 }
 .menu-backdrop {
   position: fixed;
@@ -1747,13 +1747,13 @@ button:disabled {
   z-index: 20;
   padding: 1rem;
   border-radius: 9999px;
-  background-color: #2c698d;
+  background-color: var(--color-primary);
   aspect-ratio: 1/1;
 }
 .menu-button > div {
   width: 30px;
   height: 3px;
-  background-color: #fff;
+  background-color: var(--text-color-primary);
   transition: all 0.3s ease;
 }
 .menu-button.open > .bar1 {
@@ -1774,8 +1774,8 @@ button:disabled {
   flex-direction: column;
   gap: 1rem;
   border: 2px solid transparent;
-  background-color: #35415a;
-  color: #ccc;
+  background-color: var(--module-color);
+  color: var(--text-color-secondary);
 }
 .toast-loading {
   animation: slide-in;
@@ -1783,27 +1783,27 @@ button:disabled {
 }
 .toast > .time {
   font-size: 0.7em;
-  color: #4c5159;
+  color: var(--disabled-color);
 }
 .toast > .toast-title {
   font-weight: bold;
-  color: #fff;
+  color: var(--text-color-primary);
 }
 
 .error {
-  border-bottom: 3px solid #f08694;
+  border-bottom: 3px solid var(--error-color);
 }
 
 .warn {
-  border-bottom: 3px solid #9cb8e6;
+  border-bottom: 3px solid var(--warning-color);
 }
 
 .info {
-  border-bottom: 3px solid #91c7b5;
+  border-bottom: 3px solid var(--success-color);
 }
 
 .paused {
-  border: 3px solid grey;
+  border: 3px solid var(--disabled-color);
 }
 
 .toasts {
