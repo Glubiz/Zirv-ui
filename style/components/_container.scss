@@ -1,5 +1,5 @@
 .container {
     border-radius: $border-radius-outer;
-    background-color: $module-color;
+    background-color: var(--module-color);
     padding: $flex-gap;
 }

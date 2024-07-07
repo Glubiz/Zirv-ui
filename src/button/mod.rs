@@ -31,40 +31,14 @@
 //! }
 //! ```
 
-use yew::{
-    classes,
-    function_component,
-    html,
-    Callback,
-    Children,
-    Classes,
-    Html,
-    MouseEvent,
-    Properties,
-};
+use yew::{classes, function_component, html, use_state, Callback, Children, Classes, Html, MouseEvent, Properties};
 
 use crate::{
-    border::{
-        Border,
-        BorderColor,
-        BorderRadius,
-        BorderStyle,
-        BorderWidth,
-    },
+    border::{Border, BorderColor, BorderRadius, BorderStyle, BorderWidth},
     color::BackgroundColor,
-    font::{
-        FontSize,
-        TextColor,
-    },
-    size::{
-        CustomType,
-        Height,
-        Width,
-    },
-    spacing::{
-        Margin,
-        Padding,
-    },
+    font::{FontSize, TextColor},
+    size::{CustomType, Height, Width},
+    spacing::{Margin, Padding},
 };
 
 /// Properties for the `Button` component.
@@ -136,6 +110,34 @@ pub struct ButtonProps {
 /// - `onclick`: Callback to be executed when the button is clicked.
 #[function_component(Button)]
 pub fn button(props: &ButtonProps) -> Html {
+    let hover_state = use_state(|| false);
+
+    let background_color = {
+        let hover_state = hover_state.clone();
+        let background_color = props.background_color;
+        move || {
+            if *hover_state {
+                background_color.to_dark().to_classes()
+            } else {
+                background_color.clone().to_classes()
+            }
+        }
+    };
+
+    let onmouseover = {
+        let hover_state = hover_state.clone();
+        Callback::from(move |_: MouseEvent| {
+            hover_state.set(true);
+        })
+    };
+
+    let onmouseout = {
+        let hover_state = hover_state.clone();
+        Callback::from(move |_: MouseEvent| {
+            hover_state.set(false);
+        })
+    };
+
     let classes = classes!(
         &props.width,
         &props.height,
@@ -146,14 +148,19 @@ pub fn button(props: &ButtonProps) -> Html {
         &props.border_style,
         &props.padding,
         &props.margin,
-        &props.background_color,
+        background_color(),
         &props.font_color,
         &props.font_size,
         Some(props.classes.clone())
     );
 
     html! {
-        <button class={classes} onclick={&props.onclick}>
+        <button
+            class={classes}
+            onclick={&props.onclick}
+            onmouseover={onmouseover}
+            onmouseout={onmouseout}
+        >
             {props.children.clone()}
         </button>
     }

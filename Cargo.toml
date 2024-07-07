@@ -11,10 +11,14 @@ readme = "README.md"
 [dependencies]
 time = { version = "0.3.34", features = ["local-offset", "wasm-bindgen"] }
 uuid = { version = "1.8.0", features = ["v4", "js"] }
-yew = { version = "0.21", default-features = false }
+yew = { version = "0.21", default-features = true }
 gloo = "0.11"
 log = "0.4.21"
-web-sys = "0.3.69"
+wasm-bindgen = "0.2"
+csscolorparser = "0.6.2"
+syntect = "5.0"
+web-sys = "0.3"
+js-sys = "0.3"
 
 [features]
 full = [
@@ -28,7 +32,8 @@ full = [
   "image",
   "list",
   "menu",
-  "code_block"
+  "code_block",
+  "theme"
 ]
 button = []
 toast = []
@@ -41,3 +46,4 @@ image = []
 list = []
 menu = []
 code_block = []
+theme = []

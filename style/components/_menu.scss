@@ -4,7 +4,7 @@
     left: -25rem; // Hide the menu offscreen
     width: 25rem;
     height: 100vh;
-    background-color: $module-color;
+    background-color: var(--module-color);
     transition: left 0.3s ease;
     z-index: 10;
 
@@ -21,10 +21,10 @@
             display: block;
             padding: 1rem 2rem;
             text-decoration: none;
-            color: $text-color-primary;
+            color: var(--text-color-primary);
 
             &:hover {
-                background-color: scale-color($module-color, $lightness: -10%);
+                background-color: var(--module-color-dark);
             }
         }
     }
@@ -56,13 +56,13 @@
         z-index: 20;
         padding: 1rem;
         border-radius: 9999px;
-        background-color: $color-primary;
+        background-color: var(--color-primary);
         aspect-ratio: 1 / 1;
 
         & > div {
             width: 30px;
             height: 3px;
-            background-color: $text-color-primary;
+            background-color: var(--text-color-primary);
             transition: all 0.3s ease;
         }
 

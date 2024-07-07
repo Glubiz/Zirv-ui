@@ -58,22 +58,22 @@
       border-color: transparent;
     }
     &-primary {
-      border-color: $color-primary;
+      border-color: var(--color-primary);
     }
     &-secondary {
-      border-color: $color-secondary;
+      border-color: var(--color-secondary);
     }
     &-tertiary {
-      border-color: --color-tertiary;
+      border-color: var(--color-tertiary);
     }
     &-success {
-      border-color: $color-success;
+      border-color: var(--color-success);
     }
     &-warning {
-      border-color: $color-warning;
+      border-color: var(--color-warning);
     }
     &-error {
-      border-color: $color-error;
+      border-color: var(--color-error);
     }
   }
 

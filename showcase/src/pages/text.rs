@@ -1,13 +1,13 @@
-use crate::sections::getting_started::GettingStartedSection;
+use crate::sections::text::TextSection;
 use yew::prelude::*;
 use zirv_ui::{options::flex::FlexDirection, Container};
 
-#[function_component(GettingStartedPage)]
-pub fn getting_started() -> Html {
+#[function_component(TextPage)]
+pub fn text() -> Html {
     html! {
         <div>
             <Container flex_direction={FlexDirection::Column}>
-                <GettingStartedSection />
+                <TextSection />
             </Container>
         </div>
     }

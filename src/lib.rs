@@ -56,6 +56,7 @@ pub mod menu;
 pub mod options;
 pub mod table;
 pub mod text;
+pub mod theme;
 pub mod toast;
 
 #[cfg(feature = "button")]
@@ -128,6 +129,10 @@ pub use text::{
         Subheadline,
         SubheadlineProps,
     },
+};
+#[cfg(feature = "theme")]
+pub use theme::{
+    Theme, ThemeProps, ThemeProvider
 };
 #[cfg(feature = "toast")]
 pub use toast::{

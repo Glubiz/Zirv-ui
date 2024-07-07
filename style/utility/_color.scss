@@ -1,129 +1,97 @@
-$background-color: #252e42;
-$module-color: #35415a;
-$text-color-primary: #fff;
-$text-color-secondary: #ccc;
-$color-primary: #2c698d;
-$color-secondary: #bae8e8;
-$color-tertiery: #e3f6f5;
-$color-success: #2ecc71;
-$color-warning: #f39c12;
-$color-error: #e74c3c;
-$color-disabled: #7f8c8d;
-
-.light-theme{
-    $background-color: #fff;
-    $module-color: #bbbbbb;
-    $text-color-primary: #000;
-    $text-color-secondary: #333;
-    $color-primary: #2c698d;
-    $color-secondary: #bae8e8;
-    $color-tertiery: #e3f6f5;
-}
-
-.dark-theme{
-    $background-color: #252e42;
-    $module-color: #35415a;
-    $text-color-primary: #fff;
-    $text-color-secondary: #cccccc;
-    $color-primary: #2c698d;
-    $color-secondary: #bae8e8;
-    $color-secondary: #e3f6f5;
-}
-
 .background {
     &-color {
         &-none {
             background-color: transparent;
         }
         &-primary {
-            background-color: $color-primary;
+            background-color: var(--color-primary);
         }
         &-primary-dark {
-            background-color: scale-color($color-primary, $lightness: -10%);
+            background-color: var(--color-primary-dark);
         }
         &-primary-light {
-            background-color: scale-color($color-primary, $lightness: 10%);
+            background-color: var(--color-primary-light);
         }
         &-secondary {
-            background-color: $color-secondary;
+            background-color: var(--color-secondary);
         }
         &-secondary-dark {
-            background-color: scale-color($color-secondary, $lightness: -10%);
+            background-color: var(--color-secondary-dark);
         }
         &-secondary-light {
-            background-color: scale-color($color-secondary, $lightness: 10%);
+            background-color: var(--color-secondary-light);
         }
         &-teritiary {
-            background-color: $color-tertiery;
+            background-color: var(--color-tertiery);
         }
         &-tertiary-dark {
-            background-color: scale-color($color-tertiery, $lightness: -10%);
+            background-color: var(--color-tertiery-dark);
         }
         &-tertiary-light {
-            background-color: scale-color($color-tertiery, $lightness: 10%);
+            background-color: var(--color-tertiery-light);
         }
         &-container {
-            background-color: $module-color;
+            background-color: var(--module-color);
         }
         &-container-dark {
-            background-color: scale-color($module-color, $lightness: -10%);
+            background-color: var(--module-color-dark);
         }
         &-container-light {
-            background-color: scale-color($module-color, $lightness: 10%);
+            background-color: var(--module-color-light);
         }
         &-background {
-            background-color: $background-color;
+            background-color: var(--background-color);
         }
         &-background-dark {
-            background-color: scale-color($background-color, $lightness: -10%);
+            background-color: var(--background-color-dark);
         }
         &-background-light {
-            background-color: scale-color($background-color, $lightness: 10%);
+            background-color: var(--background-color-light);
         }
         &-text-primary {
-            background-color: $text-color-primary;
+            background-color: var(--text-color-primary);
         }
         &-text-primary-dark {
-            background-color: scale-color($text-color-primary, $lightness: -10%);
+            background-color: var(--text-color-primary-dark);
         }
         &-text-primary-light {
-            background-color: scale-color($text-color-primary, $lightness: 10%);
+            background-color: var(--text-color-primary-light);
         }
         &-text-secondary {
-            background-color: $text-color-secondary;
+            background-color: var(--text-color-secondary);
         }
         &-text-secondary-dark {
-            background-color: scale-color($text-color-secondary, $lightness: -10%);
+            background-color: var(--text-color-secondary-dark);
         }
         &-text-secondary-light {
-            background-color: scale-color($text-color-secondary, $lightness: 10%);
+            background-color:  var(--text-color-secondary-light);
         }
         &-success {
-            background-color: $color-success;
+            background-color: var(--color-success);
         }
         &-success-dark {
-            background-color: scale-color($color-success, $lightness: -10%);
+            background-color: var(--color-success-dark);
         }
         &-success-light {
-            background-color: scale-color($color-success, $lightness: 10%);
+            background-color: var(--color-success-light);
         }
         &-warning {
-            background-color: $color-warning;
+            background-color: var(--color-warning);
         }
         &-warning-dark {
-            background-color: scale-color($color-warning, $lightness: -10%);
+            background-color: var(--color-warning-dark);
         }
         &-warning-light {
-            background-color: scale-color($color-warning, $lightness: 10%);
+            background-color: var(--color-warning-light);
         }
         &-error {
-            background-color: $color-error;
+            background-color: var(--color-error);
         }
         &-error-dark {
-            background-color: scale-color($color-error, $lightness: -10%);
+            background-color: var(--color-error-dark);
         }
         &-error-light {
-            background-color: scale-color($color-error, $lightness: 10%);
+            background-color: var(--color-error-light);
         }
     }
 }

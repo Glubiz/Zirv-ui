@@ -4,7 +4,7 @@ use zirv_ui::{
     Container, Headline, Paragraph, CodeBlock
 };
 
-#[function_component(GettingStarted)]
+#[function_component(GettingStartedSection)]
 pub fn getting_started() -> Html {
     html! {
         <section>

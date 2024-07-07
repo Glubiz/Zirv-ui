@@ -4,7 +4,7 @@ use zirv_ui::{
     Container, Headline, Paragraph,
 };
 
-#[function_component(Introduction)]
+#[function_component(IntroductionSection)]
 pub fn introduction() -> Html {
     html! {
         <section>

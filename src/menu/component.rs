@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::menu::use_menu::MenuState;
+use crate::menu::use_menu::use_menu;
 
 #[derive(PartialEq)]
 pub struct MenuItem {
@@ -15,7 +15,7 @@ pub struct MenuProps {
 
 #[function_component(Menu)]
 pub fn menu(props: &MenuProps) -> Html {
-    let menu_state = use_context::<MenuState>().expect("No context found!");
+    let menu_state = use_menu();
 
     let menu_class = if menu_state.is_open { "menu open" } else { "menu" };
     let backdrop_class = if menu_state.is_open { "menu-backdrop open" } else { "menu-backdrop" };

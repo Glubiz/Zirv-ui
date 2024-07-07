@@ -147,3 +147,73 @@ impl From<&BackgroundColor> for Classes {
         }
     }
 }
+
+impl BackgroundColor {
+    pub fn to_dark(&self) -> Self {
+        match self {
+            Self::None => Self::None,
+            Self::Primary | Self::PrimaryDark | Self::PrimaryLight => Self::PrimaryDark,
+            Self::Secondary | Self::SecondaryDark | Self::SecondaryLight => Self::SecondaryDark,
+            Self::Tertiary | Self::TertiaryDark | Self::TertiaryLight => Self::TertiaryDark,
+            Self::Container | Self::ContainerDark | Self::ContainerLight => Self::ContainerDark,
+            Self::Background | Self::BackgroundDark | Self::BackgroundLight => Self::BackgroundDark,
+            Self::TextPrimary | Self::TextPrimaryDark | Self::TextPrimaryLight => Self::TextPrimaryDark,
+            Self::TextSecondary | Self::TextSecondaryDark | Self::TextSecondaryLight => Self::TextSecondaryDark,
+            Self::Success | Self::SuccessDark | Self::SuccessLight => Self::SuccessDark,
+            Self::Warning | Self::WarningDark | Self::WarningLight => Self::WarningDark,
+            Self::Error | Self::ErrorDark | Self::ErrorLight => Self::ErrorDark,
+        }
+    }
+
+    pub fn to_light(&self) -> Self {
+        match self {
+            Self::None => Self::None,
+            Self::Primary | Self::PrimaryDark | Self::PrimaryLight => Self::PrimaryLight,
+            Self::Secondary | Self::SecondaryDark | Self::SecondaryLight => Self::SecondaryLight,
+            Self::Tertiary | Self::TertiaryDark | Self::TertiaryLight => Self::TertiaryLight,
+            Self::Container | Self::ContainerDark | Self::ContainerLight => Self::ContainerLight,
+            Self::Background | Self::BackgroundDark | Self::BackgroundLight => Self::BackgroundLight,
+            Self::TextPrimary | Self::TextPrimaryDark | Self::TextPrimaryLight => Self::TextPrimaryLight,
+            Self::TextSecondary | Self::TextSecondaryDark | Self::TextSecondaryLight => Self::TextSecondaryLight,
+            Self::Success | Self::SuccessDark | Self::SuccessLight => Self::SuccessLight,
+            Self::Warning | Self::WarningDark | Self::WarningLight => Self::WarningLight,
+            Self::Error | Self::ErrorDark | Self::ErrorLight => Self::ErrorLight,
+        }
+    }
+
+    pub fn to_classes(&self) -> Classes {
+        match self {
+            Self::None => classes!("background-color-none"),
+            Self::Primary => classes!("background-color-primary"),
+            Self::PrimaryDark => classes!("background-color-primary-dark"),
+            Self::PrimaryLight => classes!("background-color-primary-light"),
+            Self::Secondary => classes!("background-color-secondary"),
+            Self::SecondaryDark => classes!("background-color-secondary-dark"),
+            Self::SecondaryLight => classes!("background-color-secondary-light"),
+            Self::Tertiary => classes!("background-color-tertiary"),
+            Self::TertiaryDark => classes!("background-color-tertiary-dark"),
+            Self::TertiaryLight => classes!("background-color-tertiary-light"),
+            Self::Container => classes!("background-color-container"),
+            Self::ContainerDark => classes!("background-color-container-dark"),
+            Self::ContainerLight => classes!("background-color-container-light"),
+            Self::Background => classes!("background-color-background"),
+            Self::BackgroundDark => classes!("background-color-background-dark"),
+            Self::BackgroundLight => classes!("background-color-background-light"),
+            Self::TextPrimary => classes!("background-color-text-primary"),
+            Self::TextPrimaryDark => classes!("background-color-text-primary-dark"),
+            Self::TextPrimaryLight => classes!("background-color-text-primary-light"),
+            Self::TextSecondary => classes!("background-color-text-secondary"),
+            Self::TextSecondaryDark => classes!("background-color-text-secondary-dark"),
+            Self::TextSecondaryLight => classes!("background-color-text-secondary-light"),
+            Self::Success => classes!("background-color-success"),
+            Self::SuccessDark => classes!("background-color-success-dark"),
+            Self::SuccessLight => classes!("background-color-success-light"),
+            Self::Warning => classes!("background-color-warning"),
+            Self::WarningDark => classes!("background-color-warning-dark"),
+            Self::WarningLight => classes!("background-color-warning-light"),
+            Self::Error => classes!("background-color-error"),
+            Self::ErrorDark => classes!("background-color-error-dark"),
+            Self::ErrorLight => classes!("background-color-error-light"),
+        }
+    }
+}

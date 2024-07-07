@@ -3,7 +3,6 @@ button {
 
     &:hover {
         cursor: pointer;
-        //background-color: scale-color(inherit, 10%);
     }
 
     &:active {
@@ -11,7 +10,7 @@ button {
     }
 
     &:disabled {
-        background-color: $color-disabled;
+        background-color: var(--color-disabled);
         cursor: not-allowed;
     }
 }

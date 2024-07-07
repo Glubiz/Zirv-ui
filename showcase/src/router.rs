@@ -1,4 +1,4 @@
-use crate::pages::{index::Index, getting_started::GettingStarted, not_found::NotFound};
+use crate::pages::{index::IndexPage, getting_started::GettingStartedPage, not_found::NotFoundPage, button::ButtonPage, loader::LoaderPage, table::TablePage, text::TextPage, toast::ToastPage, container::ContainerPage};
 use yew::{html, Html};
 use yew_router::Routable;
 
@@ -8,6 +8,18 @@ pub enum Route {
     Index,
     #[at("/getting-started")]
     GettingStarted,
+    #[at("/button")]
+    Button,
+    #[at("/loader")]
+    Loader,
+    #[at("/table")]
+    Table,
+    #[at("/text")]
+    Text,
+    #[at("/toast")]
+    Toast,
+    #[at("/container")]
+    Container,
     #[not_found]
     #[at("/404")]
     NotFound,
@@ -15,8 +27,14 @@ pub enum Route {
 
 pub fn switch(routes: Route) -> Html {
     match routes {
-        Route::Index => html! { <Index /> },
-        Route::GettingStarted => html! { <GettingStarted /> },
-        Route::NotFound => html! { <NotFound /> },
+        Route::Index => html! { <IndexPage /> },
+        Route::GettingStarted => html! { <GettingStartedPage /> },
+        Route::Button => html! { <ButtonPage /> },
+        Route::Loader => html! { <LoaderPage /> },
+        Route::Table => html! { <TablePage /> },
+        Route::Text => html! { <TextPage /> },
+        Route::Toast => html! { <ToastPage /> },
+        Route::Container => html! { <ContainerPage /> },
+        Route::NotFound => html! { <NotFoundPage /> },
     }
 }

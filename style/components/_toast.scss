@@ -6,8 +6,8 @@
     flex-direction: column;
     gap: $flex-gap;
     border: 2px solid transparent;
-    background-color: $module-color;
-    color: $text-color-secondary;
+    background-color: var(--module-color);
+    color: var(--text-color-secondary);
 
     &-loading {
         animation: slide-in;
@@ -16,29 +16,29 @@
 
     & > .time {
         font-size: 0.7em;
-        color: #4c5159;
+        color: var(--disabled-color);
     }
     
     & > .toast-title {
         font-weight: bold;
-        color: $text-color-primary;
+        color: var(--text-color-primary);
     }
 }
   
 .error {
-    border-bottom: 3px solid #f08694;
+    border-bottom: 3px solid var(--error-color);
 }
   
 .warn {
-    border-bottom: 3px solid #9cb8e6;
+    border-bottom: 3px solid var(--warning-color);
 }
   
 .info {    
-     border-bottom: 3px solid #91c7b5;
+     border-bottom: 3px solid var(--success-color);
 }
   
 .paused {
-    border: 3px solid grey;
+    border: 3px solid var(--disabled-color);
 }
 
 .toasts {

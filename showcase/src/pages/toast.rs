@@ -1,13 +1,13 @@
-use crate::sections::getting_started::GettingStartedSection;
+use crate::sections::toast::ToastSection;
 use yew::prelude::*;
 use zirv_ui::{options::flex::FlexDirection, Container};
 
-#[function_component(GettingStartedPage)]
-pub fn getting_started() -> Html {
+#[function_component(ToastPage)]
+pub fn toast() -> Html {
     html! {
         <div>
             <Container flex_direction={FlexDirection::Column}>
-                <GettingStartedSection />
+                <ToastSection />
             </Container>
         </div>
     }

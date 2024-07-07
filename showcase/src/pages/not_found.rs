@@ -1,7 +1,7 @@
 use yew::prelude::*;
 use zirv_ui::{options::flex::{FlexDirection, FlexJustify, FlexAlign}, Container, Headline, Paragraph};
 
-#[function_component(NotFound)]
+#[function_component(NotFoundPage)]
 pub fn not_found() -> Html {
     html! {
         <div>

@@ -1,8 +1,8 @@
 h1, h2, h3, h4, h5, h6 {
-    color: $text-color-primary;
+    color: var(--text-color-primary);
 }
 
 p, ul, ol, dl, blockquote, pre, form, table, fieldset, figure {
-    color: $text-color-secondary;
+    color: var(--text-color-secondary);
     margin-bottom: .5rem;
 }
