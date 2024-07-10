@@ -1,0 +1,18 @@
+.code-block {
+    background-color: var(--background-color-dark);
+    border-radius: 8px;
+    width: 100%;
+
+    &_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .5rem;
+    }
+
+    &_snippet {
+        background-color: var(--module-color-dark);
+        padding: 1rem;
+        border-radius: 8px
+    }
+}

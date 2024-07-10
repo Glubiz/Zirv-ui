@@ -50,6 +50,10 @@ pub fn app() -> Html {
             url: Route::Text.to_path(),
         },
         MenuItem {
+            text: "Theme".to_string(),
+            url: Route::Theme.to_path(),
+        },
+        MenuItem {
             text: "Toast".to_string(),
             url: Route::Toast.to_path(),
         },

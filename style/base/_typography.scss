@@ -2,7 +2,6 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-color-primary);
 }
 
-p, ul, ol, dl, blockquote, pre, form, table, fieldset, figure {
+p, ul, ol, dl, blockquote, pre, form, table, fieldset, figure, span, div {
     color: var(--text-color-secondary);
-    margin-bottom: .5rem;
 }

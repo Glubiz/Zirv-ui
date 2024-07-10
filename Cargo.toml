@@ -11,14 +11,15 @@ readme = "README.md"
 [dependencies]
 time = { version = "0.3.34", features = ["local-offset", "wasm-bindgen"] }
 uuid = { version = "1.8.0", features = ["v4", "js"] }
-yew = { version = "0.21", default-features = true }
+yew = { version = "0.21", default-features = true}
 gloo = "0.11"
 log = "0.4.21"
 wasm-bindgen = "0.2"
 csscolorparser = "0.6.2"
-syntect = "5.0"
-web-sys = "0.3"
+pulldown-cmark = "0.11.0"
+web-sys = { version = "0.3.69", features = ["Clipboard", "Window", "Navigator", "Permissions"] }
 js-sys = "0.3"
+wasm-bindgen-futures = "0.4.42"
 
 [features]
 full = [
