@@ -11,10 +11,10 @@ pub mod highlight;
 
 use crate::{
     spacing::Padding,
-    Toast, 
     use_toast,
+    Button,
+    Toast,
     ToastType,
-    Button
 };
 
 #[derive(Clone, PartialEq, Properties)]
@@ -33,14 +33,18 @@ pub fn code_block(props: &CodeBlockProps) -> Html {
         let code = props.snippet.clone();
         Callback::from(move |_| {
             let code = code.clone();
-            
+
             let window = web_sys::window().expect("window");
             let nav = window.navigator().clipboard();
 
             match nav {
                 Some(a) => {
                     let _ = a.write_text(code.as_str());
-                    toasts_manager.spawn(Toast::new(ToastType::Info, "Clipboard", "Code successfully copied to clipboard"));
+                    toasts_manager.spawn(Toast::new(
+                        ToastType::Info,
+                        "Clipboard",
+                        "Code successfully copied to clipboard",
+                    ));
                 }
                 None => {
                     toasts_manager.spawn(Toast::new(ToastType::Error, "Clipboard", "Unable to copy code to clipboard"));
