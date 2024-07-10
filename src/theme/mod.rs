@@ -226,9 +226,9 @@ pub fn theme_provider(props: &ThemeProps) -> Html {
             --color-error: {};
             --color-error-dark: {};
             --color-error-light: {};
-            --disabled-color: {};
-            --disabled-color-dark: {};
-            --disabled-color-light: {};
+            --color-disabled: {};
+            --color-disabled-dark: {};
+            --color-disabled-light: {};
         }}
         "#,
         theme.background_color,

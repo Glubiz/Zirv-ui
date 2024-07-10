@@ -11,13 +11,25 @@ pub fn getting_started() -> Html {
             <Container flex_direction={FlexDirection::Column} flex_align={FlexAlign::Start} flex_gap={FlexGap::None}>
                 <Headline>{"Getting Started"}</Headline>
                 <Paragraph>{"To get started with Zirv UI, you can install the package using cargo:"}</Paragraph>
-                <CodeBlock>{"cargo add zirv_ui"}</CodeBlock>
+                <CodeBlock 
+                    snippet={"cargo add zirv_ui"}
+                    language="Shell"
+                />
                 <Paragraph>{"After installing the package, you need to add the styling to the index.html. This can be done by adding the following snippet to the head:"}</Paragraph>
-                <CodeBlock>{"<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/Glubiz/Zirv-ui@main/style/dist/main.css\">"}</CodeBlock>
+                <CodeBlock 
+                    snippet={"<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/Glubiz/Zirv-ui@main/style/dist/main.css\">"}
+                    language="HTML"
+                />
                 <Paragraph>{"Now you can start using the components in your project. To use the components, you need to import them in your project:"}</Paragraph>
-                <CodeBlock>{"use zirv_ui::Button;"}</CodeBlock>
+                <CodeBlock 
+                    snippet={"use zirv_ui::Button;"}
+                    language="Rust"
+                />
                 <Paragraph>{"After importing the components, you can start using them in your project:"}</Paragraph>
-                <CodeBlock>{"<Button onclick={Callback::from(|_| log::info!(\"Button clicked\"))}>Click me</Button>"}</CodeBlock>
+                <CodeBlock 
+                    snippet={"<Button onclick={Callback::from(|_| log::info!(\"Button clicked\"))}>Click me</Button>"}
+                    language="Rust"
+                />
             </Container>
         </section>
     }

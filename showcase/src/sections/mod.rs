@@ -7,4 +7,5 @@ pub mod loader;
 pub mod quickstart;
 pub mod table;
 pub mod text;
+pub mod theme;
 pub mod toast;
