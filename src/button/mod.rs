@@ -31,14 +31,41 @@
 //! }
 //! ```
 
-use yew::{classes, function_component, html, use_state, Callback, Children, Classes, Html, MouseEvent, Properties};
+use yew::{
+    classes,
+    function_component,
+    html,
+    use_state,
+    Callback,
+    Children,
+    Classes,
+    Html,
+    MouseEvent,
+    Properties,
+};
 
 use crate::{
-    border::{Border, BorderColor, BorderRadius, BorderStyle, BorderWidth},
+    border::{
+        Border,
+        BorderColor,
+        BorderRadius,
+        BorderStyle,
+        BorderWidth,
+    },
     color::BackgroundColor,
-    font::{FontSize, TextColor},
-    size::{CustomType, Height, Width},
-    spacing::{Margin, Padding},
+    font::{
+        FontSize,
+        TextColor,
+    },
+    size::{
+        CustomType,
+        Height,
+        Width,
+    },
+    spacing::{
+        Margin,
+        Padding,
+    },
 };
 
 /// Properties for the `Button` component.

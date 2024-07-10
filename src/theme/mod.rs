@@ -1,24 +1,24 @@
-use yew::{function_component, html, Children, Html, Properties};
-
 use csscolorparser::Color;
+use yew::{
+    function_component,
+    html,
+    Children,
+    Html,
+    Properties,
+};
 
 fn create_color_variants(rgb: &str) -> (String, String, String) {
     let color = Color::from_html(rgb).unwrap();
     let [r, g, b, a] = color.to_rgba8();
-    
-    let dark = Color::from_rgba8(
-        (r as f32 * 0.9) as u8,
-        (g as f32 * 0.9) as u8,
-        (b as f32 * 0.9) as u8,
-        a
-    );
+
+    let dark = Color::from_rgba8((r as f32 * 0.9) as u8, (g as f32 * 0.9) as u8, (b as f32 * 0.9) as u8, a);
     let light = Color::from_rgba8(
         (r as f32 * 1.1).min(255.0) as u8,
         (g as f32 * 1.1).min(255.0) as u8,
         (b as f32 * 1.1).min(255.0) as u8,
-        a
+        a,
     );
-    
+
     (rgb.to_string(), dark.to_rgb_string(), light.to_rgb_string())
 }
 
@@ -55,9 +55,7 @@ pub struct Theme {
     pub disabled_color_light: String,
 }
 
-
-
-impl Default for Theme {    
+impl Default for Theme {
     fn default() -> Self {
         let (background_color, background_color_dark, background_color_light) = create_color_variants("rgb(37,46,66)");
         let (module_color, module_color_dark, module_color_light) = create_color_variants("rgb(53,65,90)");

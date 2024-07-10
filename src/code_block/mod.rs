@@ -1,5 +1,17 @@
+use syntect::{
+    highlighting::ThemeSet,
+    html::highlighted_html_for_string,
+    parsing::SyntaxSet,
+};
+use wasm_bindgen::JsCast;
 use yew::{
-    classes, function_component, html, AttrValue, Callback, Html, Properties
+    classes,
+    function_component,
+    html,
+    AttrValue,
+    Callback,
+    Html,
+    Properties,
 };
 
 pub mod highlight;

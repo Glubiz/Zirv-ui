@@ -132,7 +132,9 @@ pub use text::{
 };
 #[cfg(feature = "theme")]
 pub use theme::{
-    Theme, ThemeProps, ThemeProvider
+    Theme,
+    ThemeProps,
+    ThemeProvider,
 };
 #[cfg(feature = "toast")]
 pub use toast::{
