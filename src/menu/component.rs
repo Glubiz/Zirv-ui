@@ -34,7 +34,10 @@ pub struct MenuProps {
 /// # Example
 ///
 /// ```
-/// use your_crate::{Menu, MenuItem};
+/// use your_crate::{
+///     Menu,
+///     MenuItem,
+/// };
 ///
 /// let menu_items = vec![
 ///     MenuItem { text: "Home".to_string(), url: "/".to_string() },

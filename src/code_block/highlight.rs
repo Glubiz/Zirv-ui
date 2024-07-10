@@ -3,7 +3,12 @@
 //! This module provides functionality for basic syntax highlighting of code snippets.
 //! It uses the pulldown_cmark library to parse markdown and generate HTML with syntax highlighting.
 
-use pulldown_cmark::{CodeBlockKind, Event, Parser, Tag};
+use pulldown_cmark::{
+    CodeBlockKind,
+    Event,
+    Parser,
+    Tag,
+};
 
 /// Highlights code with basic syntax highlighting
 ///
@@ -55,8 +60,8 @@ pub fn highlight_code(code: &str, language: &str) -> String {
                     .replace('"', "&quot;")
                     .replace('\'', "&#39;");
                 highlighted.push_str(&highlighted_text);
-            },
-            _ => {}  // Ignore other markdown events
+            }
+            _ => {} // Ignore other markdown events
         }
     }
 

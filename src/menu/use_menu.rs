@@ -43,7 +43,7 @@ impl Default for MenuState {
 /// #[function_component(YourComponent)]
 /// fn your_component() -> Html {
 ///     let menu_state = use_menu();
-///     
+///
 ///     html! {
 ///         <div onclick={menu_state.toggle}>
 ///             { if menu_state.is_open { "Close Menu" } else { "Open Menu" } }

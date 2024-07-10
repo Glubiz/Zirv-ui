@@ -228,11 +228,13 @@ pub struct ThemeProps {
 /// # Example
 ///
 /// ```
-/// use your_crate::{Theme, ThemeProvider};
+/// use your_crate::{
+///     Theme,
+///     ThemeProvider,
+/// };
 ///
-/// let custom_theme = Theme::default()
-///     .set_background_color("rgb(0,0,0)")
-///     .set_primary_color("rgb(255,0,0)");
+/// let custom_theme =
+///     Theme::default().set_background_color("rgb(0,0,0)").set_primary_color("rgb(255,0,0)");
 ///
 /// html! {
 ///     <ThemeProvider theme={custom_theme}>

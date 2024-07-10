@@ -20,8 +20,10 @@ use crate::menu::use_menu::MenuState;
 /// # Example
 ///
 /// ```
-/// use your_crate::MenuButton;
-/// use your_crate::menu::use_menu::MenuState;
+/// use your_crate::{
+///     menu::use_menu::MenuState,
+///     MenuButton,
+/// };
 ///
 /// html! {
 ///     <ContextProvider<MenuState> context={MenuState::default()}>

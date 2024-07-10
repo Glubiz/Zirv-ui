@@ -4,13 +4,29 @@
 //! It includes functionality for syntax highlighting and copying code to the clipboard.
 
 use yew::{
-    classes, function_component, html, AttrValue, Callback, Html, Properties
+    classes,
+    function_component,
+    html,
+    AttrValue,
+    Callback,
+    Html,
+    Properties,
 };
 
 pub mod highlight;
 
 use crate::{
-    font::FontWeight, size::{CustomType, Height, Width}, spacing::Padding, use_toast, Button, Toast, ToastType
+    font::FontWeight,
+    size::{
+        CustomType,
+        Height,
+        Width,
+    },
+    spacing::Padding,
+    use_toast,
+    Button,
+    Toast,
+    ToastType,
 };
 
 /// Properties for the CodeBlock component
