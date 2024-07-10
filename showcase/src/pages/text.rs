@@ -1,4 +1,4 @@
-use crate::sections::text::TextSection;
+use crate::sections::text::TextComponentsSection;
 use yew::prelude::*;
 use zirv_ui::{options::flex::FlexDirection, Container};
 
@@ -7,7 +7,7 @@ pub fn text() -> Html {
     html! {
         <div>
             <Container flex_direction={FlexDirection::Column}>
-                <TextSection />
+                <TextComponentsSection />
             </Container>
         </div>
     }
