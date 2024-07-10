@@ -1,11 +1,4 @@
-use syntect::{
-    highlighting::ThemeSet,
-    html::highlighted_html_for_string,
-    parsing::SyntaxSet,
-};
-use wasm_bindgen::JsCast;
 use yew::{
-    classes,
     function_component,
     html,
     AttrValue,
@@ -17,9 +10,6 @@ use yew::{
 pub mod highlight;
 
 use crate::{
-    border::BorderRadius,
-    color::BackgroundColor,
-    font::TextColor,
     spacing::Padding,
     Toast, 
     use_toast,
