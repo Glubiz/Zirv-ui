@@ -20,6 +20,10 @@ pub fn getting_started() -> Html {
                     snippet={"<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/gh/Glubiz/Zirv-ui@main/style/dist/main.css\">"}
                     language="HTML"
                 />
+
+                <Paragraph>{"Once you have added the css to the index.html, you can start using the components in your project."}</Paragraph>
+                <Paragraph>{"Start by adding code to the main.rs file:"}</Paragraph>
+
                 <Paragraph>{"Now you can start using the components in your project. To use the components, you need to import them in your project:"}</Paragraph>
                 <CodeBlock 
                     snippet={"use zirv_ui::Button;"}
