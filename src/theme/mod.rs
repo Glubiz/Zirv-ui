@@ -1,3 +1,8 @@
+//! Theme Module
+//!
+//! This module provides a theme system for styling applications, including a `Theme` struct,
+//! utility functions for color manipulation, and a `ThemeProvider` component for Yew applications.
+
 use csscolorparser::Color;
 use yew::{
     function_component,
@@ -7,6 +12,15 @@ use yew::{
     Properties,
 };
 
+/// Creates dark and light variants of a given color
+///
+/// # Arguments
+///
+/// * `rgb` - A string representation of an RGB color (e.g., "rgb(255,0,0)")
+///
+/// # Returns
+///
+/// A tuple containing the original color, a darker variant, and a lighter variant
 fn create_color_variants(rgb: &str) -> (String, String, String) {
     let color = Color::from_html(rgb).unwrap();
     let [r, g, b, a] = color.to_rgba8();
@@ -22,6 +36,7 @@ fn create_color_variants(rgb: &str) -> (String, String, String) {
     (rgb.to_string(), dark.to_rgb_string(), light.to_rgb_string())
 }
 
+/// Represents a complete theme with various color properties
 #[derive(Clone, PartialEq)]
 pub struct Theme {
     pub background_color: String,
@@ -55,6 +70,7 @@ pub struct Theme {
     pub disabled_color_light: String,
 }
 
+/// Provides a default theme with predefined colors
 impl Default for Theme {
     fn default() -> Self {
         let (background_color, background_color_dark, background_color_light) = create_color_variants("rgb(37,46,66)");
@@ -102,6 +118,7 @@ impl Default for Theme {
 }
 
 impl Theme {
+    /// Sets the background color and its variants
     pub fn set_background_color(mut self, color: &str) -> Self {
         let (background_color, background_color_dark, background_color_light) = create_color_variants(color);
         self.background_color = background_color;
@@ -110,6 +127,7 @@ impl Theme {
         self
     }
 
+    /// Sets the module color and its variants
     pub fn set_module_color(mut self, color: &str) -> Self {
         let (module_color, module_color_dark, module_color_light) = create_color_variants(color);
         self.module_color = module_color;
@@ -118,16 +136,19 @@ impl Theme {
         self
     }
 
+    /// Sets the primary text color
     pub fn set_text_color_primary(mut self, color: &str) -> Self {
         self.text_color_primary = color.to_string();
         self
     }
 
+    /// Sets the secondary text color
     pub fn set_text_color_secondary(mut self, color: &str) -> Self {
         self.text_color_secondary = color.to_string();
         self
     }
 
+    /// Sets the primary color and its variants
     pub fn set_primary_color(mut self, color: &str) -> Self {
         let (primary_color, primary_color_dark, primary_color_light) = create_color_variants(color);
         self.primary_color = primary_color;
@@ -136,6 +157,7 @@ impl Theme {
         self
     }
 
+    /// Sets the secondary color and its variants
     pub fn set_secondary_color(mut self, color: &str) -> Self {
         let (secondary_color, secondary_color_dark, secondary_color_light) = create_color_variants(color);
         self.secondary_color = secondary_color;
@@ -144,6 +166,7 @@ impl Theme {
         self
     }
 
+    /// Sets the tertiary color and its variants
     pub fn set_tertiary_color(mut self, color: &str) -> Self {
         let (tertiary_color, tertiary_color_dark, tertiary_color_light) = create_color_variants(color);
         self.tertiary_color = tertiary_color;
@@ -152,6 +175,7 @@ impl Theme {
         self
     }
 
+    /// Sets the success color and its variants
     pub fn set_success_color(mut self, color: &str) -> Self {
         let (success_color, success_color_dark, success_color_light) = create_color_variants(color);
         self.success_color = success_color;
@@ -160,6 +184,7 @@ impl Theme {
         self
     }
 
+    /// Sets the warning color and its variants
     pub fn set_warning_color(mut self, color: &str) -> Self {
         let (warning_color, warning_color_dark, warning_color_light) = create_color_variants(color);
         self.warning_color = warning_color;
@@ -168,6 +193,7 @@ impl Theme {
         self
     }
 
+    /// Sets the error color and its variants
     pub fn set_error_color(mut self, color: &str) -> Self {
         let (error_color, error_color_dark, error_color_light) = create_color_variants(color);
         self.error_color = error_color;
@@ -176,6 +202,7 @@ impl Theme {
         self
     }
 
+    /// Sets the disabled color and its variants
     pub fn set_disabled_color(mut self, color: &str) -> Self {
         let (disabled_color, disabled_color_dark, disabled_color_light) = create_color_variants(color);
         self.disabled_color = disabled_color;
@@ -185,12 +212,34 @@ impl Theme {
     }
 }
 
+/// Properties for the ThemeProvider component
 #[derive(Properties, Clone, PartialEq)]
 pub struct ThemeProps {
+    /// The theme to be applied
     pub theme: Theme,
+    /// Child components that will inherit the theme
     pub children: Children,
 }
 
+/// ThemeProvider Component
+///
+/// This component applies the provided theme to its children by injecting CSS variables.
+///
+/// # Example
+///
+/// ```
+/// use your_crate::{Theme, ThemeProvider};
+///
+/// let custom_theme = Theme::default()
+///     .set_background_color("rgb(0,0,0)")
+///     .set_primary_color("rgb(255,0,0)");
+///
+/// html! {
+///     <ThemeProvider theme={custom_theme}>
+///         <YourApp />
+///     </ThemeProvider>
+/// }
+/// ```
 #[function_component(ThemeProvider)]
 pub fn theme_provider(props: &ThemeProps) -> Html {
     let theme = &props.theme;
