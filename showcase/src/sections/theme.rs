@@ -1,7 +1,7 @@
 use yew::{function_component, html, Html};
 use zirv_ui::{
     options::flex::{FlexAlign, FlexDirection, FlexGap},
-    Container, Headline, Paragraph, Subheadline, CodeBlock, Theme, ThemeProvider,
+    Container, Headline, Paragraph, Subheadline, CodeBlock
 };
 
 #[function_component(ThemeSection)]

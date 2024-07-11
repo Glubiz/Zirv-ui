@@ -3,7 +3,6 @@ use zirv_ui::{
     options::flex::{FlexAlign, FlexDirection, FlexGap},
     Container, Headline, Paragraph, CodeBlock, Subheadline, Button,
     border::{BorderRadius, BorderColor, BorderWidth, BorderStyle},
-    color::BackgroundColor,
     font::{FontSize, TextColor},
     size::{Width, Height, CustomType},
     spacing::Padding,
