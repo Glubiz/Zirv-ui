@@ -1,6 +1,26 @@
-use yew::{classes, function_component, html, Html, Properties};
+use yew::{
+    classes,
+    function_component,
+    html,
+    Html,
+    Properties,
+};
 
-use crate::{border::{Border, BorderColor, BorderRadius, BorderStyle, BorderWidth}, color::BackgroundColor, size::{CustomType, Height, Width}};
+use crate::{
+    border::{
+        Border,
+        BorderColor,
+        BorderRadius,
+        BorderStyle,
+        BorderWidth,
+    },
+    color::BackgroundColor,
+    size::{
+        CustomType,
+        Height,
+        Width,
+    },
+};
 
 #[derive(Clone, PartialEq, Properties)]
 pub struct DividerProps {

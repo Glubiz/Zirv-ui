@@ -88,7 +88,7 @@ pub fn menu(props: &MenuProps) -> Html {
                             },
                             MenuEntry::Section(section) => html! {
                                 <li class="section">
-                                    <div 
+                                    <div
                                         class="section-header"
                                     >
                                         { &section.name }

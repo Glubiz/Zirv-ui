@@ -43,7 +43,13 @@
 use std::cmp::Ordering;
 
 use yew::{
-    classes, function_component, html, use_state_eq, Callback, Html, Properties
+    classes,
+    function_component,
+    html,
+    use_state_eq,
+    Callback,
+    Html,
+    Properties,
 };
 
 use crate::options::{
@@ -227,47 +233,52 @@ pub fn table(props: &TableProps) -> Html {
         &props.cell_text_align,
     };
 
-    let headers = props.headers.iter().enumerate().map(|(index, header)| {
-        let sort_column = sort_column.clone();
-        let sort_direction = sort_direction.clone();
-        let on_sort = props.on_sort.clone();
+    let headers = props
+        .headers
+        .iter()
+        .enumerate()
+        .map(|(index, header)| {
+            let sort_column = sort_column.clone();
+            let sort_direction = sort_direction.clone();
+            let on_sort = props.on_sort.clone();
 
-        let sort_indicator = if Some(index) == *sort_column {
-            match *sort_direction {
-                SortDirection::Ascending => " ▲",
-                SortDirection::Descending => " ▼",
-                SortDirection::None => "",
-            }
-        } else {
-            ""
-        };
-
-        let onclick = Callback::from(move |_| {
-            let new_direction = if Some(index) == *sort_column {
+            let sort_indicator = if Some(index) == *sort_column {
                 match *sort_direction {
-                    SortDirection::Ascending => SortDirection::Descending,
-                    SortDirection::Descending => SortDirection::None,
-                    SortDirection::None => SortDirection::Ascending,
+                    SortDirection::Ascending => " ▲",
+                    SortDirection::Descending => " ▼",
+                    SortDirection::None => "",
                 }
             } else {
-                SortDirection::Ascending
+                ""
             };
 
-            sort_column.set(Some(index));
-            sort_direction.set(new_direction);
+            let onclick = Callback::from(move |_| {
+                let new_direction = if Some(index) == *sort_column {
+                    match *sort_direction {
+                        SortDirection::Ascending => SortDirection::Descending,
+                        SortDirection::Descending => SortDirection::None,
+                        SortDirection::None => SortDirection::Ascending,
+                    }
+                } else {
+                    SortDirection::Ascending
+                };
 
-            if let Some(callback) = on_sort.as_ref() {
-                callback.emit((index, new_direction));
+                sort_column.set(Some(index));
+                sort_direction.set(new_direction);
+
+                if let Some(callback) = on_sort.as_ref() {
+                    callback.emit((index, new_direction));
+                }
+            });
+
+            html! {
+                <th onclick={onclick}>
+                    {header}
+                    {sort_indicator}
+                </th>
             }
-        });
-
-        html! {
-            <th onclick={onclick}>
-                {header}
-                {sort_indicator}
-            </th>
-        }
-    }).collect::<Html>();
+        })
+        .collect::<Html>();
 
     let mut sorted_data = props.data.clone();
     if let Some(column) = *sort_column {
@@ -288,7 +299,6 @@ pub fn table(props: &TableProps) -> Html {
             html! { <tr class={row_classes.clone()}>{cells}</tr> }
         })
         .collect::<Html>();
-
 
     html! {
         <table class={table_classes}>

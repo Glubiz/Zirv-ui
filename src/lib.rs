@@ -75,6 +75,11 @@ pub use container::{
     Container,
     ContainerProps,
 };
+#[cfg(feature = "divider")]
+pub use divider::{
+    Divider,
+    DividerProps,
+};
 #[cfg(feature = "flex")]
 pub use flex::{
     Flex,
@@ -154,9 +159,4 @@ pub use toast::{
     use_toast::use_toast,
     utils::ToastType,
     Toast,
-};
-#[cfg(feature = "divider")]
-pub use divider::{
-    Divider,
-    DividerProps,
 };
