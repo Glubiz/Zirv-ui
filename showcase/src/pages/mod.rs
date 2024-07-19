@@ -1,5 +1,6 @@
 pub mod button;
 pub mod container;
+pub mod divider;
 pub mod getting_started;
 pub mod index;
 pub mod loader;

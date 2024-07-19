@@ -89,6 +89,30 @@ pub enum BorderWidth {
     Medium,
     /// Large border width.
     Large,
+    /// Small border width.
+    BottomSmall,
+    /// Medium border width.
+    BottomMedium,
+    /// Large border width.
+    BottomLarge,
+    /// Small border width.
+    TopSmall,
+    /// Medium border width.
+    TopMedium,
+    /// Large border width.
+    TopLarge,
+    /// Small border width.
+    RightSmall,
+    /// Medium border width.
+    RightMedium,
+    /// Large border width.
+    RightLarge,
+    /// Small border width.
+    LeftSmall,
+    /// Medium border width.
+    LeftMedium,
+    /// Large border width.
+    LeftLarge,
 }
 
 impl From<&BorderWidth> for Classes {
@@ -108,6 +132,18 @@ impl From<&BorderWidth> for Classes {
             BorderWidth::Small => classes!("border-width-small"),
             BorderWidth::Medium => classes!("border-width-medium"),
             BorderWidth::Large => classes!("border-width-large"),
+            BorderWidth::BottomSmall => classes!("border-width-bottom-small"),
+            BorderWidth::BottomMedium => classes!("border-width-bottom-medium"),
+            BorderWidth::BottomLarge => classes!("border-width-bottom-large"),
+            BorderWidth::TopSmall => classes!("border-width-top-small"),
+            BorderWidth::TopMedium => classes!("border-width-top-medium"),
+            BorderWidth::TopLarge => classes!("border-width-top-large"),
+            BorderWidth::RightSmall => classes!("border-width-right-small"),
+            BorderWidth::RightMedium => classes!("border-width-right-medium"),
+            BorderWidth::RightLarge => classes!("border-width-right-large"),
+            BorderWidth::LeftSmall => classes!("border-width-left-small"),
+            BorderWidth::LeftMedium => classes!("border-width-left-medium"),
+            BorderWidth::LeftLarge => classes!("border-width-left-large"),
         }
     }
 }
@@ -233,28 +269,28 @@ impl From<&Border> for Classes {
         match border {
             Border::None => classes!("border-none"),
             Border::All(width, style, color) => {
-                let mut classes = classes!("border-all");
+                let mut classes = classes!("");
                 classes.push(width);
                 classes.push(style);
                 classes.push(color);
                 classes
             }
             Border::Top(width, style, color) => {
-                let mut classes = classes!("border-top");
+                let mut classes = classes!("");
                 classes.push(width);
                 classes.push(style);
                 classes.push(color);
                 classes
             }
             Border::Right(width, style, color) => {
-                let mut classes = classes!("border-right");
+                let mut classes = classes!("");
                 classes.push(width);
                 classes.push(style);
                 classes.push(color);
                 classes
             }
             Border::Bottom(width, style, color) => {
-                let mut classes = classes!("border-bottom");
+                let mut classes = classes!("");
                 classes.push(width);
                 classes.push(style);
                 classes.push(color);

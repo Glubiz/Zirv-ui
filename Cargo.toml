@@ -24,27 +24,29 @@ wasm-bindgen-futures = "0.4.42"
 [features]
 full = [
   "button",
-  "toast",
-  "loader",
-  "flex",
+  "code_block",
   "container",
-  "text",
-  "table",
+  "divider",
+  "flex",
   "image",
   "list",
+  "loader",
   "menu",
-  "code_block",
-  "theme"
+  "table",
+  "text",
+  "theme",
+  "toast",
 ]
 button = []
-toast = []
-loader = []
-flex = []
+code_block = []
 container = []
-text = []
-table = []
+divider = []
+flex = []
 image = []
 list = []
+loader = []
 menu = []
-code_block = []
+table = []
+text = []
 theme = []
+toast = []

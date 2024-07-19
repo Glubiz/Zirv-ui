@@ -40,12 +40,10 @@
 //! }
 //! ```
 
+use std::cmp::Ordering;
+
 use yew::{
-    classes,
-    function_component,
-    html,
-    Html,
-    Properties,
+    classes, function_component, html, use_state_eq, Callback, Html, Properties
 };
 
 use crate::options::{
@@ -62,6 +60,13 @@ use crate::options::{
     },
 };
 
+#[derive(Clone, Copy, PartialEq)]
+pub enum SortDirection {
+    Ascending,
+    Descending,
+    None,
+}
+
 /// Properties for the `Table` component.
 #[derive(Clone, PartialEq, Properties, Default)]
 pub struct TableProps {
@@ -69,6 +74,9 @@ pub struct TableProps {
     pub headers: Vec<String>,
     /// The data for the table.
     pub data: Vec<Vec<String>>,
+    /// Callback for when a column is sorted
+    #[prop_or_default]
+    pub on_sort: Option<Callback<(usize, SortDirection)>>,
     /// The border width of the table.
     #[prop_or_default]
     pub table_border_width: BorderWidth,
@@ -183,6 +191,9 @@ pub struct TableProps {
 /// - `cell_overflow`: The overflow property of the cells. Default is `Overflow::Auto`.
 #[function_component(Table)]
 pub fn table(props: &TableProps) -> Html {
+    let sort_column = use_state_eq(|| None::<usize>);
+    let sort_direction = use_state_eq(|| SortDirection::None);
+
     let table_classes = classes! {
         &props.table_border_width,
         &props.table_border_radius,
@@ -216,17 +227,68 @@ pub fn table(props: &TableProps) -> Html {
         &props.cell_text_align,
     };
 
-    let headers = props.headers.iter().map(|header| html! { <th>{header}</th> }).collect::<Html>();
+    let headers = props.headers.iter().enumerate().map(|(index, header)| {
+        let sort_column = sort_column.clone();
+        let sort_direction = sort_direction.clone();
+        let on_sort = props.on_sort.clone();
 
-    let data = props
-        .data
+        let sort_indicator = if Some(index) == *sort_column {
+            match *sort_direction {
+                SortDirection::Ascending => " ▲",
+                SortDirection::Descending => " ▼",
+                SortDirection::None => "",
+            }
+        } else {
+            ""
+        };
+
+        let onclick = Callback::from(move |_| {
+            let new_direction = if Some(index) == *sort_column {
+                match *sort_direction {
+                    SortDirection::Ascending => SortDirection::Descending,
+                    SortDirection::Descending => SortDirection::None,
+                    SortDirection::None => SortDirection::Ascending,
+                }
+            } else {
+                SortDirection::Ascending
+            };
+
+            sort_column.set(Some(index));
+            sort_direction.set(new_direction);
+
+            if let Some(callback) = on_sort.as_ref() {
+                callback.emit((index, new_direction));
+            }
+        });
+
+        html! {
+            <th onclick={onclick}>
+                {header}
+                {sort_indicator}
+            </th>
+        }
+    }).collect::<Html>();
+
+    let mut sorted_data = props.data.clone();
+    if let Some(column) = *sort_column {
+        sorted_data.sort_by(|a, b| {
+            let comparison = a[column].cmp(&b[column]);
+            match *sort_direction {
+                SortDirection::Ascending => comparison,
+                SortDirection::Descending => comparison.reverse(),
+                SortDirection::None => Ordering::Equal,
+            }
+        });
+    }
+
+    let data = sorted_data
         .iter()
         .map(|row| {
             let cells = row.iter().map(|cell| html! { <td class={cell_classes.clone()}>{cell}</td> }).collect::<Html>();
-
             html! { <tr class={row_classes.clone()}>{cells}</tr> }
         })
         .collect::<Html>();
+
 
     html! {
         <table class={table_classes}>

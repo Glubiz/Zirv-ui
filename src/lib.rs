@@ -48,6 +48,7 @@
 pub mod button;
 pub mod code_block;
 pub mod container;
+pub mod divider;
 pub mod flex;
 pub mod image;
 pub mod list;
@@ -100,8 +101,10 @@ pub use menu::{
     button::MenuButton,
     component::{
         Menu,
+        MenuEntry,
         MenuItem,
         MenuProps,
+        Section,
     },
     provider::{
         MenuProvider,
@@ -151,4 +154,9 @@ pub use toast::{
     use_toast::use_toast,
     utils::ToastType,
     Toast,
+};
+#[cfg(feature = "divider")]
+pub use divider::{
+    Divider,
+    DividerProps,
 };

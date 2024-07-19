@@ -8,7 +8,7 @@ use yew::{function_component, html, Html};
 use yew_router::{Routable, switch:: Switch, router::BrowserRouter};
 
 use components::header::Header;
-use zirv_ui::{Toast, ToastFactory, ToastProvider, MenuItem, MenuProvider, Menu, ThemeProvider, Theme};
+use zirv_ui::{Toast, ToastFactory, ToastProvider, MenuItem, MenuEntry, Section, MenuProvider, Menu, ThemeProvider, Theme};
 
 use crate::router::{Route, switch};
 
@@ -25,43 +25,53 @@ pub fn app() -> Html {
     let theme = Theme::default();
 
     let menu_items = vec![
-        MenuItem {
-            text: "Home".to_string(),
-            url: Route::Index.to_path(),
-        },
-        MenuItem {
-            text: "Getting Started".to_string(),
-            url: Route::GettingStarted.to_path(),
-        },
-        MenuItem {
-            text: "Button".to_string(),
-            url: Route::Button.to_path(),
-        },
-        MenuItem {
-            text: "Loader".to_string(),
-            url: Route::Loader.to_path(),
-        },
-        MenuItem {
-            text: "Table".to_string(),
-            url: Route::Table.to_path(),
-        },
-        MenuItem {
-            text: "Text".to_string(),
-            url: Route::Text.to_path(),
-        },
-        MenuItem {
-            text: "Theme".to_string(),
-            url: Route::Theme.to_path(),
-        },
-        MenuItem {
-            text: "Toast".to_string(),
-            url: Route::Toast.to_path(),
-        },
-        MenuItem {
-            text: "Container".to_string(),
-            url: Route::Container.to_path(),
-        },
-    ];
+            MenuEntry::Item(MenuItem {
+                text: "Home".to_string(),
+                url: Route::Index.to_path(),
+            }),
+            MenuEntry::Item(MenuItem {
+                text: "Getting Started".to_string(),
+                url: Route::GettingStarted.to_path(),
+            }),
+            MenuEntry::Section(Section {
+                name: "Components".to_string(),
+                is_open: true,
+                items: vec![
+                    MenuItem {
+                        text: "Button".to_string(),
+                        url: Route::Button.to_path(),
+                    },
+                    MenuItem {
+                        text: "Loader".to_string(),
+                        url: Route::Loader.to_path(),
+                    },
+                    MenuItem {
+                        text: "Table".to_string(),
+                        url: Route::Table.to_path(),
+                    },
+                    MenuItem {
+                        text: "Text".to_string(),
+                        url: Route::Text.to_path(),
+                    },
+                    MenuItem {
+                        text: "Theme".to_string(),
+                        url: Route::Theme.to_path(),
+                    },
+                    MenuItem {
+                        text: "Toast".to_string(),
+                        url: Route::Toast.to_path(),
+                    },
+                    MenuItem {
+                        text: "Container".to_string(),
+                        url: Route::Container.to_path(),
+                    },
+                    MenuItem {
+                        text: "Divider".to_string(),
+                        url: Route::Divider.to_path(),
+                    },
+                ]
+            })
+        ];
 
     html! {
         <ThemeProvider theme={theme}>

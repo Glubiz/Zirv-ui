@@ -1,4 +1,3 @@
-pub mod backgound;
 pub mod border;
 pub mod color;
 pub mod display;

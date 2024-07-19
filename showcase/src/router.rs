@@ -1,4 +1,4 @@
-use crate::pages::{index::IndexPage, getting_started::GettingStartedPage, not_found::NotFoundPage, button::ButtonPage, loader::LoaderPage, table::TablePage, text::TextPage, toast::ToastPage, container::ContainerPage, theme::ThemePage};
+use crate::pages::{index::IndexPage, getting_started::GettingStartedPage, not_found::NotFoundPage, button::ButtonPage, loader::LoaderPage, table::TablePage, text::TextPage, toast::ToastPage, container::ContainerPage, theme::ThemePage, divider::DividerPage};
 use yew::{html, Html};
 use yew_router::Routable;
 
@@ -22,6 +22,8 @@ pub enum Route {
     Theme,
     #[at("/container")]
     Container,
+    #[at("/divider")]
+    Divider,
     #[not_found]
     #[at("/404")]
     NotFound,
@@ -38,6 +40,7 @@ pub fn switch(routes: Route) -> Html {
         Route::Theme => html! { <ThemePage /> },
         Route::Toast => html! { <ToastPage /> },
         Route::Container => html! { <ContainerPage /> },
+        Route::Divider => html! { <DividerPage /> },
         Route::NotFound => html! { <NotFoundPage /> },
     }
 }

@@ -1,5 +1,6 @@
 pub mod button;
 pub mod container;
+pub mod divider;
 pub mod flex;
 pub mod getting_started;
 pub mod introduction;

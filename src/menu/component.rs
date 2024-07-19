@@ -3,12 +3,20 @@
 //! This module provides a `Menu` component that renders a list of menu items.
 //! The menu can be toggled open or closed, and its state is managed by the `use_menu` hook.
 
+use std::default;
+
 use yew::prelude::*;
 
 use crate::menu::use_menu::use_menu;
 
+#[derive(Clone, PartialEq)]
+pub struct Drawer {
+    pub name: String,
+    pub is_open: bool,
+}
+
 /// Represents a single menu item with text and a URL.
-#[derive(PartialEq)]
+#[derive(PartialEq, Clone)]
 pub struct MenuItem {
     /// The text to display for the menu item
     pub text: String,
@@ -16,11 +24,23 @@ pub struct MenuItem {
     pub url: String,
 }
 
+#[derive(Clone, PartialEq)]
+pub struct Section {
+    pub name: String,
+    pub items: Vec<MenuItem>,
+    pub is_open: bool,
+}
+
+#[derive(Clone, PartialEq)]
+pub enum MenuEntry {
+    Item(MenuItem),
+    Section(Section),
+}
+
 /// Properties for the Menu component
 #[derive(Properties, PartialEq)]
 pub struct MenuProps {
-    /// A vector of MenuItem structs representing the menu items to be displayed
-    pub items: Vec<MenuItem>,
+    pub items: Vec<MenuEntry>,
 }
 
 /// Menu Component
@@ -50,24 +70,43 @@ pub struct MenuProps {
 /// ```
 #[function_component(Menu)]
 pub fn menu(props: &MenuProps) -> Html {
-    // Get the current menu state using the use_menu hook
     let menu_state = use_menu();
-
-    // Determine CSS classes based on whether the menu is open or closed
     let menu_class = if menu_state.is_open { "menu open" } else { "menu" };
     let backdrop_class = if menu_state.is_open { "menu-backdrop open" } else { "menu-backdrop" };
 
+    let menu_entries = use_state(|| props.items.clone());
+
     html! {
         <>
-            // Render a backdrop that can be clicked to close the menu
             <div class={backdrop_class} onclick={menu_state.toggle.clone()}></div>
-            // Render the navigation menu
             <nav class={menu_class}>
                 <ul>
-                    // Iterate over menu items and render each as a list item
-                    { for props.items.iter().map(|item| html! {
-                        <li><a href={item.url.clone()}>{ &item.text }</a></li>
-                    }) }
+                    {
+                        for menu_entries.iter().map(|entry| match entry {
+                            MenuEntry::Item(item) => html! {
+                                <li><a href={item.url.clone()}>{ &item.text }</a></li>
+                            },
+                            MenuEntry::Section(section) => html! {
+                                <li class="section">
+                                    <div 
+                                        class="section-header"
+                                    >
+                                        { &section.name }
+                                        <span class="section-icon">
+                                            { if section.is_open { "▼" } else { "▶" } }
+                                        </span>
+                                    </div>
+                                    if section.is_open {
+                                        <ul class="section-items">
+                                            { for section.items.iter().map(|item| html! {
+                                                <li><a href={item.url.clone()}>{ &item.text }</a></li>
+                                            }) }
+                                        </ul>
+                                    }
+                                </li>
+                            }
+                        })
+                    }
                 </ul>
             </nav>
         </>

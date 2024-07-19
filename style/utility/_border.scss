@@ -33,6 +33,74 @@
     &-large {
       border-width: 8px;
     }
+    &-bottom {
+      &-none {
+        border-bottom-width: 0;
+      }
+      &-small {
+        border-width: 0;
+        border-bottom-width: 1px;
+      }
+      &-medium {
+        border-width: 0;
+        border-bottom-width: 4px;
+      }
+      &-large {
+        border-width: 0;
+        border-bottom-width: 8px;
+      }
+    }
+    &-top {
+      &-none {
+        border-top-width: 0;
+      }
+      &-small {
+        border-width: 0;
+        border-top-width: 1px;
+      }
+      &-medium {
+        border-width: 0;
+        border-top-width: 4px;
+      }
+      &-large {
+        border-width: 0;
+        border-top-width: 8px;
+      }
+    }
+    &-right {
+      &-none {
+        border-right-width: 0;
+      }
+      &-small {
+        border-width: 0;
+        border-right-width: 1px;
+      }
+      &-medium {
+        border-width: 0;
+        border-right-width: 4px;
+      }
+      &-large {
+        border-width: 0;
+        border-right-width: 8px;
+      }
+    }
+    &-left {
+      &-none {
+        border-left-width: 0;
+      }
+      &-small {
+        border-width: 0;
+        border-left-width: 1px;
+      }
+      &-medium {
+        border-width: 0;
+        border-left-width: 4px;
+      }
+      &-large {
+        border-width: 0;
+        border-left-width: 8px;
+      }
+    }
   }
 
   &-style {
@@ -77,5 +145,5 @@
     }
   }
 
-  // TODO - Add border classes
+  
 }
