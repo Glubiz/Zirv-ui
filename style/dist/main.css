@@ -2614,6 +2614,29 @@ button:disabled {
 .menu-button.open > .bar3 {
   transform: rotate(45deg) translate(-7px, -7px);
 }
+.menu .section .section-header {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--module-color-light);
+}
+.menu .section .section-header .section-icon {
+  transition: transform 0.3s ease;
+}
+.menu .section .section-items {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+.menu .section.open .section-header .section-icon {
+  transform: rotate(180deg);
+}
+.menu .section.open .section-items {
+  max-height: 1000px;
+  transition: max-height 0.5s ease-in;
+}
 
 .toast {
   cursor: pointer;

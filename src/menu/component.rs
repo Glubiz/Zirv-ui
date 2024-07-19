@@ -30,10 +30,7 @@ pub struct Section {
 
 impl Section {
     pub fn toggle(self) -> Self {
-        Self {
-            is_open: !self.is_open,
-            ..self
-        }
+        Self { is_open: !self.is_open, ..self }
     }
 }
 
@@ -99,7 +96,7 @@ pub fn menu(props: &MenuProps) -> Html {
                             entry.clone()
                         }
                     })
-                    .collect()
+                    .collect(),
             );
         })
     };
