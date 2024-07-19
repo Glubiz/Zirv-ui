@@ -7,19 +7,8 @@ use yew::{
 };
 
 use crate::{
-    border::{
-        Border,
-        BorderColor,
-        BorderRadius,
-        BorderStyle,
-        BorderWidth,
-    },
+    border::BorderRadius,
     color::BackgroundColor,
-    size::{
-        CustomType,
-        Height,
-        Width,
-    },
 };
 
 #[derive(Clone, PartialEq, Properties)]

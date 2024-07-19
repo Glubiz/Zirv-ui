@@ -2,9 +2,6 @@
 //!
 //! This module provides a `Menu` component that renders a list of menu items.
 //! The menu can be toggled open or closed, and its state is managed by the `use_menu` hook.
-
-use std::default;
-
 use yew::prelude::*;
 
 use crate::menu::use_menu::use_menu;
@@ -29,6 +26,15 @@ pub struct Section {
     pub name: String,
     pub items: Vec<MenuItem>,
     pub is_open: bool,
+}
+
+impl Section {
+    pub fn toggle(self) -> Self {
+        Self {
+            is_open: !self.is_open,
+            ..self
+        }
+    }
 }
 
 #[derive(Clone, PartialEq)]
@@ -76,34 +82,55 @@ pub fn menu(props: &MenuProps) -> Html {
 
     let menu_entries = use_state(|| props.items.clone());
 
+    let toggle_section = {
+        let menu_entries = menu_entries.clone();
+        Callback::from(move |index: usize| {
+            menu_entries.set(
+                menu_entries
+                    .iter()
+                    .enumerate()
+                    .map(|(i, entry)| {
+                        if i == index {
+                            match entry {
+                                MenuEntry::Section(section) => MenuEntry::Section(section.clone().toggle()),
+                                _ => entry.clone(),
+                            }
+                        } else {
+                            entry.clone()
+                        }
+                    })
+                    .collect()
+            );
+        })
+    };
+
     html! {
         <>
             <div class={backdrop_class} onclick={menu_state.toggle.clone()}></div>
             <nav class={menu_class}>
                 <ul>
                     {
-                        for menu_entries.iter().map(|entry| match entry {
+                        for menu_entries.iter().enumerate().map(|(index, entry)| match entry {
                             MenuEntry::Item(item) => html! {
                                 <li><a href={item.url.clone()}>{ &item.text }</a></li>
                             },
-                            MenuEntry::Section(section) => html! {
-                                <li class="section">
-                                    <div
-                                        class="section-header"
-                                    >
-                                        { &section.name }
-                                        <span class="section-icon">
-                                            { if section.is_open { "▼" } else { "▶" } }
-                                        </span>
-                                    </div>
-                                    if section.is_open {
+                            MenuEntry::Section(section) => {
+                                html! {
+                                    <li class={classes!("section", section.is_open.then_some("open"))}>
+                                        <div
+                                            class="section-header"
+                                            onclick={toggle_section.reform(move |_| index)}
+                                        >
+                                            { &section.name }
+                                            <span class="section-icon">{ "▼" }</span>
+                                        </div>
                                         <ul class="section-items">
                                             { for section.items.iter().map(|item| html! {
                                                 <li><a href={item.url.clone()}>{ &item.text }</a></li>
                                             }) }
                                         </ul>
-                                    }
-                                </li>
+                                    </li>
+                                }
                             }
                         })
                     }

@@ -35,7 +35,7 @@ pub fn app() -> Html {
             }),
             MenuEntry::Section(Section {
                 name: "Components".to_string(),
-                is_open: true,
+                is_open: false,
                 items: vec![
                     MenuItem {
                         text: "Button".to_string(),
