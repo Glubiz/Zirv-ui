@@ -60,11 +60,12 @@ jobs:
       id: docker-meta
       run: |
         REPO=${{ secrets.GH_DOCKER_USERNAME }}/zirv-ui
-        TAG=$(curl -s "https://registry.hub.docker.com/v1/repositories/${REPO}/tags" | jq -r '.[].name' | grep -E '^[0-9]+$' | sort -n | tail -n 1)
+        TAG=$(curl -s "https://registry.hub.docker.com/v2/repositories/${REPO}/tags?page_size=1000" | jq -r '.results[].name' | grep -E '^[0-9]+$' | sort -rn | head -n1)
         if [ -z "$TAG" ]; then
           TAG=0
         fi
-        echo "::set-output name=tag::$((TAG+1))"
+        NEXT_TAG=$((TAG+1))
+        echo "tag=${NEXT_TAG}" >> $GITHUB_OUTPUT
 
     - name: Build and push Docker image
       run: |
