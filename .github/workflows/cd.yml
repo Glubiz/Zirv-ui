@@ -50,24 +50,30 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
   
+    - name: Get latest tag and bump version
+      id: bump_version
+      run: |
+        git fetch --tags
+        latest_tag=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+        IFS='.' read -ra ADDR <<< "$latest_tag"
+        major=${ADDR[0]}
+        minor=${ADDR[1]}
+        patch=${ADDR[2]}
+        new_patch=$((patch + 1))
+        new_tag="${major}.${minor}.${new_patch}"
+        echo "new_tag=${new_tag}" >> $GITHUB_OUTPUT
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git tag -a ${new_tag} -m "Bump version to ${new_tag}"
+        git push origin ${new_tag}
+
     - name: Log in to Docker Hub
       uses: docker/login-action@v2
       with:
         username: ${{ secrets.GH_DOCKER_USERNAME }}
         password: ${{ secrets.GH_DOCKER_PASSWORD }}
-  
-    - name: Get latest Docker tag
-      id: docker-meta
-      run: |
-        REPO=${{ secrets.GH_DOCKER_USERNAME }}/zirv-ui
-        TAG=$(curl -s "https://registry.hub.docker.com/v2/repositories/${REPO}/tags?page_size=1000" | jq -r '.results[].name' | grep -E '^[0-9]+$' | sort -rn | head -n1)
-        if [ -z "$TAG" ]; then
-          TAG=0
-        fi
-        NEXT_TAG=$((TAG+1))
-        echo "tag=${NEXT_TAG}" >> $GITHUB_OUTPUT
 
     - name: Build and push Docker image
       run: |
-        docker build -t ${{ secrets.GH_DOCKER_USERNAME }}/zirv-ui:${{ steps.docker-meta.outputs.tag }} .
-        docker push ${{ secrets.GH_DOCKER_USERNAME }}/zirv-ui:${{ steps.docker-meta.outputs.tag }}
+        docker build -t ${{ secrets.GH_DOCKER_USERNAME }}/zirv-ui:${{ steps.bump_version.outputs.new_tag }} .
+        docker push ${{ secrets.GH_DOCKER_USERNAME }}/zirv-ui:${{ steps.bump_version.outputs.new_tag }}
